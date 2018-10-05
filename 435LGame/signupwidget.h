@@ -11,7 +11,7 @@ public:
     explicit SignUpWidget(QWidget *parent = nullptr);
     QLabel *FirstName,*LastName,*UserName,*Password,*ConfirmPass,*ProfilePic,*Gender;
     QLineEdit *First,*Last,*User,*Pass,*Confirm;
-    QPushButton *Submit;
+    QPushButton *Submit,*ProfilePicture;
     QRadioButton *Male,*Female;
     QGridLayout *GridLayout;
     QVBoxLayout *VerticalLayout;
@@ -19,6 +19,8 @@ public:
 signals:
 
 public slots:
+    void VerifySubmitSlot();
+    void AddProfilePictureSlot();
 };
 
 #endif // SIGNUPWIDGET_H
