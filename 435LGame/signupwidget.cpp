@@ -29,8 +29,10 @@ SignUpWidget::SignUpWidget(QWidget *parent) : QWidget(parent)
     GridLayout=new QGridLayout;
     VerticalLayout=new QVBoxLayout;
 
+
     ProfilePicture->setStyleSheet("font-size: 25px;height: 30px;width: 70px;");
     Submit->setStyleSheet("font-size: 36px;height: 38px;width: 90px;");
+
 
     GridLayout->addWidget(FirstName,0,0,1,2);
     GridLayout->addWidget(First,1,0,1,2);

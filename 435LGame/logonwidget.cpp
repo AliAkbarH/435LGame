@@ -6,6 +6,7 @@ LogOnWidget::LogOnWidget(QWidget *parent) : QWidget(parent)
     SignInButton=new QPushButton("Sign In");
     SignUpButton=new QPushButton("Sign Up");
     GuestButton=new QPushButton("Log in as Guest");
+<<<<<<< HEAD
 
     TitleLabel=new QLabel("Welcome to Our Game");
     TitleLabel->setStyleSheet("font-size: 36px;height: 38px;width: 90px;");
@@ -40,7 +41,7 @@ LogOnWidget::LogOnWidget(QWidget *parent) : QWidget(parent)
 
 void LogOnWidget::setVerticalLayout(){
 
-    VerticalLayout->addWidget(TitleLabel, 0, 0);
+    VerticalLayout->addWidget(TitleLabel, 0);
     VerticalLayout->addItem(GridLayout);
     VerticalLayout->addWidget(InfoLabel);
     VerticalLayout->setSpacing(50);
@@ -54,10 +55,12 @@ void LogOnWidget::setGridLayout(){
 
      GridLayout->setSpacing(15);
 
+
 }
 
 void LogOnWidget::GotoSignUpPage(){
     SignUpWidget *SignUp=new SignUpWidget();
+
     this->close();
     SignUp->show();
 }
@@ -67,3 +70,5 @@ void LogOnWidget::GotoSignInPage(){
     this->close();
     signin->show();
 }
+
+
