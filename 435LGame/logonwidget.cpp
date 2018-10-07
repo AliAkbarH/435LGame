@@ -6,7 +6,7 @@ LogOnWidget::LogOnWidget(QWidget *parent) : QWidget(parent)
     SignInButton=new QPushButton("Sign In");
     SignUpButton=new QPushButton("Sign Up");
     GuestButton=new QPushButton("Log in as Guest");
-<<<<<<< HEAD
+
 
     TitleLabel=new QLabel("Welcome to Our Game");
     TitleLabel->setStyleSheet("font-size: 36px;height: 38px;width: 90px;");

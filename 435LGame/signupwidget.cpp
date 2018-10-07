@@ -112,40 +112,40 @@ void SignUpWidget::VerifySubmitSlot(){
     if(!Male->isChecked()&&!Female->isChecked()){
         QLabel *GenderMissing=new QLabel("Need to select gender");
         GridLayout->addWidget(GenderMissing,5,0);
+        return;
     }
 
 
    QDir dir;
-   dir.mkdir("profiles");
-   QFile file(dir.path()+"/profile.txt");
-   QFile file1(dir.path()+"/profile1.txt");
-   file.open(QIODevice::ReadWrite);
-   file1.open(QIODevice::ReadWrite);
-   //Last->setText(file.fileName());
-   if(fileExists(dir.path()+"/profile.txt")){
-       First->setText("exists");
+   dir.setPath(dir.path()+"/profiles");
+   QFile *NewProfile;
+   if(fileExists(dir.path()+"/"+User->text()+".txt")){
+       UserName->setText("Username : Username taken");
+       return;
    }
-   else{
-       First->setText("doesnt exist");
-   }
-   if(fileExists(dir.path()+"/profile1.txt")){
-       Last->setText("exists");
-   }
-   else{
-       Last->setText("doesnt exist");
-   }
-   User->setText(dir.absolutePath());
-    file.write("hola");
+
+       UserName->setText("Username");
+       NewProfile=new QFile(dir.path()+"/"+User->text()+".txt");
+       NewProfile->open(QIODevice::ReadWrite);
+       QTextStream out(NewProfile);
+       const QString esc="7727";//for some reason endl and \n are not working so we provide this escape string to determine the end of a field
+       out<<"First: "<<First->text()<<esc;
+       out<<"Last: "<<Last->text()<<esc;
+       out<<"Gender: ";
+       if(Male->isChecked()){
+           out<<"Male";
+       }
+       else{
+           out<<"Female";
+       }
+       out<<esc;
+       out<<"Username: "<<User->text()<<esc;
+       out<<"Password: "<<Pass->text()<<esc;
+       Submit->setText("Sign Up successful, press to continue");
+       connect(Submit,SIGNAL(pressed()),this,SLOT(GoBackToLogOnSlot()));
 
 }
-bool SignUpWidget::checkForWord(fstream *file,string user){
-    string temp;
-    while(!(*file).eof()){
-        *file>>temp;
-        if(temp==user)return true;
-    }
-    return false;
-}
+
 
 bool SignUpWidget::fileExists(QString path) {
     QFileInfo check_file(path);
@@ -157,3 +157,8 @@ bool SignUpWidget::fileExists(QString path) {
     }
 }
 
+void SignUpWidget::GoBackToLogOnSlot(){
+    LogOnWidget *logon=new LogOnWidget();
+    logon->show();
+    delete this;
+}
