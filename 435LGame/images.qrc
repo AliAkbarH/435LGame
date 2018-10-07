@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Profile Images/water.gif</file>
+        <file>Profile Images/bucket.png</file>
+        <file>Profile Images/cloud.png</file>
+        <file>Profile Images/background_without.jpeg</file>
+        <file>Profile Images/background.PNG</file>
+    </qresource>
+</RCC>
