@@ -128,26 +128,24 @@ void SignUpWidget::VerifySubmitSlot(){
        NewProfile=new QFile(dir.path()+"/"+User->text()+".txt");
        NewProfile->open(QIODevice::ReadWrite);
        QTextStream out(NewProfile);
-       out<<"First: "<<First->text()<<endl;
-       out<<"Last: "<<Last->text()<<endl;
-       out<<"Username: "<<User->text()<<endl;
-       out<<"Password: "<<Pass->text()<<endl;
-
-
-
-
-
-
+       const QString esc="7727";//for some reason endl and \n are not working so we provide this escape string to determine the end of a field
+       out<<"First: "<<First->text()<<esc;
+       out<<"Last: "<<Last->text()<<esc;
+       out<<"Gender: ";
+       if(Male->isChecked()){
+           out<<"Male";
+       }
+       else{
+           out<<"Female";
+       }
+       out<<esc;
+       out<<"Username: "<<User->text()<<esc;
+       out<<"Password: "<<Pass->text()<<esc;
+       Submit->setText("Sign Up successful, press to continue");
+       connect(Submit,SIGNAL(pressed()),this,SLOT(GoBackToLogOnSlot()));
 
 }
-bool SignUpWidget::checkForWord(fstream *file,string user){
-    string temp;
-    while(!(*file).eof()){
-        *file>>temp;
-        if(temp==user)return true;
-    }
-    return false;
-}
+
 
 bool SignUpWidget::fileExists(QString path) {
     QFileInfo check_file(path);
@@ -159,3 +157,8 @@ bool SignUpWidget::fileExists(QString path) {
     }
 }
 
+void SignUpWidget::GoBackToLogOnSlot(){
+    LogOnWidget *logon=new LogOnWidget();
+    logon->show();
+    delete this;
+}

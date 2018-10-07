@@ -1,6 +1,7 @@
 #ifndef SIGNUPWIDGET_H
 #define SIGNUPWIDGET_H
 
+#include"logonwidget.h"
 #include <QWidget>
 #include<QtWidgets>
 #include<fstream>
@@ -27,6 +28,7 @@ signals:
 public slots:
     void VerifySubmitSlot();
     void AddProfilePictureSlot();
+    void GoBackToLogOnSlot();
 };
 
 #endif // SIGNUPWIDGET_H
