@@ -1,6 +1,12 @@
 #include "signupwidget.h"
 #include<QFileDialog>
 #include <iostream>
+#include<QFile>
+#include<fstream>
+#include<string>
+#include<QJsonObject>
+#include<QJsonDocument>
+using namespace std;
 
 SignUpWidget::SignUpWidget(QWidget *parent) : QWidget(parent)
 {
@@ -14,8 +20,8 @@ SignUpWidget::SignUpWidget(QWidget *parent) : QWidget(parent)
     First=new QLineEdit("First Name");
     Last=new QLineEdit("Last Name");
     User=new QLineEdit("Username");
-    Pass=new QLineEdit("Password");
-    Confirm=new QLineEdit("Confirm Password");
+    Pass=new QLineEdit("Password1");
+    Confirm=new QLineEdit("Password1");
     Submit=new QPushButton("Submit");
     ProfilePicture=new QPushButton("Browse");
     Male=new QRadioButton("Male");
@@ -45,8 +51,8 @@ SignUpWidget::SignUpWidget(QWidget *parent) : QWidget(parent)
     VerticalLayout->addStretch(3);
     VerticalLayout->addWidget(Submit);
 
-    connect(ProfilePicture,SIGNAL(pressed()),this,SLOT(AddProfilePictureSlot));
-    connect(Submit,SIGNAL(pressed()),this,  SLOT(VerifySubmitSlot));
+    connect(ProfilePicture,SIGNAL(pressed()),this,SLOT(AddProfilePictureSlot()));
+    connect(Submit,SIGNAL(pressed()),this,  SLOT(VerifySubmitSlot()));
     setLayout(VerticalLayout);
     resize(450,700);
 
@@ -59,6 +65,7 @@ void SignUpWidget::AddProfilePictureSlot(){
 }
 
 void SignUpWidget::VerifySubmitSlot(){
+
     if(First->text().isNull()||First->text().isEmpty()){
         First->setText("First Name can't be empty");
         return;
@@ -68,18 +75,22 @@ void SignUpWidget::VerifySubmitSlot(){
         Last->setText("Last Name can't be empty");
         return;
     }
+
     if(User->text().isNull()||User->text().isEmpty()){
         User->setText("Username can't be empty");
         return;
     }
+
     if(Pass->text().isNull()||Pass->text().isEmpty()){
-        First->setText("Password can't be empty");
+        Pass->setText("Password can't be empty");
         return;
     }
+
     if(Confirm->text()!=Pass->text()){
         Confirm->setText("The Passwords are not matching");
         return;
     }
+
     bool hasNum=false;
     bool hasCaptial=false;
     bool hasSmall=false;
@@ -95,4 +106,51 @@ void SignUpWidget::VerifySubmitSlot(){
         return;
     }
 
+    if(!Male->isChecked()&&!Female->isChecked()){
+        QLabel *GenderMissing=new QLabel("Need to select gender");
+        GridLayout->addWidget(GenderMissing,5,0);
+    }
+
+
+   QDir dir;
+   dir.mkdir("profiles");
+   QFile file(dir.path()+"/profile.txt");
+   QFile file1(dir.path()+"/profile1.txt");
+   file.open(QIODevice::ReadWrite);
+   file1.open(QIODevice::ReadWrite);
+   //Last->setText(file.fileName());
+   if(fileExists(dir.path()+"/profile.txt")){
+       First->setText("exists");
+   }
+   else{
+       First->setText("doesnt exist");
+   }
+   if(fileExists(dir.path()+"/profile1.txt")){
+       Last->setText("exists");
+   }
+   else{
+       Last->setText("doesnt exist");
+   }
+   User->setText(dir.absolutePath());
+    file.write("hola");
+
 }
+bool SignUpWidget::checkForWord(fstream *file,string user){
+    string temp;
+    while(!(*file).eof()){
+        *file>>temp;
+        if(temp==user)return true;
+    }
+    return false;
+}
+
+bool SignUpWidget::fileExists(QString path) {
+    QFileInfo check_file(path);
+    // check if file exists and if yes: Is it really a file and no directory?
+    if (check_file.exists() && check_file.isFile()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+

@@ -3,7 +3,9 @@
 
 #include <QWidget>
 #include<QtWidgets>
-
+#include<fstream>
+#include<QFileInfo>
+using namespace std;
 class SignUpWidget : public QWidget
 {
     Q_OBJECT
@@ -15,6 +17,10 @@ public:
     QRadioButton *Male,*Female;
     QGridLayout *GridLayout;
     QVBoxLayout *VerticalLayout;
+
+private:
+    bool checkForWord(fstream *file,string user);
+    bool fileExists(QString path) ;
 
 signals:
 
