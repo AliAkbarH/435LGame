@@ -128,19 +128,19 @@ void SignUpWidget::VerifySubmitSlot(){
        NewProfile=new QFile(dir.path()+"/"+User->text()+".txt");
        NewProfile->open(QIODevice::ReadWrite);
        QTextStream out(NewProfile);
-       const QString esc="7727";//for some reason endl and \n are not working so we provide this escape string to determine the end of a field
-       out<<"First: "<<First->text()<<esc;
-       out<<"Last: "<<Last->text()<<esc;
-       out<<"Gender: ";
+
+       out<<"First:"<<First->text()<<'\t';
+       out<<"Last:"<<Last->text()<<'\t';
+       out<<"Gender:";
        if(Male->isChecked()){
-           out<<"Male";
+           out<<"Male"<<'\t';
        }
        else{
-           out<<"Female";
+           out<<"Female"<<'\t';
        }
-       out<<esc;
-       out<<"Username: "<<User->text()<<esc;
-       out<<"Password: "<<Pass->text()<<esc;
+
+       out<<"Username:"<<User->text()<<'\t';
+       out<<"Password:"<<Pass->text()<<'\t';
        Submit->setText("Sign Up successful, press to continue");
        connect(Submit,SIGNAL(pressed()),this,SLOT(GoBackToLogOnSlot()));
 

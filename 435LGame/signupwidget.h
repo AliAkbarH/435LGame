@@ -18,6 +18,7 @@ public:
     QRadioButton *Male,*Female;
     QGridLayout *GridLayout;
     QVBoxLayout *VerticalLayout;
+    const QString esc="7727";//for some reason endl and \n are not working so we provide this escape string to determine the end of a field
 
 private:
     bool checkForWord(fstream *file,string user);
