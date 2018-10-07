@@ -120,15 +120,21 @@ void SignUpWidget::VerifySubmitSlot(){
    dir.setPath(dir.path()+"/profiles");
    QFile *NewProfile;
    if(fileExists(dir.path()+"/"+User->text()+".txt")){
-       First->setText("exists");
+       UserName->setText("Username : Username taken");
        return;
    }
 
-       First->setText("doesnt exist");
+       UserName->setText("Username");
        NewProfile=new QFile(dir.path()+"/"+User->text()+".txt");
        NewProfile->open(QIODevice::ReadWrite);
-       NewProfile->write("just created");
-       Last->setText(NewProfile->read(3));
+       QTextStream out(NewProfile);
+       out<<"First: "<<First->text()<<endl;
+       out<<"Last: "<<Last->text()<<endl;
+       out<<"Username: "<<User->text()<<endl;
+       out<<"Password: "<<Pass->text()<<endl;
+
+
+
 
 
 
