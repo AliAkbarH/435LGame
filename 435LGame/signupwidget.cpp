@@ -112,30 +112,26 @@ void SignUpWidget::VerifySubmitSlot(){
     if(!Male->isChecked()&&!Female->isChecked()){
         QLabel *GenderMissing=new QLabel("Need to select gender");
         GridLayout->addWidget(GenderMissing,5,0);
+        return;
     }
 
 
    QDir dir;
-   dir.mkdir("profiles");
-   QFile file(dir.path()+"/profile.txt");
-   QFile file1(dir.path()+"/profile1.txt");
-   file.open(QIODevice::ReadWrite);
-   file1.open(QIODevice::ReadWrite);
-   //Last->setText(file.fileName());
-   if(fileExists(dir.path()+"/profile.txt")){
+   dir.setPath(dir.path()+"/profiles");
+   QFile *NewProfile;
+   if(fileExists(dir.path()+"/"+User->text()+".txt")){
        First->setText("exists");
+       return;
    }
-   else{
+
        First->setText("doesnt exist");
-   }
-   if(fileExists(dir.path()+"/profile1.txt")){
-       Last->setText("exists");
-   }
-   else{
-       Last->setText("doesnt exist");
-   }
-   User->setText(dir.absolutePath());
-    file.write("hola");
+       NewProfile=new QFile(dir.path()+"/"+User->text()+".txt");
+       NewProfile->open(QIODevice::ReadWrite);
+       NewProfile->write("just created");
+       Last->setText(NewProfile->read(3));
+
+
+
 
 }
 bool SignUpWidget::checkForWord(fstream *file,string user){
