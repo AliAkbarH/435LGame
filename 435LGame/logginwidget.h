@@ -24,6 +24,11 @@ public:
         void setVerticalLayout();
         void setGridLayout();
 
+private:
+        bool fileExists(QString path);
+        QString profilePic();
+        QStringList profileParser(QString in);
+
 signals:
 
 

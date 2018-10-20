@@ -6,6 +6,7 @@
 #include<string>
 #include<QJsonObject>
 #include<QJsonDocument>
+#include<QCalendarWidget>
 using namespace std;
 
 SignUpWidget::SignUpWidget(QWidget *parent) : QWidget(parent)
@@ -15,24 +16,26 @@ SignUpWidget::SignUpWidget(QWidget *parent) : QWidget(parent)
     UserName=new QLabel("Username");
     Password=new QLabel("Password");
     ConfirmPass=new QLabel("Confirm Password");
-    ProfilePic=new QLabel("Profile Picture");
+    ProfilePicture=new QLabel("Profile Picture");
     Gender=new QLabel("Gender");
-    First=new QLineEdit("First Name");
-    Last=new QLineEdit("Last Name");
+    First=new QLineEdit("FirstName");
+    Last=new QLineEdit("LastName");
     User=new QLineEdit("Username");
     Pass=new QLineEdit("Password1");
     Confirm=new QLineEdit("Password1");
     Submit=new QPushButton("Submit");
-    ProfilePicture=new QPushButton("Browse");
     Male=new QRadioButton("Male");
     Female=new QRadioButton("Female");
     GridLayout=new QGridLayout;
     VerticalLayout=new QVBoxLayout;
 
-
-    ProfilePicture->setStyleSheet("font-size: 25px;height: 30px;width: 70px;");
     Submit->setStyleSheet("font-size: 36px;height: 38px;width: 90px;");
 
+
+    Pass->setEchoMode(QLineEdit::Password);
+    Confirm->setEchoMode(QLineEdit::Password);
+
+    createPreviewGroupBox();
 
     GridLayout->addWidget(FirstName,0,0,1,2);
     GridLayout->addWidget(First,1,0,1,2);
@@ -48,24 +51,62 @@ SignUpWidget::SignUpWidget(QWidget *parent) : QWidget(parent)
     GridLayout->addWidget(ConfirmPass,10,0,1,2);
     GridLayout->addWidget(Confirm,11,0,1,2);
 
+    GridLayout->addWidget(profilePicGroup(), 12, 0);
+
+    GridLayout->addWidget(previewGroupBox,13,0);
+
+
     VerticalLayout->addLayout(GridLayout);
-    VerticalLayout->addWidget(ProfilePic);
-    VerticalLayout->addWidget(ProfilePicture);
     VerticalLayout->addStretch(3);
     VerticalLayout->addWidget(Submit);
 
-    connect(ProfilePicture,SIGNAL(pressed()),this,SLOT(AddProfilePictureSlot()));
+
     connect(Submit,SIGNAL(pressed()),this,  SLOT(VerifySubmitSlot()));
     setLayout(VerticalLayout);
     resize(450,700);
 
 }
 
-void SignUpWidget::AddProfilePictureSlot(){
-    QString fileName= QFileDialog::getOpenFileName(this, "Select a file to open...", QDir::homePath());
-    std::cout<<&fileName;
-    QFile::copy(fileName, "./images/profilePic"+User->text());
+
+void SignUpWidget::createPreviewGroupBox()
+{
+    previewGroupBox = new QGroupBox(tr("Preview"));
+
+    calendar = new QCalendarWidget;
+    calendar->setMinimumDate(QDate(1900, 1, 1));
+    calendar->setMaximumDate(QDate(3000, 1, 1));
+    calendar->setGridVisible(true);
+
+    connect(calendar, SIGNAL(currentPageChanged(int,int)),
+            this, SLOT(reformatCalendarPage()));
+
+    previewLayout = new QGridLayout;
+    previewLayout->addWidget(calendar, 0, 0, Qt::AlignCenter);
+    previewGroupBox->setLayout(previewLayout);
 }
+
+QGroupBox *SignUpWidget::profilePicGroup()
+{
+    groupBox = new QGroupBox(tr("Profile Picture Style "));
+
+    ProfilePic1=new QRadioButton("Style 1");
+    ProfilePic2=new QRadioButton("Style 2");
+    ProfilePic3=new QRadioButton("Style 3");
+    ProfilePic4=new QRadioButton("Style 4");
+
+
+    ProfilePic1->setChecked(true);
+
+    QVBoxLayout *vbox = new QVBoxLayout;
+       vbox->addWidget(ProfilePic1);
+       vbox->addWidget(ProfilePic2);
+       vbox->addWidget(ProfilePic3);
+       vbox->addWidget(ProfilePic4);
+       vbox->addStretch(1);
+       groupBox->setLayout(vbox);
+
+       return groupBox;
+   }
 
 void SignUpWidget::VerifySubmitSlot(){
 
@@ -115,7 +156,6 @@ void SignUpWidget::VerifySubmitSlot(){
         return;
     }
 
-
    QDir dir;
    dir.setPath(dir.path()+"/profiles");
    QFile *NewProfile;
@@ -136,10 +176,27 @@ void SignUpWidget::VerifySubmitSlot(){
        }
        else{
            out<<"Female"<<'\t';
+
        }
 
        out<<User->text()<<'\t';
        out<<Pass->text()<<'\t';
+
+       if (ProfilePic1->isChecked()){
+           out<<":/Profile Images/background.PNG"<<'\t';
+       }else if (ProfilePic2->isChecked()){
+           out<<":/Profile Images/bucket.png"<<'\t';
+       }else if (ProfilePic3->isChecked()){
+           out<<":/Profile Images/water.gif"<<'\t';     //same as Profile PIc 4, for now
+       }else if (ProfilePic4->isChecked()){
+           out<<":/Profile Images/water.gif"<<'\t';
+       }
+
+       out<<calendar->selectedDate().day()<<'\t'<<calendar->selectedDate().month()<<'\t'<<calendar->selectedDate().year()<<'\t';
+
+       out<<"1"<<'\t';       // USER IS AT LEVEL 1 WHEN HE STARTS    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+>>>>>>> master
        Submit->setText("Press to continue");
        connect(Submit,SIGNAL(pressed()),this,SLOT(GoBackToLogOnSlot()));
 

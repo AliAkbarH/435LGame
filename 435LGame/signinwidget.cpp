@@ -4,6 +4,11 @@
 #include <QObject>
 #include<QStringList>
 #include<QRegExp>
+#include<QFileDialog>
+#include <iostream>
+#include<QFile>
+#include<fstream>
+
 
 
 signInWidget::signInWidget(QWidget *parent) : QWidget(parent)
@@ -76,11 +81,13 @@ bool signInWidget::userValid(){
     }
     else{
         userName->setText("Username");
-        QFile *user=new QFile(dir.path()+"/"+LuserName->text()+".txt");
+
+        QFile *user = new QFile(dir.path()+"/"+LuserName->text()+".txt");
         user->open(QIODevice::ReadWrite);
         QTextStream in(user);
-        QString s=in.readLine();
-        QString Password=profileParser(s)[4];
+        QString s = in.readLine();
+        QString Password = profileParser(s)[4];
+
 
 
         if(Lpassword->text()!=Password){
@@ -88,9 +95,13 @@ bool signInWidget::userValid(){
             return false;
         }
 
+        user->close();
+
+
     }
     userName->setText("Username");
     password->setText("Password");
+
     return true;
 }
 
