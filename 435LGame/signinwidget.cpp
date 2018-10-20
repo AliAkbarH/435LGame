@@ -38,7 +38,7 @@ signInWidget::signInWidget(QWidget *parent) : QWidget(parent)
 
 void signInWidget::loggedIn(){
     if(userValid()){
-    loggInWidget *login = new loggInWidget();
+    loggInWidget *login = new loggInWidget(LuserName->text());
     this->close();
     login->show();
     }
@@ -70,22 +70,24 @@ bool signInWidget::userValid(){
     dir.setPath(dir.path()+"/profiles");
     //LuserName->setText(dir.absolutePath());
     if(!fileExists(dir.path()+"/"+LuserName->text()+".txt")){
+        password->setText("Password");
         userName->setText("Username Not found");
         return false;
     }
     else{
+        userName->setText("Username");
         QFile *user=new QFile(dir.path()+"/"+LuserName->text()+".txt");
         user->open(QIODevice::ReadWrite);
         QTextStream in(user);
-        QStringList list;
-        profileParser(in.readLine(),list);
-        LuserName->setText(list.first());
+        QString s=in.readLine();
+        QString Password=profileParser(s)[4];
 
-        if(list.isEmpty()){
+
+        if(Lpassword->text()!=Password){
             password->setText("Incorrect Password");
             return false;
         }
-        return false;
+
     }
     userName->setText("Username");
     password->setText("Password");
@@ -102,19 +104,10 @@ bool signInWidget::fileExists(QString path) {
     }
 }
 
-QStringList signInWidget::profileParser(QString in,QStringList &list){
+QStringList signInWidget::profileParser(QString line){       //pars the line and return a list.
 
-
-    QString temp;
-
-    for(int i=0;i<in.size();i++){
-        if(in.at(i)=='\t'){
-            temp.append(in.at(i));
-        }
-        else{
-            list.append(temp);
-            temp="";
-        }
-    }
+    QRegExp rx("[\t]");
+    QStringList list = line.split(rx, QString::SkipEmptyParts);
     return list;
 }
+

@@ -1,5 +1,6 @@
 #include "logonwidget.h"
 #include "signinwidget.h"
+#include"logginwidget.h"
 
 LogOnWidget::LogOnWidget(QWidget *parent) : QWidget(parent)
 {
@@ -36,6 +37,7 @@ LogOnWidget::LogOnWidget(QWidget *parent) : QWidget(parent)
 
     connect(SignUpButton,SIGNAL(pressed()),this,SLOT(GotoSignUpPage()));
     connect(SignInButton,SIGNAL(pressed()),this,SLOT(GotoSignInPage()));
+    connect(GuestButton,SIGNAL(pressed()),this,SLOT(LogInAsGuest()));
 
 }
 
@@ -69,6 +71,12 @@ void LogOnWidget::GotoSignInPage(){
     signInWidget *signin = new signInWidget();
     this->close();
     signin->show();
+}
+
+void LogOnWidget::LogInAsGuest(){
+    loggInWidget *loggin=new loggInWidget("guest");
+    this->close();
+    loggin->show();
 }
 
 

@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QtWidgets>
 #include <QObject>
-#include<Qdir>
+#include <QDir>
 
 class signInWidget : public QWidget
 {
@@ -26,7 +26,7 @@ public:
 private:
         bool fileExists(QString path);
         bool userValid();
-        QStringList profileParser(QString in,QStringList &list);
+        QStringList profileParser(QString in);
 signals:
 
 

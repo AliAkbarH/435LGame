@@ -7,13 +7,13 @@
 #include <QLabel>
 #include"gameswidget.h"
 
-loggInWidget::loggInWidget(QWidget *parent) : QWidget(parent)
+loggInWidget::loggInWidget(QString user)
 {
     games = new QPushButton("Let's PLay!");
 
     games->setStyleSheet("font: bold;background-color: blue;font-size: 36px;height: 48px;width: 190px;");
-
-    userName = new QLabel("Username: ");
+    this->user=user;
+    userName = new QLabel("Username: "+this->user);
     userName->setStyleSheet("font: bold;font-size: 36px;height: 38px;width: 90px;");
 
 

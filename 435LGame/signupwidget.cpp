@@ -129,9 +129,8 @@ void SignUpWidget::VerifySubmitSlot(){
        NewProfile->open(QIODevice::ReadWrite);
        QTextStream out(NewProfile);
 
-       out<<"First:"<<First->text()<<'\t';
-       out<<"Last:"<<Last->text()<<'\t';
-       out<<"Gender:";
+       out<<First->text()<<'\t';
+       out<<Last->text()<<'\t';
        if(Male->isChecked()){
            out<<"Male"<<'\t';
        }
@@ -139,9 +138,9 @@ void SignUpWidget::VerifySubmitSlot(){
            out<<"Female"<<'\t';
        }
 
-       out<<"Username:"<<User->text()<<'\t';
-       out<<"Password:"<<Pass->text()<<'\t';
-       Submit->setText("Sign Up successful, press to continue");
+       out<<User->text()<<'\t';
+       out<<Pass->text()<<'\t';
+       Submit->setText("Press to continue");
        connect(Submit,SIGNAL(pressed()),this,SLOT(GoBackToLogOnSlot()));
 
 }
