@@ -1,10 +1,18 @@
 #include <QtWidgets>
 #include <QObject>
 #include <QPixmap>
+#include <QGraphicsItem>
+#include <QGraphicsPixmapItem>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QApplication>
+
+
+#include "game1scene.h"
 #include"gameswidget.h"
 
 
-gamesWidget::gamesWidget(QWidget *parent) : QWidget(parent)
+gamesWidget::gamesWidget(QString user)
 {
     game1 = new QPushButton("Game 1");
     game2 = new QPushButton("Game 2");
@@ -25,13 +33,24 @@ gamesWidget::gamesWidget(QWidget *parent) : QWidget(parent)
 
 
     QObject::connect(game1, SIGNAL(clicked()), this, SLOT(startGame1()));
-    QObject::connect(game2, SIGNAL(clicked()), this, SLOT(startGame1()));
-    QObject::connect(game3, SIGNAL(clicked()), this, SLOT(startGame1()));
+    QObject::connect(game2, SIGNAL(clicked()), this, SLOT(startGame2()));
+    QObject::connect(game3, SIGNAL(clicked()), this, SLOT(startGame3()));
     QObject::connect(score, SIGNAL(clicked()), this, SLOT(scoreLog()));
 
 }
 
 void gamesWidget::startGame1(){
+
+    scene1 = new game1scene();              //!< pointer to an Object of type game1scene
+    view1 = new QGraphicsView(scene1);      //!< pointer to an Object of type QGraphicsView
+
+    view1->setFixedSize(910,512);
+    view1->setHorizontalScrollBarPolicy((Qt::ScrollBarAlwaysOff));
+    view1->setVerticalScrollBarPolicy((Qt::ScrollBarAlwaysOff));
+
+    this->hide();
+    view1->show();
+    view1->close();
 
 }
 void gamesWidget::startGame2(){
@@ -42,6 +61,14 @@ void gamesWidget::startGame3(){
 }
 void gamesWidget::scoreLog(){
 
+}
+
+void gamesWidget::hideScene(){
+    //scene1->deleteLater();
+   // scene1->clear();
+   // delete scene1;
+   // view1->hide();
+    view1->close();
 }
 
 void gamesWidget::setVerticalLayout(){

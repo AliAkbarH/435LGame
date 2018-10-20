@@ -5,12 +5,13 @@
 #include <QtWidgets>
 #include <QObject>
 #include <QPixmap>
+#include "game1scene.h"
 
 class gamesWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit gamesWidget(QWidget *parent = nullptr);
+    explicit gamesWidget(QString user);
 
 
         QPushButton *game1, *game2, *game3, *score;
@@ -18,8 +19,12 @@ public:
         QVBoxLayout *VerticalL;
         QGridLayout *GridL;
 
+        game1scene *scene1;                     //!< pointer to an Object of type game1scene
+        QGraphicsView *view1;                   //!< pointer to an Object of type QGraphicsView
+
         void setVerticalLayout();
         void setGridLayout();
+        void hideScene();
 
 signals:
 

@@ -24,7 +24,7 @@ signals:
 
 public slots:
     void GotoSignUpPage();
-
+    void LogInAsGuest();
     void GotoSignInPage();
 
 };

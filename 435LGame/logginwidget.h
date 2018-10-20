@@ -13,16 +13,21 @@ class loggInWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit loggInWidget(QWidget *parent = nullptr);
+    explicit loggInWidget(QString user="guest");
 
         QLabel *userName, *logIn;
         QPushButton *games;
-
+        QString user;
         QVBoxLayout *VerticalL;
         QGridLayout *GridL;
 
         void setVerticalLayout();
         void setGridLayout();
+
+private:
+        bool fileExists(QString path);
+        QString profilePic();
+        QStringList profileParser(QString in);
 
 signals:
 

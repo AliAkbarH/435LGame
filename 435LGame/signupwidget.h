@@ -6,29 +6,37 @@
 #include<QtWidgets>
 #include<fstream>
 #include<QFileInfo>
+#include<QCalendarWidget>
 using namespace std;
 class SignUpWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit SignUpWidget(QWidget *parent = nullptr);
-    QLabel *FirstName,*LastName,*UserName,*Password,*ConfirmPass,*ProfilePic,*Gender;
+    QLabel *FirstName,*LastName,*UserName,*Password,*ConfirmPass,*ProfilePicture,*Gender;
     QLineEdit *First,*Last,*User,*Pass,*Confirm;
-    QPushButton *Submit,*ProfilePicture;
-    QRadioButton *Male,*Female;
+    QPushButton *Submit;
+    QRadioButton *Male,*Female,*ProfilePic1,*ProfilePic2,*ProfilePic3,*ProfilePic4;
+    QGroupBox *groupBox;
     QGridLayout *GridLayout;
     QVBoxLayout *VerticalLayout;
+    QGroupBox *previewGroupBox;
+    QGridLayout *previewLayout;
+    QCalendarWidget *calendar;
+    const QString esc="7727";//for some reason endl and \n are not working so we provide this escape string to determine the end of a field
 
 private:
     bool checkForWord(fstream *file,string user);
     bool fileExists(QString path) ;
+    QGroupBox *profilePicGroup();
+    void createPreviewGroupBox();
 
 signals:
 
 public slots:
     void VerifySubmitSlot();
-    void AddProfilePictureSlot();
     void GoBackToLogOnSlot();
+
 };
 
 #endif // SIGNUPWIDGET_H
