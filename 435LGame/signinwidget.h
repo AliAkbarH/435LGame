@@ -5,13 +5,11 @@
 #include <QtWidgets>
 #include <QObject>
 #include <QDir>
-<<<<<<< HEAD
-=======
 #include<QFileDialog>
 #include <iostream>
 #include<QFile>
 #include<fstream>
->>>>>>> master
+
 
 class signInWidget : public QWidget
 {

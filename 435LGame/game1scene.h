@@ -33,9 +33,9 @@ public:
     locks *lock7 = new locks();
     locks *lock8 = new locks();
 
-    game1scene();                       //!< Default constructor
+    game1scene(QString user);                       //!< Default constructor
     QPushButton *start;
-
+    QString user;
     void updatePosition();                /**< function that will update the position of popeye, placing him on top of the locks*/
 
 public slots:

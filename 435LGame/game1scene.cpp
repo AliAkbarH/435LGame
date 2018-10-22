@@ -19,9 +19,9 @@
 /*! \brief
 */
 
-game1scene::game1scene()
+game1scene::game1scene(QString user)
 {
-
+    this->user=user;
     start = new QPushButton("Let's GO!");
     start->setStyleSheet("font: bold;background-color: orange;font-size: 36px;height: 48px;width: 170px;");
 

@@ -15,7 +15,7 @@ public:
 
 
         QPushButton *game1, *game2, *game3, *score;
-
+        QString user;
         QVBoxLayout *VerticalL;
         QGridLayout *GridL;
 

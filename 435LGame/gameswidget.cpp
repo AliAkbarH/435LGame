@@ -18,7 +18,7 @@ gamesWidget::gamesWidget(QString user)
     game2 = new QPushButton("Game 2");
     game3 = new QPushButton("Game 3");
     score = new QPushButton("Score Log");
-
+    this->user=user;
     game1->setStyleSheet("font: bold;background-color: red;font-size: 36px;height: 48px;width: 170px;");
     game2->setStyleSheet("font: bold;background-color: red;font-size: 36px;height: 48px;width: 170px;");
     game3->setStyleSheet("font: bold;background-color: red;font-size: 36px;height: 48px;width: 170px;");
@@ -41,7 +41,7 @@ gamesWidget::gamesWidget(QString user)
 
 void gamesWidget::startGame1(){
 
-    scene1 = new game1scene();              //!< pointer to an Object of type game1scene
+    scene1 = new game1scene(user);              //!< pointer to an Object of type game1scene
     view1 = new QGraphicsView(scene1);      //!< pointer to an Object of type QGraphicsView
 
     view1->setFixedSize(910,512);
@@ -50,7 +50,7 @@ void gamesWidget::startGame1(){
 
     this->hide();
     view1->show();
-    view1->close();
+    //view1->close();
 
 }
 void gamesWidget::startGame2(){

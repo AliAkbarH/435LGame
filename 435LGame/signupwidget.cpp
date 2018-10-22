@@ -196,7 +196,6 @@ void SignUpWidget::VerifySubmitSlot(){
 
        out<<"1"<<'\t';       // USER IS AT LEVEL 1 WHEN HE STARTS    ////////////////////////////////////////////////////////////////////////////////////////////////
 
->>>>>>> master
        Submit->setText("Press to continue");
        connect(Submit,SIGNAL(pressed()),this,SLOT(GoBackToLogOnSlot()));
 

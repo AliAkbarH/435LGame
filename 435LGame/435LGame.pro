@@ -4,26 +4,25 @@ SOURCES += \
     main.cpp \
     signinwidget.cpp \
     logginwidget.cpp \
-    gameswidget.cpp \
     logonwidget.cpp \
     signupwidget.cpp \
     game1scene.cpp \
     popeye.cpp \
     locks.cpp \
     spinach.cpp \
-    levelsscene.cpp
+    gameswidget.cpp
 
 HEADERS += \
     signinwidget.h \
     logginwidget.h \
-    gameswidget.h \
     signupwidget.h \
     logonwidget.h \
     game1scene.h \
     popeye.h \
     locks.h \
     spinach.h \
-    levelsscene.h
+    game1scene.h \
+    gameswidget.h
 
 DISTFILES += \
     Profile Images/water.gif \
