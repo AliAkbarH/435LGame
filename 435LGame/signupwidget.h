@@ -23,6 +23,7 @@ public:
     QGroupBox *previewGroupBox;
     QGridLayout *previewLayout;
     QCalendarWidget *calendar;
+
     const QString esc="7727";//for some reason endl and \n are not working so we provide this escape string to determine the end of a field
 
 private:

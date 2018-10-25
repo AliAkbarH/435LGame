@@ -176,6 +176,7 @@ void SignUpWidget::VerifySubmitSlot(){
        }
        else{
            out<<"Female"<<'\t';
+
        }
 
        out<<User->text()<<'\t';

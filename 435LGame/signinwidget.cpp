@@ -10,6 +10,7 @@
 #include<fstream>
 
 
+
 signInWidget::signInWidget(QWidget *parent) : QWidget(parent)
 {
     submit = new QPushButton("Submit");
@@ -80,6 +81,7 @@ bool signInWidget::userValid(){
     }
     else{
         userName->setText("Username");
+
         QFile *user = new QFile(dir.path()+"/"+LuserName->text()+".txt");
         user->open(QIODevice::ReadWrite);
         QTextStream in(user);
@@ -87,11 +89,14 @@ bool signInWidget::userValid(){
         QString Password = profileParser(s)[4];
 
 
+
         if(Lpassword->text()!=Password){
             password->setText("Incorrect Password");
             return false;
         }
+
         user->close();
+
 
     }
     userName->setText("Username");
