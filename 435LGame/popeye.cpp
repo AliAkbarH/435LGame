@@ -12,3 +12,4 @@ Popeye::Popeye(QObject *parent) : QObject(parent)
 {
    setPixmap((QPixmap(":/Profile Images/Popeye.png")).scaled(75,75));
 }
+

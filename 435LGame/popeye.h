@@ -8,6 +8,7 @@ class Popeye : public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 public:
     explicit Popeye(QObject *parent = nullptr);
+    void collision();
 
 signals:
 

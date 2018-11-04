@@ -76,7 +76,6 @@ QString loggInWidget::profilePic(){
        QTextStream in(&inputFile);
        QString s=in.readLine();
        profilePicDir=profileParser(s)[5];
-
        inputFile.close();
     }
     else

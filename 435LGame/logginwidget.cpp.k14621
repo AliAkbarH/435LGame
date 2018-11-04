@@ -38,8 +38,8 @@ loggInWidget::loggInWidget(QString user)
 void loggInWidget::startGames(){
 
     gamesWidget *games = new gamesWidget(user);
-    games->show();
     this->close();
+    games->show();
 
 }
 
@@ -69,18 +69,17 @@ QString loggInWidget::profilePic(){
     dir.setPath(dir.path()+"/profiles");
     QString profilePicDir;
 
-    QFile inputFile(dir.path()+"/"+user+".txt");
+    QFile inputFile(dir.path()+"/"+userName->text()+".txt");
 
     if (inputFile.open(QIODevice::ReadOnly))                // to check if it is entering the file, and it is
     {
        QTextStream in(&inputFile);
-       QString s=in.readLine();
-       profilePicDir=profileParser(s)[5];
 
-       inputFile.close();
-    }
-    else
-    {
+       QString s;
+      // in>>s>>"\t">>s>>"\t">>s>>"\t">>s>>"\t">>s>>"\t";
+
+       inputFile.close();s
+    }else{
         profilePicDir = ":/Profile Images/water.gif";  // same as above comment
     }
 

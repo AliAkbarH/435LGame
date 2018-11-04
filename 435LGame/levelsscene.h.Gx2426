@@ -1,0 +1,58 @@
+#ifndef LEVELSSCENE_H
+#define LEVELSSCENE_H
+
+#include <QObject>
+#include <QGraphicsScene>
+#include <QGraphicsPixmapItem>
+#include <QtEvents>
+#include <QTimer>
+#include <QtWidgets>
+#include <QString>
+#include "popeye.h"
+#include "locks.h"
+#include "levels.h"
+#include "spinach.h"
+
+/**
+* \file game1scene.h
+* \brief The Game's scene
+*
+* This is the header file for our first game's scene. It publicly inherits from QGraphicsScene.
+*/
+
+class levelsscene : public QGraphicsScene
+{
+    Q_OBJECT
+public:
+    levelsscene(QString s);
+    QString user;
+    levels *l;
+
+    Popeye *popeye = new Popeye();       //!< Creating the references to the Objects
+    spinach *spin = new spinach;
+    QPushButton *run, *hint;
+
+    QTextEdit *text;
+
+    QVBoxLayout *VerticalL;
+    QGridLayout *GridL;
+
+    void setVerticalLayout();
+    void setGridLayout();
+
+    //void updatePosition();                /**< function that will update the position of popeye*/
+
+
+private:
+        bool fileExists(QString path);
+        int getLevel();
+        QStringList profileParser(QString in);
+
+signals:
+
+public slots:
+        void checkAnswer();
+        void displayHint();
+};
+
+#endif // LEVELSSCENE_H

@@ -9,6 +9,7 @@
 #include <QtWidgets>
 #include "popeye.h"
 #include "locks.h"
+#include "levelsscene.h"
 
 /**
 * \file game1scene.h
@@ -36,6 +37,10 @@ public:
     game1scene(QString user);                       //!< Default constructor
     QPushButton *start;
     QString user;
+    
+    levelsscene *scene2;                     //!< pointer to an Object of type levelsscene
+    QGraphicsView *view2;                   //!< pointer to an Object of type QGraphicsView
+    
     void updatePosition();                /**< function that will update the position of popeye, placing him on top of the locks*/
 
 public slots:

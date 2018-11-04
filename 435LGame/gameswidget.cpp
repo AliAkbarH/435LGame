@@ -68,7 +68,7 @@ void gamesWidget::hideScene(){
    // scene1->clear();
    // delete scene1;
    // view1->hide();
-    view1->close();
+    //view1->close();
 }
 
 void gamesWidget::setVerticalLayout(){

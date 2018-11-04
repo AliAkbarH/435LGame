@@ -10,7 +10,11 @@ SOURCES += \
     popeye.cpp \
     locks.cpp \
     spinach.cpp \
-    gameswidget.cpp
+    gameswidget.cpp \
+    levels.cpp \
+    levelsscene.cpp \
+    hints.cpp \
+    lost.cpp
 
 HEADERS += \
     signinwidget.h \
@@ -22,7 +26,11 @@ HEADERS += \
     locks.h \
     spinach.h \
     game1scene.h \
-    gameswidget.h
+    gameswidget.h \
+    levels.h \
+    levelsscene.h \
+    hints.h \
+    lost.h
 
 DISTFILES += \
     Profile Images/water.gif \

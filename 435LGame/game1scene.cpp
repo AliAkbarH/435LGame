@@ -88,6 +88,15 @@ void game1scene::updatePosition(){
 }
 
 void game1scene::starLevel(){
+    scene2 = new levelsscene(user);               //!< pointer to an Object of type levelsscene
+    view2 = new QGraphicsView(scene2);            //!< pointer to an Object of type QGraphicsView
+
+    view2->setFixedSize(910,512);
+    view2->setHorizontalScrollBarPolicy((Qt::ScrollBarAlwaysOff));
+    view2->setVerticalScrollBarPolicy((Qt::ScrollBarAlwaysOff));
+
+    //should close scene1//////////////////////////////////////////////////////////////////////////////////////
+    view2->show();
 
 }
 

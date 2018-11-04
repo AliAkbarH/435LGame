@@ -74,9 +74,14 @@ QString loggInWidget::profilePic(){
     if (inputFile.open(QIODevice::ReadOnly))                // to check if it is entering the file, and it is
     {
        QTextStream in(&inputFile);
+<<<<<<< Updated upstream
        QString s=in.readLine();
        profilePicDir=profileParser(s)[5];
+=======
 
+       QString s;
+
+>>>>>>> Stashed changes
        inputFile.close();
     }
     else

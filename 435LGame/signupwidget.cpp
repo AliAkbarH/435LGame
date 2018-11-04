@@ -183,7 +183,7 @@ void SignUpWidget::VerifySubmitSlot(){
        out<<Pass->text()<<'\t';
 
        if (ProfilePic1->isChecked()){
-           out<<":/Profile Images/background.PNG"<<'\t';
+           out<<":/Profile Images/Popeye.png"<<'\t';
        }else if (ProfilePic2->isChecked()){
            out<<":/Profile Images/bucket.png"<<'\t';
        }else if (ProfilePic3->isChecked()){
