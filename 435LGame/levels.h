@@ -9,7 +9,13 @@
 #include "spinach.h"
 #include "popeye.h"
 
-
+/**
+* \file levels.h
+* \brief The Level Object
+*
+* Creating a Level Object that will be passed to every scene to load the respective level.
+*
+*/
 class levels
 {
 public:
