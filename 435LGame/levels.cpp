@@ -28,6 +28,11 @@ void levels::decrementLifes(){
     this->lifes--;
 }
 
+void levels::incrementLevelNumb(){
+    levelNumb++;
+
+}
+
 void levels::incrementHintNumber(){
     this->hintNumber++;
 }
@@ -39,5 +44,32 @@ void levels::setPopeyeX1(int newX){
 }
 void levels::setPopeyeY1(int newY){
     this->popeyeY1=newY;
+}
+void levels::updateLevel(QString user){
+                //!<To update the level number in the text file (stored as the 10th entry)
+    int level=levelNumb;
+    levelNumb++;
+    if(level<8){
+        QDir dir;
+        dir.setPath(dir.path()+"/profiles");
+        QString profilePicDir;
+
+
+        QFile inputFile(dir.path()+"/"+user+".txt");
+
+        if (inputFile.open(QIODevice::ReadWrite))                // to check if it is entering the file, and it is
+        {
+           QTextStream in(&inputFile);
+           QString line=in.readLine();
+           QRegExp toReplace("/t"+QString::number(level));
+           QString replaceWith("/t"+QString::number(level+1));
+           line.replace(toReplace,replaceWith);
+           in<<line;
+
+        }
+        inputFile.close();
+    }
+
+
 }
 

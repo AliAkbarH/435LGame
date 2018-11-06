@@ -17,9 +17,10 @@
 #include "locks.h"
 #include "levels.h"
 #include "spinach.h"
+//#include "game1scene.h"
 
 /**
-* \file game1scene.h
+* \file game1scene.hB
 * \brief The Game's scene
 *
 * This is the header file for our first game's scene. It publicly inherits from QGraphicsScene.
@@ -29,9 +30,10 @@ class levelsscene : public QGraphicsScene
 {
     Q_OBJECT
 public:
-    levelsscene(QString s);
+    levelsscene(QString user,QGraphicsScene *gameScene);
 
     QString user;    
+    QGraphicsScene *gameScene;
 
     Popeye *popeye = new Popeye();       //!< Creating the references to the Objects
     spinach *spinach1 = new spinach();
@@ -40,7 +42,7 @@ public:
 
     levels *l;
 
-    QPushButton *run, *hint, *pause, *retry;
+    QPushButton *run, *hint, *pause, *retry, *proceed;
     QTextEdit *text;
     QLabel *instructions;
 
@@ -53,6 +55,8 @@ public:
     void levelssceneTimer();
 
     void youLost();
+
+    void youWon();
     
     //void updatePosition();                /**< function that will update the position of popeye*/
 
@@ -69,6 +73,9 @@ public slots:
         void displayHint();
         void pauseLevel();
         void retryLevel();
+        void hideScene();
+
+
 };
 
-#endif // LEVELSSCENE_H
+#endif

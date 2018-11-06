@@ -77,7 +77,7 @@ game1scene::game1scene(QString user)
    lock8->setFlag(QGraphicsItem::ItemIsFocusable);
    lock8->setFocus();
 
-   QObject::connect(start, SIGNAL(clicked()), this, SLOT(starLevel()));
+   QObject::connect(start, SIGNAL(clicked()), this, SLOT(startLevel()));
 
    //updatePosition();
 
@@ -87,8 +87,8 @@ void game1scene::updatePosition(){
     lock1->hide();
 }
 
-void game1scene::starLevel(){
-    scene2 = new levelsscene(user);               //!< pointer to an Object of type levelsscene
+void game1scene::startLevel(){
+    scene2 = new levelsscene(user,this);               //!< pointer to an Object of type levelsscene
     view2 = new QGraphicsView(scene2);            //!< pointer to an Object of type QGraphicsView
 
     view2->setFixedSize(910,512);
@@ -98,5 +98,12 @@ void game1scene::starLevel(){
     //should close scene1//////////////////////////////////////////////////////////////////////////////////////
     view2->show();
 
+}
+
+void game1scene::hideLevelScene(){
+
+    qDebug()<<view2->close();
+    delete scene2;
+    delete view2;
 }
 

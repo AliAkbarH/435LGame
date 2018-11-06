@@ -2,17 +2,22 @@
 #include "levels.h"
 #include "hints.h"
 #include "lost.h"
+#include "won.h"
 
 
-levelsscene::levelsscene(QString user)
+
+
+levelsscene::levelsscene(QString user, QGraphicsScene *gameScene)
 {
     this->user=user;
+    this->gameScene=gameScene;
     l = new levels(getLevel());
 
     run = new QPushButton("Run");
     hint = new QPushButton("Hint");
     pause = new QPushButton("Pause");
     retry = new QPushButton("Retry");
+    proceed=new QPushButton("Continnue");
 
     text = new QTextEdit();
     instructions = new QLabel(l->instructions);
@@ -22,6 +27,7 @@ levelsscene::levelsscene(QString user)
     hint->setStyleSheet("font: bold;background-color: blue;font-size: 15px;height: 25px;width: 70px;");
     pause->setStyleSheet("font: bold;background-color: white;font-size: 15px;height: 25px;width: 70px;");
     retry->setStyleSheet("font: bold;background-color: yellow;font-size: 15px;height: 25px;width: 70px;");
+    proceed->setStyleSheet("font: bold;background-color: green;font-size: 15px;height: 25px;width: 70px;");
 
     text->setFixedHeight(130);
 
@@ -64,6 +70,7 @@ levelsscene::levelsscene(QString user)
     QObject::connect(hint, SIGNAL(clicked()), this, SLOT(displayHint()));
     QObject::connect(pause, SIGNAL(clicked()), this, SLOT(pauseLevel()));
     QObject::connect(retry, SIGNAL(clicked()), this, SLOT(retryLevel()));
+    QObject::connect(proceed, SIGNAL(clicked()), this, SLOT(hideScene()));
 
 
 
@@ -104,20 +111,23 @@ int levelsscene::getLevel(){             //!<To get the level number from the te
 void levelsscene::checkAnswer(){                 //!< INCOMPLETE run push button function
     QString input = text->toPlainText();
 
-    QRegExp rx("[() \n]");
+    QRegExp rx("[() ; \n]");
     QStringList list = input.split(rx, QString::SkipEmptyParts);
 
-    qDebug() << list.at(0);              //!< to display on the console
-    qDebug() << list.at(1);
+
+    qDebug() << l->levelNumb;
+    qDebug()<<l->lifes;
 
     if (list.at(0)=="Move"){
         QString newx = list.at(1);
-        int newX =newx.toInt() + l->popeyeX1;
+        int newX =newx.toInt()*50 + l->popeyeX1;
 
         popeye->setPos(newX,l->popeyeY1);
 
         if(!this->collidingItems(popeye).isEmpty() && list.at(2)=="pickUp"){
             this->removeItem(spinach1);
+            this->youWon();
+
         }else {
            youLost();
         }
@@ -137,6 +147,15 @@ void levelsscene::youLost(){
     }
 }
 
+void levelsscene::youWon(){
+    Won *winWidget=new Won(l->levelNumb,l->lifes);
+    winWidget->setGeometry(100,100,100,100);
+    winWidget->show();
+    //l->updateLevel(user);
+    addWidget(proceed)->moveBy(800,450);
+
+
+}
 void levelsscene::displayHint(){         //!< displaying the 3 hints and repeating them if passed over all of them
 
     int hintNumber = l->hintNumber;
@@ -158,6 +177,21 @@ void levelsscene::pauseLevel(){
 
 void levelsscene::retryLevel(){                  //!<retry -> reset popeye's position
     popeye->setPos(l->popeyeX1,l->popeyeY1);
+    this->removeItem(spinach1);
+    addItem(spinach1);
+    spinach1->setPos(l->spinachX1,l->spinachY1);
+
+    if(l->spinachX2!=0){      //!< if the levels has ot not other spinach cans
+        removeItem(spinach2);
+        addItem(spinach2);
+        spinach2->setPos(l->spinachX2,l->spinachY2);
+    }
+    if(l->spinachX3!=0){
+        removeItem(spinach3);
+        addItem(spinach3);
+        spinach3->setPos(l->spinachX3,l->spinachY3);
+    }
+
 }
 
 bool levelsscene::fileExists(QString path) {
@@ -176,3 +210,12 @@ QStringList levelsscene::profileParser(QString line){       //parse the line and
     QStringList list = line.split(rx, QString::SkipEmptyParts);
     return list;
 }
+
+void levelsscene::hideScene(){
+    qDebug()<<"deleting";
+    delete this;
+
+}
+
+
+
