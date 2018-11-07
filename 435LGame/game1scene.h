@@ -41,8 +41,17 @@ public:
     levelsscene *scene2;                     //!< pointer to an Object of type levelsscene
     QGraphicsView *view2;                   //!< pointer to an Object of type QGraphicsView
     
-    void updatePosition();                /**< function that will update the position of popeye, placing him on top of the locks*/
+    void updatePosition1();                /**< function that will update the position of popeye, placing him on top of the locks*/
+    void updatePosition2();
+    void updatePosition3();
+    void updatePosition4();
+    void updatePosition5();
+    void updatePosition6();
+    void updatePosition7();
+    void updatePosition8();
     void hideLevelScene();
+    int getLevel();
+    QStringList profileParser(QString line);
 
 public slots:
     void startLevel();

@@ -79,15 +79,11 @@ game1scene::game1scene(QString user)
 
    QObject::connect(start, SIGNAL(clicked()), this, SLOT(startLevel()));
 
-   //updatePosition();
 
-}
-void game1scene::updatePosition(){
-    popeye->setPos(lock1->x(),lock1->y());      //for now
-    lock1->hide();
 }
 
 void game1scene::startLevel(){
+
     scene2 = new levelsscene(user);               //!< pointer to an Object of type levelsscene
     view2 = new QGraphicsView(scene2);            //!< pointer to an Object of type QGraphicsView
 
@@ -95,7 +91,26 @@ void game1scene::startLevel(){
     view2->setHorizontalScrollBarPolicy((Qt::ScrollBarAlwaysOff));
     view2->setVerticalScrollBarPolicy((Qt::ScrollBarAlwaysOff));
 
-    //should close scene1//////////////////////////////////////////////////////////////////////////////////////
+    int levelNum = getLevel();
+
+    if (levelNum==1){
+       updatePosition1();
+    }else if (levelNum==2){
+        updatePosition2();
+     }else if (levelNum==3){
+        updatePosition3();
+     }else if (levelNum==4){
+        updatePosition4();
+     }else if (levelNum==5){
+        updatePosition5();
+     }else if (levelNum==6){
+        updatePosition6();
+     }else if (levelNum==7){
+        updatePosition7();
+     }else if (levelNum==8){
+        updatePosition8();
+     }
+
     view2->show();
 
 }
@@ -107,3 +122,92 @@ void game1scene::hideLevelScene(){
     delete view2;
 }
 
+int game1scene::getLevel(){             //!<To get the level number from the text file (stored as the 10th entry)
+    QDir dir;
+    dir.setPath(dir.path()+"/profiles");
+    QString profilePicDir;
+    int levelNum=1;
+
+    QFile inputFile(dir.path()+"/"+user+".txt");
+
+    if (inputFile.open(QIODevice::ReadOnly))                // to check if it is entering the file, and it is
+    {
+       QTextStream in(&inputFile);
+       QString s=in.readLine();
+       profilePicDir=profileParser(s)[9];
+       levelNum = profilePicDir.toInt();
+
+       inputFile.close();
+    }
+    return levelNum;
+
+}
+
+
+QStringList game1scene::profileParser(QString line){       //parse the line and return a list.
+
+    QRegExp rx("[\t]");
+    QStringList list = line.split(rx, QString::SkipEmptyParts);
+    return list;
+}
+
+void game1scene::updatePosition1(){
+    popeye->setPos(lock1->x(),lock1->y());
+    lock1->hide();
+}
+void game1scene::updatePosition2(){
+    popeye->setPos(lock2->x(),lock2->y());
+    lock2->hide();
+    lock1->hide();
+}
+void game1scene::updatePosition3(){
+    popeye->setPos(lock3->x(),lock3->y());
+    lock3->hide();
+    lock2->hide();
+    lock1->hide();
+}
+void game1scene::updatePosition4(){
+    popeye->setPos(lock4->x(),lock4->y());
+    lock4->hide();
+    lock3->hide();
+    lock2->hide();
+    lock1->hide();
+}
+void game1scene::updatePosition5(){
+    popeye->setPos(lock5->x(),lock5->y());
+    lock5->hide();
+    lock4->hide();
+    lock3->hide();
+    lock2->hide();
+    lock1->hide();
+}
+void game1scene::updatePosition6(){
+    popeye->setPos(lock6->x(),lock6->y());
+    lock6->hide();
+    lock5->hide();
+    lock4->hide();
+    lock3->hide();
+    lock2->hide();
+    lock1->hide();
+}
+void game1scene::updatePosition7(){
+    popeye->setPos(lock7->x(),lock7->y());
+    lock7->hide();
+    lock6->hide();
+    lock5->hide();
+    lock4->hide();
+    lock3->hide();
+    lock2->hide();
+    lock1->hide();
+}
+void game1scene::updatePosition8(){
+    popeye->setPos(lock8->x(),lock8->y());
+    lock8->hide();
+    lock7->hide();
+    lock6->hide();
+    lock5->hide();
+    lock4->hide();
+    lock3->hide();
+    lock2->hide();
+    lock1->hide();
+}

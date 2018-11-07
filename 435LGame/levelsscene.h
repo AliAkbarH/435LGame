@@ -13,10 +13,15 @@
 #include <QGraphicsView>
 #include <QApplication>
 
+#include "river.h"
 #include "popeye.h"
 #include "locks.h"
 #include "levels.h"
 #include "spinach.h"
+#include "boat.h"
+#include "rock.h"
+#include "riverobstacle.h"
+#include "smallriver.h"
 
 
 /**
@@ -39,6 +44,17 @@ public:
     spinach *spinach1 = new spinach();
     spinach *spinach2 = new spinach();
     spinach *spinach3 = new spinach();
+
+    river *river1 = new river();
+
+    boat *boat1 = new boat();
+
+    rock *rock1 = new rock();
+
+    riverObstacle *obstacle = new riverObstacle;
+
+    smallRiver *smallRiver1 = new smallRiver();
+    smallRiver *smallRiver2 = new smallRiver();
 
     levels *l;
 

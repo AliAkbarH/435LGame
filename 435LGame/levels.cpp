@@ -4,7 +4,7 @@ levels::levels(int x)
 {
     this->levelNumb = x;
     switch(levelNumb){
-    case 1:
+    case 1:                                                //switched with 5th
         hintNumber = 0;
         hint[0]="First hint";
         hint[1]="Second hint";
@@ -17,6 +17,7 @@ levels::levels(int x)
 
         spinachX2 = 0;
         spinachX3 = 0;
+        boat1X = 0;
 
         lifes = 5;
 
@@ -34,7 +35,9 @@ levels::levels(int x)
 
         spinachX2 = 100;
         spinachY2 = 350;
+
         spinachX3 = 0;
+        boat1X = 0;
 
         lifes = 5;
 
@@ -44,15 +47,134 @@ levels::levels(int x)
         hint[0]="First hint";
         hint[1]="Second hint";
         hint[2]="Third hint";
-        instructions = "Functions: \nMove(number of steps) \nrotate()\npickUp()";
+        instructions = "Functions: \nMove(number of steps) \nRotate()\npickUp()";
         popeyeX1 = 100;
         popeyeY1 = 350;
+
         spinachX1 = 400;
         spinachY1 = 350;
 
-        spinachX2 = 700;
+        spinachX2 = 670;
         spinachY2=200;
+
         spinachX3 = 0;
+        boat1X = 0;
+
+        lifes = 5;
+
+        break;
+    case 4:
+        hintNumber = 0;
+        hint[0]="First hint";
+        hint[1]="Second hint";
+        hint[2]="Third hint";
+        instructions = "Functions: \nMove(number of steps) \nRotate() \nBoat.Move(number of steps) \npickUp()";
+
+        popeyeX1 = 100;
+        popeyeY1 = 415;
+
+        spinachX1 = 600;
+        spinachY1 = 100;
+
+        spinachX2 = 600;
+        spinachY2 = 300;
+
+        spinachX3 = 0;
+
+        lifes = 5;
+
+        river1X = 0;
+        river1Y = 300;
+
+        boat1X = 50;
+        boat1Y = 300;
+
+        break;
+
+
+    case 5:
+        hintNumber = 0;
+        hint[0]="First hint";
+        hint[1]="Second hint";
+        hint[2]="Third hint";
+        instructions = "Functions: \nMove(number of steps) \nRotate() \nBoat.Move(number of steps) \nBoat.Rotate() \npickUp()";
+
+        popeyeX1 = 670;
+        popeyeY1 = 360;
+
+        spinachX1 = 400;
+        spinachY1 = 100;
+
+        spinachX2 = 0;
+        spinachX3 = 0;
+        river1X = 0;
+
+        lifes = 5;
+
+        boat1X = 100;
+        boat1Y = 360;
+
+        rock1X = 650;
+        rock1Y = 360;
+
+        break;
+
+    case 6:
+        hintNumber = 0;
+        hint[0]="First hint";
+        hint[1]="Second hint";
+        hint[2]="Third hint";
+        instructions = "Functions: \nRepeat(number of time):[steps to repeat] \nMove(number of steps) \nRotate() \npickUp()";
+
+        popeyeX1 = 600;
+        popeyeY1 = 350;
+
+        spinachX1 = 600;
+        spinachY1 = 100;
+
+        spinachX2 = 300;
+        spinachY2 = 350;
+
+        spinachX3 = 300;
+        spinachY3 = 100;
+
+        obstacleX = 450;
+        obstacleY = 0;
+
+        lifes = 5;
+
+        break;
+
+    case 7:
+        hintNumber = 0;
+        hint[0]="First hint";
+        hint[1]="Second hint";
+        hint[2]="Third hint";
+        instructions = "Functions: \nRepeat(number of time):[steps to repeat] \nMove(number of steps) \nRotate() \nBoat.Move(number of steps) \npickUp()";
+
+        popeyeX1 = 120;
+        popeyeY1 = 220;
+
+        boat1X = 60;
+        boat1Y = 350;
+
+        spinachX1 = 120;
+        spinachY1 = 435;
+
+        spinachX2 = 430;
+        spinachY2 = 435;
+
+        spinachX3 = 750;
+        spinachY3 = 435;
+
+        river1X = 0;
+        river1Y = 350;
+
+        smallRiver1X = 250;
+        smallRiver1Y = 430;
+
+        smallRiver2X = 550;
+        smallRiver2Y = 430;
 
         lifes = 5;
 

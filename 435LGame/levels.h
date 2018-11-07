@@ -20,7 +20,15 @@ class levels
 {
 public:
     QString hint[3], instructions;
-    int popeyeX1, popeyeY1, spinachX1, spinachY1, spinachX2, spinachY2, spinachX3, spinachY3;
+
+    int popeyeX1, popeyeY1;
+    int spinachX1, spinachY1, spinachX2, spinachY2, spinachX3, spinachY3;
+    int river1X,river1Y;
+    int boat1X,boat1Y;
+    int rock1X,rock1Y;
+    int obstacleX,obstacleY;
+    int smallRiver1X, smallRiver1Y;
+    int smallRiver2X, smallRiver2Y;
     int levelNumb, hintNumber, lifes;
 
     levels(int x);

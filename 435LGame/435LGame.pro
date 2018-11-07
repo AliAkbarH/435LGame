@@ -15,7 +15,12 @@ SOURCES += \
     levelsscene.cpp \
     hints.cpp \
     lost.cpp \
-    won.cpp
+    won.cpp \
+    river.cpp \
+    boat.cpp \
+    rock.cpp \
+    riverobstacle.cpp \
+    smallriver.cpp
 
 HEADERS += \
     signinwidget.h \
@@ -32,7 +37,12 @@ HEADERS += \
     levelsscene.h \
     hints.h \
     lost.h \
-    won.h
+    won.h \
+    river.h \
+    boat.h \
+    rock.h \
+    riverobstacle.h \
+    smallriver.h
 
 DISTFILES += \
     Profile Images/water.gif \
@@ -46,7 +56,19 @@ DISTFILES += \
     Profile Images/popeye_s_spinach_by_can.png \
     Profile Images/Popeye.png \
     Profile Images/Lock.png \
-    Profile Images/Game1.png
+    Profile Images/Game1.png \
+    Profile Images/River.jpg \
+    Profile Images/River2.jpg \
+    Profile Images/River.jpg \
+    Profile Images/Boat.jpg \
+    Profile Images/backgroundLevel5.jpg \
+    Profile Images/backgroundLevel5.jpg \
+    Profile Images/rubble-md.png \
+    Profile Images/rubble-md.png \
+    Profile Images/level6.jpg \
+    Profile Images/level6.jpg \
+    Profile Images/level6.jpg \
+    Profile Images/smallRiver.jpg
 
 RESOURCES += \
     images.qrc
