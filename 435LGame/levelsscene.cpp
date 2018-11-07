@@ -7,10 +7,10 @@
 
 
 
-levelsscene::levelsscene(QString user, QGraphicsScene *gameScene)
+levelsscene::levelsscene(QString user)
 {
     this->user=user;
-    this->gameScene=gameScene;
+
     l = new levels(getLevel());
 
     run = new QPushButton("Run");
@@ -47,12 +47,16 @@ levelsscene::levelsscene(QString user, QGraphicsScene *gameScene)
     spinach1->setPos(l->spinachX1,l->spinachY1);
 
     if(l->spinachX2!=0){                    //!< if the levels has ot not other spinach cans
-        addItem(spinach1);
-        spinach1->setPos(l->spinachX2,l->spinachY2);
+        addItem(spinach2);
+        spinach2->setPos(l->spinachX2,l->spinachY2);
+        spinach2->setFlag(QGraphicsItem::ItemIsFocusable);
+        spinach2->setFocus();
     }
     if(l->spinachX3!=0){
         addItem(spinach3);
-        spinach1->setPos(l->spinachX3,l->spinachY3);
+        spinach3->setPos(l->spinachX3,l->spinachY3);
+        spinach3->setFlag(QGraphicsItem::ItemIsFocusable);
+        spinach3->setFocus();
     }
 
 
@@ -113,24 +117,65 @@ void levelsscene::checkAnswer(){                 //!< INCOMPLETE run push button
 
     QRegExp rx("[() ; \n]");
     QStringList list = input.split(rx, QString::SkipEmptyParts);
-
+    int direction=0;    //direction of movement, 0 to the right and anticlockwise
 
     qDebug() << l->levelNumb;
     qDebug()<<l->lifes;
 
-    if (list.at(0)=="Move"){
-        QString newx = list.at(1);
-        int newX =newx.toInt()*50 + l->popeyeX1;
-
-        popeye->setPos(newX,l->popeyeY1);
-
-        if(!this->collidingItems(popeye).isEmpty() && list.at(2)=="pickUp"){
-            this->removeItem(spinach1);
-            this->youWon();
-
-        }else {
-           youLost();
+    for(int i=0;i<list.size();i++){
+        QString command=list.at(i);
+        if(command=="Move"){
+            QString newpos = list.at(i+1);
+            int displacement =newpos.toInt()*50;
+            switch(direction){
+            case 0:
+                popeye->setPos(popeye->x()+displacement,popeye->y());
+                break;
+            case 1:
+                popeye->setPos(popeye->x(),popeye->y()-displacement);
+                break;
+            case 2:
+                popeye->setPos(popeye->x()-displacement,popeye->y());
+                break;
+            case 3:
+                popeye->setPos(popeye->x(),popeye->y()+displacement);
+                break;
+            default:
+                popeye->setPos(popeye->x()+displacement,popeye->y());
+                break;
+            }
+            i++;
         }
+        if(command=="rotate"){
+            direction=(direction+1)%4;
+            qDebug()<<direction;
+        }
+        if(command=="pickUp"){
+            QList<QGraphicsItem*> colliding=this->collidingItems(popeye);
+            if(!colliding.isEmpty()){
+                for(int i=0;i<colliding.size();i++){
+                    if (dynamic_cast<spinach*>(colliding.at(i))!=NULL)  //if the colliding object is of type spinach
+                    {
+                        removeItem(colliding.at(i));
+                    }
+                }
+            }
+        }
+
+    }
+
+    QList<QGraphicsItem*> sceneItems=this->items();
+    bool noMoreSpinach=true;
+    for(int i=0;i<sceneItems.size();i++){
+        if(dynamic_cast<spinach*>(sceneItems.at(i))!=NULL){
+            noMoreSpinach=false;
+        }
+    }
+    if(noMoreSpinach){
+        youWon();
+    }
+    else{
+        youLost();
     }
 }
 
@@ -151,7 +196,7 @@ void levelsscene::youWon(){
     Won *winWidget=new Won(l->levelNumb,l->lifes);
     winWidget->setGeometry(100,100,100,100);
     winWidget->show();
-    //l->updateLevel(user);
+    l->updateLevel(user);
     addWidget(proceed)->moveBy(800,450);
 
 
@@ -212,7 +257,8 @@ QStringList levelsscene::profileParser(QString line){       //parse the line and
 }
 
 void levelsscene::hideScene(){
-    qDebug()<<"deleting";
+
+    views().at(0)->close();
     delete this;
 
 }

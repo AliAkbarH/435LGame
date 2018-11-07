@@ -21,6 +21,43 @@ levels::levels(int x)
         lifes = 5;
 
         break;
+    case 2:
+        hintNumber = 0;
+        hint[0]="First hint";
+        hint[1]="Second hint";
+        hint[2]="Third hint";
+        instructions = "Functions: \nMove(number of steps) \npickUp()";
+        popeyeX1 = 400;
+        popeyeY1 = 350;
+        spinachX1 = 700;
+        spinachY1 = 350;
+
+        spinachX2 = 100;
+        spinachY2 = 350;
+        spinachX3 = 0;
+
+        lifes = 5;
+
+        break;
+    case 3:
+        hintNumber = 0;
+        hint[0]="First hint";
+        hint[1]="Second hint";
+        hint[2]="Third hint";
+        instructions = "Functions: \nMove(number of steps) \nrotate()\npickUp()";
+        popeyeX1 = 100;
+        popeyeY1 = 350;
+        spinachX1 = 400;
+        spinachY1 = 350;
+
+        spinachX2 = 700;
+        spinachY2=200;
+        spinachX3 = 0;
+
+        lifes = 5;
+
+        break;
+
     }
 
 }
@@ -52,21 +89,23 @@ void levels::updateLevel(QString user){
     if(level<8){
         QDir dir;
         dir.setPath(dir.path()+"/profiles");
-        QString profilePicDir;
-
 
         QFile inputFile(dir.path()+"/"+user+".txt");
-
-        if (inputFile.open(QIODevice::ReadWrite))                // to check if it is entering the file, and it is
-        {
-           QTextStream in(&inputFile);
-           QString line=in.readLine();
-           QRegExp toReplace("/t"+QString::number(level));
-           QString replaceWith("/t"+QString::number(level+1));
-           line.replace(toReplace,replaceWith);
-           in<<line;
-
+        inputFile.open(QIODevice::ReadWrite);
+        QTextStream in(&inputFile);
+        QString line=in.readLine();
+        inputFile.close();
+        inputFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
+        int charIndex=0,tabIndex=0;
+        while(tabIndex<9 && charIndex<line.size()){
+            if(line.at(charIndex)=='\t'){
+                tabIndex++;
+            }
+            charIndex++;
         }
+        int character=level+1+'0';
+        line=line.replace(charIndex,1,QChar(character));
+        in<<line;
         inputFile.close();
     }
 

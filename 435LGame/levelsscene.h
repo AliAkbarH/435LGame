@@ -17,7 +17,7 @@
 #include "locks.h"
 #include "levels.h"
 #include "spinach.h"
-//#include "game1scene.h"
+
 
 /**
 * \file game1scene.hB
@@ -30,10 +30,10 @@ class levelsscene : public QGraphicsScene
 {
     Q_OBJECT
 public:
-    levelsscene(QString user,QGraphicsScene *gameScene);
+    levelsscene(QString user);
 
     QString user;    
-    QGraphicsScene *gameScene;
+
 
     Popeye *popeye = new Popeye();       //!< Creating the references to the Objects
     spinach *spinach1 = new spinach();

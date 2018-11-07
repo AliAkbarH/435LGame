@@ -88,7 +88,7 @@ void game1scene::updatePosition(){
 }
 
 void game1scene::startLevel(){
-    scene2 = new levelsscene(user,this);               //!< pointer to an Object of type levelsscene
+    scene2 = new levelsscene(user);               //!< pointer to an Object of type levelsscene
     view2 = new QGraphicsView(scene2);            //!< pointer to an Object of type QGraphicsView
 
     view2->setFixedSize(910,512);
