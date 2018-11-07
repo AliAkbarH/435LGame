@@ -14,7 +14,8 @@ SOURCES += \
     levels.cpp \
     levelsscene.cpp \
     hints.cpp \
-    lost.cpp
+    lost.cpp \
+    won.cpp
 
 HEADERS += \
     signinwidget.h \
@@ -30,7 +31,8 @@ HEADERS += \
     levels.h \
     levelsscene.h \
     hints.h \
-    lost.h
+    lost.h \
+    won.h
 
 DISTFILES += \
     Profile Images/water.gif \

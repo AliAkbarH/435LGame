@@ -29,6 +29,8 @@ public:
     void incrementHintNumber();
     void resetHintNumber();
     void decrementLifes();
+    void incrementLevelNumb();
+    void updateLevel(QString user);
 
 };
 

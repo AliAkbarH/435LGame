@@ -42,9 +42,11 @@ public:
     QGraphicsView *view2;                   //!< pointer to an Object of type QGraphicsView
     
     void updatePosition();                /**< function that will update the position of popeye, placing him on top of the locks*/
+    void hideLevelScene();
 
 public slots:
-    void starLevel();
+    void startLevel();
+
 };
 
 #endif // GAME1SCENE_H
