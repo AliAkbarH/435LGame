@@ -20,7 +20,16 @@ SOURCES += \
     boat.cpp \
     rock.cpp \
     riverobstacle.cpp \
-    smallriver.cpp
+    smallriver.cpp \
+    levelparser.cpp \
+    game2scene.cpp \
+    wall.cpp \
+    tester.cpp \
+    bug.cpp \
+    shield.cpp \
+    testingicon.cpp \
+    coffeecup.cpp \
+    qualitycontrolicon.cpp
 
 HEADERS += \
     signinwidget.h \
@@ -42,7 +51,16 @@ HEADERS += \
     boat.h \
     rock.h \
     riverobstacle.h \
-    smallriver.h
+    smallriver.h \
+    levelparser.h \
+    game2scene.h \
+    wall.h \
+    tester.h \
+    bug.h \
+    shield.h \
+    testingicon.h \
+    coffeecup.h \
+    qualitycontrolicon.h
 
 DISTFILES += \
     Profile Images/water.gif \

@@ -54,7 +54,7 @@ void gamesWidget::startGame1(){
 
 }
 void gamesWidget::startGame2(){
-
+    scene2=new Game2Scene(user);
 }
 void gamesWidget::startGame3(){
 
