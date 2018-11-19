@@ -23,6 +23,7 @@ public:
         game1scene *scene1;                     //!< pointer to an Object of type game1scene
         Game2Scene *scene2;
         QGraphicsView *view1;                   //!< pointer to an Object of type QGraphicsView
+        QGraphicsView *view2;
 
         void setVerticalLayout();
         void setGridLayout();

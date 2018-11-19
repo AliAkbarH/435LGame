@@ -10,8 +10,8 @@
 
 
 LevelParser::LevelParser(QString filePath){
-    QDir temp;
-    this->filePath=new QDir(temp.absolutePath() +filePath);
+
+    this->filePath=new QDir(filePath);
 }
 
 void LevelParser::parse(Game2Scene *scene){

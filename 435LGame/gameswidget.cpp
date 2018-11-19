@@ -55,6 +55,10 @@ void gamesWidget::startGame1(){
 }
 void gamesWidget::startGame2(){
     scene2=new Game2Scene(user);
+    view2=new QGraphicsView(scene2);
+    view2->setFixedHeight(325);
+    view2->setFixedWidth(645);
+    view2->show();
 }
 void gamesWidget::startGame3(){
 
