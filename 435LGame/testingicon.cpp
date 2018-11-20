@@ -5,5 +5,6 @@ TestingIcon::TestingIcon()
 {
     QDir dir;
     icon=new QPixmap(dir.absolutePath()+"/game2 images/test.png");
-    setPixmap(*icon);
+
+    setPixmap((*icon).scaledToHeight(40).scaledToWidth(40));
 }
