@@ -17,7 +17,6 @@ SOURCES += \
     lost.cpp \
     won.cpp \
     river.cpp \
-    boat.cpp \
     rock.cpp \
     riverobstacle.cpp \
     smallriver.cpp \
@@ -46,7 +45,6 @@ HEADERS += \
     levelsscene.h \
     hints.h \
     lost.h \
-    won.h \
     river.h \
     boat.h \
     rock.h \
@@ -60,7 +58,8 @@ HEADERS += \
     shield.h \
     testingicon.h \
     coffeecup.h \
-    qualitycontrolicon.h
+    qualitycontrolicon.h \
+    won.h
 
 DISTFILES += \
     Profile Images/water.gif \

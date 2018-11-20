@@ -1,0 +1,97 @@
+.gitignore
+.qmake.stash
+.qmake.winrt_uuid_Game1
+435LGame.pro
+Game1.pro
+Game1.vcxproj
+Game1.vcxproj.filters
+Package.appxmanifest
+Profile Images/Boat.jpg
+Profile Images/Game1.png
+Profile Images/Lock.png
+Profile Images/Popeye.png
+Profile Images/River.jpg
+Profile Images/background.PNG
+Profile Images/backgroundLevel5.jpg
+Profile Images/background_without.jpeg
+Profile Images/bucket.png
+Profile Images/cloud.png
+Profile Images/level6.jpg
+Profile Images/popeye_s_spinach_by_can.png
+Profile Images/rubble-md.png
+Profile Images/smallRiver.jpg
+Profile Images/water.gif
+assets/logo_150x150.png
+assets/logo_44x44.png
+assets/logo_620x300.png
+assets/logo_store.png
+boat.cpp
+boat.h
+bug.cpp
+bug.h
+coffeecup.cpp
+coffeecup.h
+comments.cpp
+debug/moc_predefs.h.cbt
+game1scene.cpp
+game1scene.h
+game2scene.cpp
+game2scene.h
+gameswidget.cpp
+gameswidget.h
+hints.cpp
+hints.h
+images.qrc
+levelparser.cpp
+levelparser.h
+levels.cpp
+levels.h
+levelsscene.cpp
+levelsscene.h
+levelsscene.h.Gx2426
+locks.cpp
+locks.h
+logginwidget.cpp
+logginwidget.cpp.BACKUP.3062.cpp
+logginwidget.cpp.BASE.3062.cpp
+logginwidget.cpp.LOCAL.3062.cpp
+logginwidget.cpp.REMOTE.3062.cpp
+logginwidget.cpp.k14621
+logginwidget.h
+logonwidget.cpp
+logonwidget.h
+lost.cpp
+lost.h
+main.cpp
+popeye.cpp
+popeye.h
+profiles/Username.txt
+profiles/profiles.txt
+profiles/user.json
+qualitycontrolicon.cpp
+qualitycontrolicon.h
+release/moc_predefs.h.cbt
+river.cpp
+river.h
+riverobstacle.cpp
+riverobstacle.h
+rock.cpp
+rock.h
+shield.cpp
+shield.h
+signinwidget.cpp
+signinwidget.h
+signupwidget.cpp
+signupwidget.h
+smallriver.cpp
+smallriver.h
+spinach.cpp
+spinach.h
+tester.cpp
+tester.h
+testingicon.cpp
+testingicon.h
+wall.cpp
+wall.h
+won.cpp
+won.h
