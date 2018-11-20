@@ -2,7 +2,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 x     b                  u     x
 xxxxxxxxxxxxxxx      xxxxxxxxxxx
 x      xxxx                    x
-x       c     b    T   b       x
+x       c     b    T     b     x
 xxxxxxxxxxxxxxxxxxxxxxxxxxx    x
 x        b           b         x
 xxx  s           xx  xx   b    x
@@ -12,6 +12,6 @@ x    b      T     xxxxxx   c   x
 xxxxxxxxxxxx             xxxxxxx
 xxx                 b        xxx
 x    xxxxxxxxxxx   x   xxx   s x
-x  c            qc b  xxx T b  x
+x  c           qc  b  xxxT  b  x
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	

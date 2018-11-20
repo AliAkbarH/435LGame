@@ -1,39 +1,66 @@
 #include "game2scene.h"
 #include "levelparser.h"
+#include"bug.h"
+#include"wall.h"
+#include"coffeecup.h"
+#include"qualitycontrolicon.h"
+#include"testingicon.h"
+#include"shield.h"
+#include"bullet.h"
 #include <QDebug>
 
 Game2Scene::Game2Scene(QString user)
 {
-    QDir dir;
+    dir=0;
     this->user=user;
     setSceneRect(0,0,1280,640);
-    setBackgroundBrush(QBrush(QImage(dir.absolutePath()+"/game2 images/background.jpg").scaledToHeight(640).scaledToWidth(1280)));
+    setBackgroundBrush(QBrush(QImage(":/game2 images/background.jpg").scaledToHeight(640).scaledToWidth(1280)));
 
-    LevelParser parser(dir.absolutePath()+"/game2 images/level1.txt");
+    LevelParser parser(":/game2 images/level1.txt");
     parser.parse(this);
-//    tester->setFlag(QGraphicsItem::ItemIsFocusable);
-//    tester->setFocus();
-//    if(tester->hasFocus()){
-//        qDebug()<<"focused";
-//    }
-//    else{
-//        qDebug()<<"not focused";
 
-//    }
 
 }
 
 void Game2Scene::keyPressEvent(QKeyEvent *event){
+
+    int prevX=tester->x(),prevY=tester->y();
+    int newX=prevX,newY=prevY;
     if(event->key()==Qt::Key_Right && tester->x()<=1240){
-        tester->setPos(tester->x()+40,tester->y());
+        newX=prevX+40;
+        newY=prevY;
+        dir=0;
     }
     if(event->key()==Qt::Key_Left && tester->x()>=40){
-        tester->setPos(tester->x()-40,tester->y());
+        newX=prevX-40;
+        newY=prevY;
+        dir=2;
     }
     if(event->key()==Qt::Key_Up && tester->y()>=40){
-        tester->setPos(tester->x(),tester->y()-40);
+        newX=prevX;
+        newY=prevY-40;
+        dir=1;
     }
     if(event->key()==Qt::Key_Down && tester->y()<=600){
-        tester->setPos(tester->x(),tester->y()+40);
+        newX=prevX;
+        newY=prevY+40;
+        dir=3;
     }
+    if(event->key()==Qt::Key_Space){
+        Bullet *bullet=new Bullet(dir,tester->x(),tester->y());
+        addItem(bullet);
+    }
+    tester->setPos(newX,newY);
+    QList<QGraphicsItem*> colliding=tester->collidingItems();
+    if(!colliding.isEmpty()){
+        if(dynamic_cast<Wall*>(colliding.at(0))!=NULL){
+            newX=prevX;
+            newY=prevY;
+        }
+    }
+
+    tester->setPos(newX,newY);
+
+
+
 }

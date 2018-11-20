@@ -2,6 +2,6 @@
 
 QualityControlIcon::QualityControlIcon()
 {
-    icon=new QPixmap(":/images/quality.png");
+    icon=new QPixmap(":/game2 images/quality.png");
     setPixmap((*icon).scaledToHeight(40).scaledToWidth(40));
 }

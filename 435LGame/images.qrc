@@ -4,12 +4,10 @@
         <file>game2 images/bug.png</file>
         <file>game2 images/bullet.png</file>
         <file>game2 images/coffee.png</file>
-        <file>game2 images/detective.png</file>
         <file>game2 images/level1.txt</file>
         <file>game2 images/one.png</file>
         <file>game2 images/quality.png</file>
         <file>game2 images/shield.png</file>
-        <file>game2 images/test.png</file>
         <file>game2 images/zero.png</file>
         <file>Profile Images/background.PNG</file>
         <file>Profile Images/background_without.jpeg</file>
@@ -26,5 +24,8 @@
         <file>Profile Images/rubble-md.png</file>
         <file>Profile Images/smallRiver.jpg</file>
         <file>Profile Images/water.gif</file>
+        <file>game2 images/detective.png</file>
+        <file>game2 images/test.png</file>
+        <file>game2 images/developer.png</file>
     </qresource>
 </RCC>

@@ -2,7 +2,7 @@
 #define WON_H
 #include<QWidget>
 
-class Won:QWidget
+class Won:public QWidget
 {
 
 public:

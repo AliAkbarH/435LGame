@@ -3,15 +3,15 @@
 #include<QGraphicsPixmapItem>
 #include<QKeyEvent>
 #include<QObject>
+#include<QTimer>
 
-class Tester : public QGraphicsPixmapItem
+class Tester : public QObject, public QGraphicsPixmapItem
 {
-    //Q_OBJECT
+    Q_OBJECT
 public:
     Tester();
     QPixmap *icon;
-    void keyPressEvent(QKeyEvent *event);
-
+    QTimer *timer;
 };
 
 #endif // TESTER_H

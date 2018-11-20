@@ -28,7 +28,9 @@ SOURCES += \
     shield.cpp \
     testingicon.cpp \
     coffeecup.cpp \
-    qualitycontrolicon.cpp
+    qualitycontrolicon.cpp \
+    baot.cpp \
+    bullet.cpp
 
 HEADERS += \
     signinwidget.h \
@@ -59,7 +61,8 @@ HEADERS += \
     testingicon.h \
     coffeecup.h \
     qualitycontrolicon.h \
-    won.h
+    won.h \
+    bullet.h
 
 DISTFILES += \
     Profile Images/water.gif \
