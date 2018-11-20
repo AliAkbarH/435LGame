@@ -1,7 +1,9 @@
 #include "bug.h"
+#include<QDir>
 
 Bug::Bug()
 {
-    icon=new QPixmap("/game2 images/bug.png");
+    QDir dir;
+    icon=new QPixmap(dir.absolutePath()+"/game2 images/bug.png");
     setPixmap(*icon);
 }

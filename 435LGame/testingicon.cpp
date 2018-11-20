@@ -1,7 +1,9 @@
 #include "testingicon.h"
+#include<QDir>
 
 TestingIcon::TestingIcon()
 {
-    icon=new QPixmap("/game2 images/test.png");
+    QDir dir;
+    icon=new QPixmap(dir.absolutePath()+"/game2 images/test.png");
     setPixmap(*icon);
 }

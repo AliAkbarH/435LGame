@@ -1,7 +1,9 @@
 #include "shield.h"
+#include<QDir>
 
 Shield::Shield()
 {
-    icon=new QPixmap("/game2 images/shield.png");
+    QDir dir;
+    icon=new QPixmap(dir.absolutePath()+"/game2 images/shield.png");
     setPixmap(*icon);
 }
