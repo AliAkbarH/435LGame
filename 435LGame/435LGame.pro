@@ -17,7 +17,6 @@ SOURCES += \
     lost.cpp \
     won.cpp \
     river.cpp \
-    boat.cpp \
     rock.cpp \
     riverobstacle.cpp \
     smallriver.cpp \
@@ -29,7 +28,9 @@ SOURCES += \
     shield.cpp \
     testingicon.cpp \
     coffeecup.cpp \
-    qualitycontrolicon.cpp
+    qualitycontrolicon.cpp \
+    baot.cpp \
+    bullet.cpp
 
 HEADERS += \
     signinwidget.h \
@@ -46,7 +47,6 @@ HEADERS += \
     levelsscene.h \
     hints.h \
     lost.h \
-    won.h \
     river.h \
     boat.h \
     rock.h \
@@ -60,7 +60,9 @@ HEADERS += \
     shield.h \
     testingicon.h \
     coffeecup.h \
-    qualitycontrolicon.h
+    qualitycontrolicon.h \
+    won.h \
+    bullet.h
 
 DISTFILES += \
     Profile Images/water.gif \

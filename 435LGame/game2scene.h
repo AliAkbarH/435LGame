@@ -15,6 +15,7 @@ public:
     LevelParser *parser;
     QString user;
     Tester *tester;
+    int dir;
     void keyPressEvent(QKeyEvent *event);
 };
 

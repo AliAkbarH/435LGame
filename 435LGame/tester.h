@@ -5,19 +5,13 @@
 #include<QObject>
 #include<QTimer>
 
-class Tester : public QGraphicsPixmapItem
+class Tester : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
     Tester();
     QPixmap *icon;
-    QTimer timer;
-    void keyPressEvent(QKeyEvent *event);
-
-signals:
-
-public slots:
-    void step(int i);
+    QTimer *timer;
 
 };
 

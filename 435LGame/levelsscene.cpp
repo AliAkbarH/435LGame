@@ -3,6 +3,7 @@
 #include "hints.h"
 #include "lost.h"
 #include "won.h"
+#include"boat.h"
 
 
 
