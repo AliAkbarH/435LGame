@@ -3,14 +3,21 @@
 #include<QGraphicsPixmapItem>
 #include<QKeyEvent>
 #include<QObject>
+#include<QTimer>
 
 class Tester : public QGraphicsPixmapItem
 {
-    //Q_OBJECT
+    Q_OBJECT
 public:
     Tester();
     QPixmap *icon;
+    QTimer timer;
     void keyPressEvent(QKeyEvent *event);
+
+signals:
+
+public slots:
+    void step(int i);
 
 };
 

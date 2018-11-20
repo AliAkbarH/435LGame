@@ -8,4 +8,5 @@ Bug::Bug()
 
     *icon=icon->scaledToHeight(40).scaledToWidth(40);
     setPixmap(*icon);
+
 }
