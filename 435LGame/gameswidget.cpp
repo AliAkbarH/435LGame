@@ -6,10 +6,12 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QApplication>
+#include<QDir>
 
 
 #include "game1scene.h"
 #include"gameswidget.h"
+#include"levelparser.h"
 
 
 gamesWidget::gamesWidget(QString user)
@@ -54,11 +56,14 @@ void gamesWidget::startGame1(){
 
 }
 void gamesWidget::startGame2(){
+    QDir dir;
     scene2=new Game2Scene(user);
     view2=new QGraphicsView(scene2);
-    view2->setFixedHeight(325);
-    view2->setFixedWidth(645);
+    view2->setFixedHeight(645);
+    view2->setFixedWidth(1285);
     view2->show();
+    scene2->tester->setFocus();
+
 }
 void gamesWidget::startGame3(){
 

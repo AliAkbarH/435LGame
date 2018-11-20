@@ -1,7 +1,10 @@
 #include "coffeecup.h"
+#include<QDir>
 
 CoffeeCup::CoffeeCup()
 {
-    icon=new QPixmap("/game2 images/coffee.png");
-    setPixmap(*icon);
+
+    QDir dir;
+    icon=new QPixmap(dir.absolutePath()+"/game2 images/coffee.png");
+    setPixmap((*icon).scaledToHeight(40).scaledToWidth(40));
 }

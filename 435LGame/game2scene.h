@@ -2,6 +2,7 @@
 #define GAME2SCENE_H
 #include<QGraphicsScene>
 #include<QGraphicsView>
+#include"tester.h"
 
 class LevelParser;
 
@@ -12,6 +13,7 @@ public:
     QGraphicsView *view;
     LevelParser *parser;
     QString user;
+    Tester *tester;
 };
 
 #endif // GAME2SCENE_H

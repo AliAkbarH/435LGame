@@ -18,47 +18,61 @@ void LevelParser::parse(Game2Scene *scene){
     QFile *levelFile=new QFile(filePath->absolutePath());
 
     if(levelFile->open(QIODevice::ReadOnly)){
+        qDebug()<<"file open";
         QTextStream encoding(levelFile);
         QChar endToken;
         int row=0, column=0;
         encoding>>endToken;
         while(endToken!='\t'){
+            qDebug()<<"entered first loop";
             QChar token=endToken;
             while(token!='\n'){
-
+                qDebug()<<"Entered second loop";
                 if(token=='x'){
+                    qDebug()<<"detected x";
                     Wall *wall=new Wall();
                     addItem(scene, wall, column, row);
                 }
                 else if(token=='u'){
-                    Tester *tester=new Tester();
-                    addItem(scene, tester, column, row);
+                    qDebug()<<"detected u";
+                    scene->tester=new Tester();
+                    scene->addItem(scene->tester);
+                    scene->tester->setPos(column,row);
                 }
                 else if(token=='b'){
+                    qDebug()<<"detected b";
                     Bug *bug=new Bug();
                     addItem(scene, bug, column, row);
                 }
                 else if(token=='s'){
+                    qDebug()<<"detected s";
                     Shield *shield=new Shield();
                     addItem(scene, shield, column, row);
                 }
-                else if(token=='t'){
+                else if(token=='T'){
+                    qDebug()<<"detected T";
                     TestingIcon *testingIcon=new TestingIcon();
                     addItem(scene, testingIcon, column, row);
                 }
                 else if(token=='c'){
+                    qDebug()<<"detected c";
                     CoffeeCup *coffeeCup=new CoffeeCup();
                     addItem(scene, coffeeCup, column, row);
                 }
                 else if(token=='q'){
+                    qDebug()<<"detected c";
                     QualityControlIcon *QCIcon=new QualityControlIcon();
                     addItem(scene, QCIcon, column, row);
                     QCIcon->hide();
                 }
-                column+=20;
+                column+=40;
+                qDebug()<<"incremented column to "<<column;
                 encoding>>token;
             }
-            row+=20;
+            row+=40;
+            qDebug()<<"incremented row to "<<row;
+            column=0;
+            qDebug()<<"resetted column to "<<column;
             encoding>>endToken;
 
         }
@@ -72,6 +86,7 @@ void LevelParser::addItem(Game2Scene *scene, QGraphicsItem *item, int column, in
     scene->addItem(item);
     item->setPos(column,row);
     item->show();
+    qDebug()<<"added item";
 }
 
 
