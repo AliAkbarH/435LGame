@@ -16,6 +16,7 @@ public:
     QString user;
     Tester *tester;
     int dir;
+    bool playing;
     void keyPressEvent(QKeyEvent *event);
 };
 

@@ -31,9 +31,9 @@ void LevelParser::parse(Game2Scene *scene){
                     addItem(scene, wall, column, row);
                 }
                 else if(token=='u'){
-                    scene->tester=new Tester();
+                    scene->tester=new Tester(column+3,row+3);
                     scene->addItem(scene->tester);
-                    scene->tester->setPos(column+5,row+5);
+                    scene->tester->setPos(column+3,row+3);
                 }
                 else if(token=='b'){
                     Bug *bug=new Bug();

@@ -9,9 +9,12 @@ class Tester : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    Tester();
+    Tester(int,int);
     QPixmap *icon;
     QTimer *timer;
+    int lives,souls,startingX,startingY;
+    void decrementLives();
+    void loseLife();
 
 };
 

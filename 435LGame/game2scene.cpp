@@ -12,6 +12,7 @@
 Game2Scene::Game2Scene(QString user)
 {
     dir=0;
+    playing=true;
     this->user=user;
     setSceneRect(0,0,1280,640);
     setBackgroundBrush(QBrush(QImage(":/game2 images/background.jpg").scaledToHeight(640).scaledToWidth(1280)));
@@ -46,16 +47,26 @@ void Game2Scene::keyPressEvent(QKeyEvent *event){
         newY=prevY+40;
         dir=3;
     }
-    if(event->key()==Qt::Key_Space){
+    if(event->key()==Qt::Key_Space && playing){
         Bullet *bullet=new Bullet(dir,tester->x(),tester->y());
         addItem(bullet);
     }
     tester->setPos(newX,newY);
     QList<QGraphicsItem*> colliding=tester->collidingItems();
+
     if(!colliding.isEmpty()){
         if(dynamic_cast<Wall*>(colliding.at(0))!=NULL){
             newX=prevX;
             newY=prevY;
+        }
+        else if(dynamic_cast<Bug*>(colliding.at(0))!=NULL){
+            tester->loseLife();
+            newX=tester->startingX;
+            newY=tester->startingY;
+            if(tester->lives==0){
+                removeItem(tester);
+                playing=false;
+            }
         }
     }
 

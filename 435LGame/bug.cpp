@@ -9,8 +9,9 @@ Bug::Bug()
 
     lives=3;
     dir=0;
-    i=2;
-    timer->start(500);
+    i=12;
+    timer=new QTimer();
+    timer->start(125);
     connect(timer,SIGNAL(timeout()),this,SLOT(guard()));
 }
 
@@ -25,13 +26,13 @@ void Bug::decrementLives(){
 
 void Bug::guard(){
     if(dir==0){
-        moveBy(40,0);
+        moveBy(8,0);
     }
     else{
-        moveBy(-40,0);
+        moveBy(-8,0);
     }
     i++;
-    i=i%5;
+    i=i%25;
     if(i==0){
         dir++;
         dir=dir%2;
