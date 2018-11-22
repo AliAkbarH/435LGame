@@ -17,12 +17,25 @@ SOURCES += \
     lost.cpp \
     won.cpp \
     river.cpp \
-    boat.cpp \
     rock.cpp \
     riverobstacle.cpp \
     smallriver.cpp \
     instruction.cpp \
-    gameover.cpp
+    gameover.cpp \
+    levelparser.cpp \
+    game2scene.cpp \
+    wall.cpp \
+    tester.cpp \
+    bug.cpp \
+    shield.cpp \
+    testingicon.cpp \
+    coffeecup.cpp \
+    qualitycontrolicon.cpp \
+    baot.cpp \
+    bullet.cpp \
+    lifecounter.cpp \
+    minibug.cpp
+
 
 HEADERS += \
     signinwidget.h \
@@ -39,14 +52,29 @@ HEADERS += \
     levelsscene.h \
     hints.h \
     lost.h \
-    won.h \
     river.h \
     boat.h \
     rock.h \
     riverobstacle.h \
     smallriver.h \
+<<<<<<< HEAD
     instruction.h \
     gameover.h
+=======
+    levelparser.h \
+    game2scene.h \
+    wall.h \
+    tester.h \
+    bug.h \
+    shield.h \
+    testingicon.h \
+    coffeecup.h \
+    qualitycontrolicon.h \
+    won.h \
+    bullet.h \
+    lifecounter.h \
+    minibug.h
+>>>>>>> ali
 
 DISTFILES += \
     Profile Images/water.gif \

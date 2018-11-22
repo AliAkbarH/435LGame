@@ -4,6 +4,7 @@
 #include "lost.h"
 #include "won.h"
 #include"instruction.h"
+#include"boat.h"
 
 /**
 * \file levelsscene.cpp
@@ -22,6 +23,13 @@
 * from the appropriate text file.
 * Each Level have different specs and object that are loaded to their appropriate positions.
 */
+
+
+
+
+
+
+
 
 levelsscene::levelsscene(QString user)
 {

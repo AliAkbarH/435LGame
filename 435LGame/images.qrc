@@ -1,19 +1,51 @@
 <RCC>
     <qresource prefix="/">
-        <file>Profile Images/water.gif</file>
+        <file>game2 images/background.jpg</file>
+        <file>game2 images/bug.png</file>
+        <file>game2 images/bullet.png</file>
+        <file>game2 images/coffee.png</file>
+        <file>game2 images/one.png</file>
+        <file>game2 images/quality.png</file>
+        <file>game2 images/shield.png</file>
+        <file>game2 images/zero.png</file>
+        <file>Profile Images/background.PNG</file>
+        <file>Profile Images/background_without.jpeg</file>
+        <file>Profile Images/backgroundLevel5.jpg</file>
+        <file>Profile Images/Boat.jpg</file>
         <file>Profile Images/bucket.png</file>
         <file>Profile Images/cloud.png</file>
-        <file>Profile Images/background_without.jpeg</file>
-        <file>Profile Images/background.PNG</file>
-        <file>Profile Images/popeye_s_spinach_by_can.png</file>
-        <file>Profile Images/Popeye.png</file>
-        <file>Profile Images/Lock.png</file>
         <file>Profile Images/Game1.png</file>
-        <file>Profile Images/River.jpg</file>
-        <file>Profile Images/Boat.jpg</file>
-        <file>Profile Images/backgroundLevel5.jpg</file>
-        <file>Profile Images/rubble-md.png</file>
         <file>Profile Images/level6.jpg</file>
+        <file>Profile Images/Lock.png</file>
+        <file>Profile Images/Popeye.png</file>
+        <file>Profile Images/popeye_s_spinach_by_can.png</file>
+        <file>Profile Images/River.jpg</file>
+        <file>Profile Images/rubble-md.png</file>
         <file>Profile Images/smallRiver.jpg</file>
+        <file>Profile Images/water.gif</file>
+        <file>game2 images/detective.png</file>
+        <file>game2 images/test.png</file>
+        <file>game2 images/developer.png</file>
+        <file>game2 images/developer1.png</file>
+        <file>game2 images/level1.txt</file>
+        <file>game2 images/live0.png</file>
+        <file>game2 images/live1.png</file>
+        <file>game2 images/live2.png</file>
+        <file>game2 images/live3.png</file>
+        <file>game2 images/live4.png</file>
+        <file>game2 images/live5.png</file>
+        <file>game2 images/heart.png</file>
+        <file>game2 images/num0.png</file>
+        <file>game2 images/num1.png</file>
+        <file>game2 images/num2.png</file>
+        <file>game2 images/num3.png</file>
+        <file>game2 images/num4.png</file>
+        <file>game2 images/num5.png</file>
+        <file>game2 images/num6.png</file>
+        <file>game2 images/num7.png</file>
+        <file>game2 images/num8.png</file>
+        <file>game2 images/num9.png</file>
+        <file>game2 images/pause.png</file>
+        <file>game2 images/play.png</file>
     </qresource>
 </RCC>
