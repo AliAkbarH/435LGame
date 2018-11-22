@@ -3,6 +3,14 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 
+/**
+* \file popeye.h
+* \brief Contains Popeye class definition
+*
+*
+* \author Camille Farhat & Ali Haidar
+*/
+
 class Popeye : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

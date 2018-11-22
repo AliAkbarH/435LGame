@@ -4,6 +4,12 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 
+/**
+* \file smallriver.h
+* \brief contains Small River class definition
+* \author Camille Farhat & Ali Haidar
+*/
+
 class smallRiver : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

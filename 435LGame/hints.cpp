@@ -2,6 +2,18 @@
 #include "levels.h"
 #include<QLabel>
 #include<QVBoxLayout>
+
+/**
+* \file hints.cpp
+* \brief Shows the appropriate hints in a pop up window
+*
+* \author Camille Farhat & Ali Haidar
+*/
+
+
+/*! \brief Setting the hints pop up window content
+*/
+
 hints::hints(QWidget *parent) : QWidget(parent)
 {
 

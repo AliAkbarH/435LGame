@@ -5,6 +5,14 @@
 #include <QGraphicsPixmapItem>
 #include <QObject>
 
+/**
+* \file locks.h
+* \brief Contains Lock class definition
+*
+*
+* \author Camille Farhat & Ali Haidar
+*/
+
 class locks : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

@@ -3,12 +3,14 @@
 
 /**
 * \file locks.cpp
-* \brief contains Lock class definition
+* \brief Contains Lock class definition
 *
 *
-* \author Camille Farhat
+* \author Camille Farhat & Ali Haidar
 */
 
+/*! \brief Setting the lock Image
+*/
 locks::locks(QObject *parent) : QObject(parent)
 {
     setPixmap((QPixmap(":/Profile Images/Lock.png")).scaled(70,70));

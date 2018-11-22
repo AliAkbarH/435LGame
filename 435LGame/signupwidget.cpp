@@ -194,7 +194,11 @@ void SignUpWidget::VerifySubmitSlot(){
 
        out<<calendar->selectedDate().day()<<'\t'<<calendar->selectedDate().month()<<'\t'<<calendar->selectedDate().year()<<'\t';
 
-       out<<"1"<<'\t';       // USER IS AT LEVEL 1 WHEN HE STARTS    ////////////////////////////////////////////////////////////////////////////////////////////////
+       out<<"1"<<'\t';          //USER IS AT LEVEL 1 WHEN HE STARTS
+
+       out<<"5"<<'\t';          //User has 5 lives initially and for each level
+
+       out<<'\n'<<"100";        //User has a score of 100 writen on a new line
 
        Submit->setText("Press to continue");
        connect(Submit,SIGNAL(pressed()),this,SLOT(GoBackToLogOnSlot()));

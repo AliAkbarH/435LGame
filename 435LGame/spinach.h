@@ -4,6 +4,11 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 
+/**
+* \file spinach.h
+* \brief Contains Spinach class definition
+* \author Camille Farhat & Ali Haidar
+*/
 class spinach : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

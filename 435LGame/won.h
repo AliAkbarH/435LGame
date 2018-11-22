@@ -3,6 +3,13 @@
 
 #include <QWidget>
 
+/**
+* \file won.h
+* \brief Shows the appropriate win message in a pop up window
+*
+* \author Camille Farhat & Ali Haidar
+*/
+
 class Won : public QWidget
 {
     Q_OBJECT

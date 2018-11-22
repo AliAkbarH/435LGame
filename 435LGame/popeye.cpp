@@ -2,12 +2,14 @@
 
 /**
 * \file popeye.cpp
-* \brief contains Popeye class definition
+* \brief Contains Popeye class definition
 *
 *
-* \author Camille Farhat
+* \author Camille Farhat & Ali Haidar
 */
 
+/*! \brief Setting Popeye's Image
+*/
 Popeye::Popeye(QObject *parent) : QObject(parent)
 {
    setPixmap((QPixmap(":/Profile Images/Popeye.png")).scaled(75,75));

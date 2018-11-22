@@ -4,6 +4,13 @@
 
 #include <QWidget>
 
+/**
+* \file hints.h
+* \brief The Level's scene's Hints
+*
+* Pop up window that will display the hints. 
+* 
+*/
 class hints : public QWidget
 {
     Q_OBJECT

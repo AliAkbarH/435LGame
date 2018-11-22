@@ -20,7 +20,9 @@ SOURCES += \
     boat.cpp \
     rock.cpp \
     riverobstacle.cpp \
-    smallriver.cpp
+    smallriver.cpp \
+    instruction.cpp \
+    gameover.cpp
 
 HEADERS += \
     signinwidget.h \
@@ -42,7 +44,9 @@ HEADERS += \
     boat.h \
     rock.h \
     riverobstacle.h \
-    smallriver.h
+    smallriver.h \
+    instruction.h \
+    gameover.h
 
 DISTFILES += \
     Profile Images/water.gif \

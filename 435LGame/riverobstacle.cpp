@@ -2,13 +2,15 @@
 #include <QGraphicsPixmapItem>
 
 /**
-* \file boat.cpp
-* \brief contains boat class definition
+* \file riverobstacle.cpp
+* \brief Contains River Obstacle class definition
 *
 *
-* \author
+* \author Camille Farhat & Ali Haidar
 */
 
+/*! \brief Setting the river obstacle's Image
+*/
 riverObstacle::riverObstacle(QObject *parent) : QObject(parent)
 {
     setPixmap((QPixmap(":/Profile Images/level6.jpg")));

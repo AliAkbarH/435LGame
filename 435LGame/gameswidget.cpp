@@ -11,7 +11,16 @@
 #include "game1scene.h"
 #include"gameswidget.h"
 
+/**
+* \file gameswidget.cpp
+* \brief contains Game1-2 Links and Score Log
+*
+* \author Camille Farhat & Ali Haidar
+*/
 
+
+/*! \brief Setting the widget's layout.
+*/
 gamesWidget::gamesWidget(QString user)
 {
     game1 = new QPushButton("Game 1");
@@ -34,11 +43,12 @@ gamesWidget::gamesWidget(QString user)
 
     QObject::connect(game1, SIGNAL(clicked()), this, SLOT(startGame1()));
     QObject::connect(game2, SIGNAL(clicked()), this, SLOT(startGame2()));
-    QObject::connect(game3, SIGNAL(clicked()), this, SLOT(startGame3()));
     QObject::connect(score, SIGNAL(clicked()), this, SLOT(scoreLog()));
 
 }
 
+/*! \brief Slot to take the user to Game1Scene.
+*/
 void gamesWidget::startGame1(){
 
     scene1 = new game1scene(user);              //!< pointer to an Object of type game1scene
@@ -50,32 +60,25 @@ void gamesWidget::startGame1(){
 
     this->hide();
     view1->show();
-    //view1->close();
 
 }
+/*! \brief Slot to take the user to Game2Scene.
+*/
 void gamesWidget::startGame2(){
 
 }
-void gamesWidget::startGame3(){
 
-}
 void gamesWidget::scoreLog(){
 
 }
-
-void gamesWidget::hideScene(){
-    //scene1->deleteLater();
-   // scene1->clear();
-   // delete scene1;
-   // view1->hide();
-    //view1->close();
-}
-
+/*! \brief Setting the Vertical Layout.
+*/
 void gamesWidget::setVerticalLayout(){
 
     VerticalL->addItem(GridL);
 }
-
+/*! \brief Setting the Grid Layout
+*/
 void gamesWidget::setGridLayout(){
 
      GridL->addWidget(game1, 0, 0);

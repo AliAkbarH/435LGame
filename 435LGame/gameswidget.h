@@ -24,7 +24,6 @@ public:
 
         void setVerticalLayout();
         void setGridLayout();
-        void hideScene();
 
 signals:
 
@@ -33,8 +32,6 @@ public slots:
         void scoreLog();
         void startGame1();
         void startGame2();
-        void startGame3();
-
 };
 
 #endif // GAMESWIDGET_H

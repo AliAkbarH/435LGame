@@ -4,6 +4,14 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 
+
+/**
+* \file river.h
+* \brief Contains Popeye class definition
+*
+*
+* \author Camille Farhat & Ali Haidar
+*/
 class river : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

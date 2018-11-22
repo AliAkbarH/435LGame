@@ -58,38 +58,39 @@ public:
 
     levels *l;
 
-    QPushButton *run, *hint, *pause, *retry, *proceed;
+    QPushButton *run, *hint, *pause, *retry, *proceed;      //!<QWidgets that will displayed on the screen
     QTextEdit *text;
     QLabel *instructions;
-
-    QTimer *timer;
-    QGraphicsTextItem *timerPreview;
 
     void looseLife();
     void gameOver();
 
-    void levelssceneTimer();
+    void youLost(bool);     //!<Decrementing lifes, score and showing appropriate pop up window when users' looses
 
-    void youLost();
+    void youWon();      //!<Incrementing score, proceeding to the game1scene and showing appropriate pop up window when user wins
 
-    void youWon();
-    
-    //void updatePosition();                /**< function that will update the position of popeye*/
+
+    QGraphicsTextItem *countDownText;
+    int countdown = 120;                //! < value of the countdown at the start of the game that is = to 120 i.e. 2 mins for each level
+    QTimer *countdownTimer;             //! < Timer controlling the countdown
+    void setUpCountdownTimer();         //!< Setting up the timer
+
 
 
 private:
-        bool fileExists(QString path);
-        int getLevel();
-        QStringList profileParser(QString in);
+        bool fileExists(QString path);          //!<Functions that checks if the file exists before using it
+        int getLevel();                         //!<Return the level the user is currently in
+        QStringList profileParser(QString in);  //!<Returns a list of strings from our text files that are seperated by spaces
 
 signals:
 
 public slots:
-        void checkAnswer();
-        void displayHint();
-        void pauseLevel();
-        void retryLevel();
-        void hideScene();
+        void checkAnswer(); //!<Checking the User's input and moving popeye and the boat accordingly. If the User Clicks on the pickUp Spinach cans dissapear.
+        void displayHint(); //!<Displaying the 3 hints and repeating them if passed over all of them and decrement score accordingly
+        void pauseLevel();  //!<Pause the level the user's in
+        void retryLevel();  //!<Retry level and reset positons to initial hard coded positions
+        void hideScene();   //!<Hide the scene
+        void updateCountdownTimer();//!<Function that will update the timer and then display it
 
 
 };

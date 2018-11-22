@@ -4,9 +4,7 @@
 /**
 * \file boat.cpp
 * \brief contains boat class definition
-*
-*
-* \author
+* \author Camille Farhat & Ali Haidar
 */
 
 boat::boat(QObject *parent) : QObject(parent)

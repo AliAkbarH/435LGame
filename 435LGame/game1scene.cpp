@@ -8,15 +8,19 @@
 #include "locks.h"
 #include "game1scene.h"
 #include "gameswidget.h"
+#include "gameover.h"
 
 /**
 * \file game1scene.cpp
 * \brief contains Game1's class definition
 *
-* \author
+* This is the scene where we see Popeye, Olive and the locks. Each time time popeye passes a level, the corresponding lock is hiden and popeye's
+* position is updated. The let's Go Button is the button that lunches the user to the corresponding level.
+*
+* \author Camille Farhat & Ali Haidar
 */
 
-/*! \brief
+/*! \brief Setting the initial scene and object's positions.
 */
 
 game1scene::game1scene(QString user)
@@ -77,11 +81,15 @@ game1scene::game1scene(QString user)
    lock8->setFlag(QGraphicsItem::ItemIsFocusable);
    lock8->setFocus();
 
+   setUpCountdownTimer();
+
    QObject::connect(start, SIGNAL(clicked()), this, SLOT(startLevel()));
 
 
 }
 
+/*! \brief Starting the corresponsding level by calling the levelsscene constructure and updating the lock's positions accordingly.
+*/
 void game1scene::startLevel(){
 
     scene2 = new levelsscene(user);               //!< pointer to an Object of type levelsscene
@@ -122,6 +130,9 @@ void game1scene::hideLevelScene(){
     delete view2;
 }
 
+/*! \brief Functions to get the user's level from the corresponding text file.
+ * \return Integer levelNumber
+*/
 int game1scene::getLevel(){             //!<To get the level number from the text file (stored as the 10th entry)
     QDir dir;
     dir.setPath(dir.path()+"/profiles");
@@ -143,7 +154,9 @@ int game1scene::getLevel(){             //!<To get the level number from the tex
 
 }
 
-
+/*! \brief Parsing the text file that was filled and has his attributes seperated by tabs.
+ * \return List of strings
+*/
 QStringList game1scene::profileParser(QString line){       //parse the line and return a list.
 
     QRegExp rx("[\t]");
@@ -151,38 +164,92 @@ QStringList game1scene::profileParser(QString line){       //parse the line and 
     return list;
 }
 
+/*! \brief Function Updating Popeye's position and hidding locks, according to the level Users' in.
+*/
 void game1scene::updatePosition1(){
     popeye->setPos(lock1->x(),lock1->y());
+
+    lock2->show();
+    lock3->show();
+    lock4->show();
+    lock5->show();
+    lock6->show();
+    lock7->show();
+    lock8->show();
+
     lock1->hide();
+
+
 }
+/*! \brief Function Updating Popeye's position and hidding locks, according to the level Users' in.
+*/
 void game1scene::updatePosition2(){
     popeye->setPos(lock2->x(),lock2->y());
+
+    lock3->show();
+    lock4->show();
+    lock5->show();
+    lock6->show();
+    lock7->show();
+    lock8->show();
+
     lock2->hide();
     lock1->hide();
 }
+/*! \brief Function Updating Popeye's position and hidding locks, according to the level Users' in.
+*/
 void game1scene::updatePosition3(){
     popeye->setPos(lock3->x(),lock3->y());
+
+
+    lock4->show();
+    lock5->show();
+    lock6->show();
+    lock7->show();
+    lock8->show();
+
     lock3->hide();
     lock2->hide();
     lock1->hide();
 }
+/*! \brief Function Updating Popeye's position and hidding locks, according to the level Users' in.
+*/
 void game1scene::updatePosition4(){
     popeye->setPos(lock4->x(),lock4->y());
+
+    lock5->show();
+    lock6->show();
+    lock7->show();
+    lock8->show();
+
     lock4->hide();
     lock3->hide();
     lock2->hide();
     lock1->hide();
 }
+/*! \brief Function Updating Popeye's position and hidding locks, according to the level Users' in.
+*/
 void game1scene::updatePosition5(){
     popeye->setPos(lock5->x(),lock5->y());
+
+    lock6->show();
+    lock7->show();
+    lock8->show();
+
     lock5->hide();
     lock4->hide();
     lock3->hide();
     lock2->hide();
     lock1->hide();
 }
+/*! \brief Function Updating Popeye's position and hidding locks, according to the level Users' in.
+*/
 void game1scene::updatePosition6(){
     popeye->setPos(lock6->x(),lock6->y());
+
+    lock7->show();
+    lock8->show();
+
     lock6->hide();
     lock5->hide();
     lock4->hide();
@@ -190,8 +257,14 @@ void game1scene::updatePosition6(){
     lock2->hide();
     lock1->hide();
 }
+/*! \brief Function Updating Popeye's position and hidding locks, according to the level Users' in.
+*/
 void game1scene::updatePosition7(){
     popeye->setPos(lock7->x(),lock7->y());
+
+
+    lock8->show();
+
     lock7->hide();
     lock6->hide();
     lock5->hide();
@@ -200,6 +273,8 @@ void game1scene::updatePosition7(){
     lock2->hide();
     lock1->hide();
 }
+/*! \brief Function Updating Popeye's position and hidding locks, according to the level Users' in.
+*/
 void game1scene::updatePosition8(){
     popeye->setPos(lock8->x(),lock8->y());
     lock8->hide();
@@ -210,4 +285,47 @@ void game1scene::updatePosition8(){
     lock3->hide();
     lock2->hide();
     lock1->hide();
+}
+
+/**
+ * \brief Initializes TextItem that indicates the Countdown at the start of each level
+ */
+void game1scene::setUpCountdownTimer() {
+    countDownText = new QGraphicsTextItem();
+    addItem(countDownText);
+    countDownText->setZValue(2);
+    countDownText->setPos(370,-35);
+    countDownText->setDefaultTextColor(QColor("yellow"));
+    countDownText->setTransform(QTransform::fromScale(5,5));
+    countdownTimer = new QTimer();
+    connect(countdownTimer,SIGNAL(timeout()),this,SLOT(updateCountdownTimer()));
+    updateCountdownTimer();
+    countdownTimer->start(1000);
+
+}
+/**
+ * \brief update SLOT that controls the Countdown to display it when adjusted, every second
+ */
+void game1scene::updateCountdownTimer() {
+    countdown--;
+    if(countdown == 0) {
+        countdownTimer->stop();
+
+        gameOver *over = new gameOver();
+        over->setGeometry(100,100,100,100);
+        over->show();
+    }
+    else {
+        int minutes;
+        QString timeOutput;
+
+        minutes = countdown / 60;
+        if(minutes < 10){
+            timeOutput = "0"+QString::number(int(minutes%60))+":"+QString::number(int(countdown%60));
+        }
+        else{
+           timeOutput = QString::number(int(minutes%60))+":"+QString::number(int(countdown%60));
+           countDownText->setPlainText(timeOutput);
+        }
+    }
 }

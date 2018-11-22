@@ -19,10 +19,6 @@ LogOnWidget::LogOnWidget(QWidget *parent) : QWidget(parent)
     SignUpButton->setStyleSheet("font-size: 36px;height: 38px;width: 90px;");
     GuestButton->setStyleSheet("font-size: 36px;height: 38px;width: 90px;");
 
-    //Scene=new QGraphicsScene();
-    //Scene->setBackgroundBrush(QBrush(QImage(":/Profile Images/background.PNG").scaledToHeight(700)
-                             // .scaledToWidth(450)));
-
 
     GridLayout = new QGridLayout();
     VerticalLayout = new QVBoxLayout();
@@ -30,10 +26,6 @@ LogOnWidget::LogOnWidget(QWidget *parent) : QWidget(parent)
     setGridLayout();
     setVerticalLayout();
     setLayout(VerticalLayout);
-
-    //setStyleSheet("background-image: "
-                 // ":/Profile Images/background.PNG)");
-   // resize(450,700);
 
     connect(SignUpButton,SIGNAL(pressed()),this,SLOT(GotoSignUpPage()));
     connect(SignInButton,SIGNAL(pressed()),this,SLOT(GotoSignInPage()));

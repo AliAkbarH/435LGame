@@ -4,6 +4,11 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 
+/**
+* \file rock.cpp
+* \brief contains rock class definition
+* \author Camille Farhat & Ali Haidar
+*/
 class rock : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
