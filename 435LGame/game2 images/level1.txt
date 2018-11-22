@@ -9,9 +9,9 @@ xxx  s           xx  xx   b    x
 xxxxxxx xxx xxxxx     xxxxxxxxxx
 x        xx    x      b        x
 x    b      T     xxxxxx   c   x
-xxxxxxxxxxxx             xxxxxxx
+xxxxxxxxxxxx   q         xxxxxxx
 xxx                 b        xxx
 x    xxxxxxxxxxx   x   xxx   s x
-x  c           qc  b  xxxT  b  x
+x  c            c  b  xxxT  b  x
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	

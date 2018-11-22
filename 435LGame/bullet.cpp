@@ -1,10 +1,12 @@
 #include "bullet.h"
 #include"wall.h"
 #include"bug.h"
+#include"minibug.h"
 #include<QTransform>
 
-Bullet::Bullet(int direction, int x, int y)
+Bullet::Bullet(int direction, int x, int y, Game2Scene *scene)
 {
+    this->scene=scene;
     icon=new QPixmap(":/game2 images/bullet.png");
     *icon=icon->scaledToWidth(40);
     this->direction=direction;
@@ -53,9 +55,13 @@ void Bullet::move(){
         }
         step++;
         QList<QGraphicsItem*> colliding=collidingItems();
-        if(!colliding.isEmpty()){
+        if(!colliding.isEmpty() && dynamic_cast<miniBug*>(colliding.at(0))==NULL){
             if(dynamic_cast<Bug*>(colliding.at(0))!=NULL){
+                if(dynamic_cast<Bug*>(colliding.at(0))->lives==1){
+                    scene->bugs--;
+                }
                 dynamic_cast<Bug*>(colliding.at(0))->decrementLives();
+
             }
             delete this;
         }

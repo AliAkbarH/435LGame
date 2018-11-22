@@ -5,6 +5,7 @@
 #include<QObject>
 #include<QTimer>
 
+
 class Tester : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
@@ -15,6 +16,8 @@ public:
     int lives,souls,startingX,startingY;
     void decrementLives();
     void loseLife();
+    void drinkCoffee();
+    void showStats();
 
 };
 

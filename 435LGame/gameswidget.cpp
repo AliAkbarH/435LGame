@@ -59,7 +59,7 @@ void gamesWidget::startGame2(){
     scene2=new Game2Scene(user);
 
     view2=new QGraphicsView(scene2);
-    view2->setFixedHeight(645);
+    view2->setFixedHeight(845);
     view2->setFixedWidth(1285);
     view2->show();
     scene2->tester->setFocus();

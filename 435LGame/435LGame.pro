@@ -30,7 +30,9 @@ SOURCES += \
     coffeecup.cpp \
     qualitycontrolicon.cpp \
     baot.cpp \
-    bullet.cpp
+    bullet.cpp \
+    lifecounter.cpp \
+    minibug.cpp
 
 HEADERS += \
     signinwidget.h \
@@ -62,7 +64,9 @@ HEADERS += \
     coffeecup.h \
     qualitycontrolicon.h \
     won.h \
-    bullet.h
+    bullet.h \
+    lifecounter.h \
+    minibug.h
 
 DISTFILES += \
     Profile Images/water.gif \

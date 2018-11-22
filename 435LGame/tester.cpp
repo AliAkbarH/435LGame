@@ -28,11 +28,13 @@ void Tester::decrementLives(){
 
 void Tester::loseLife(){
     lives--;
-    if(lives>0){
-        setPos(startingX,startingY);
-    }
-    else{
-        //youLost
+}
+
+void Tester::drinkCoffee(){
+    lives++;
+    if(lives>5){
+        lives=5;
+        souls=3;
     }
 }
 

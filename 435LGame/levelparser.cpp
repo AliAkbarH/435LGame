@@ -24,7 +24,6 @@ void LevelParser::parse(Game2Scene *scene){
         encoding>>endToken;
         while(endToken!='\t'){
             QChar token=endToken;
-            qDebug()<<"started parsing";
             while(token!='\n'){
                 if(token=='x'){
                     Wall *wall=new Wall();
@@ -36,8 +35,9 @@ void LevelParser::parse(Game2Scene *scene){
                     scene->tester->setPos(column+3,row+3);
                 }
                 else if(token=='b'){
-                    Bug *bug=new Bug();
+                    Bug *bug=new Bug(scene);
                     addItem(scene, bug, column, row);
+                    scene->bugList.append(bug);
                 }
                 else if(token=='s'){
                     Shield *shield=new Shield();
@@ -52,9 +52,10 @@ void LevelParser::parse(Game2Scene *scene){
                     addItem(scene, coffeeCup, column, row);
                 }
                 else if(token=='q'){
-                    QualityControlIcon *QCIcon=new QualityControlIcon();
-                    addItem(scene, QCIcon, column, row);
-                    QCIcon->hide();
+                    scene->QCIcon=new QualityControlIcon();
+                    scene->QCIcon->setPos(column,row);
+                    scene->addItem(scene->QCIcon);
+                    scene->QCIcon->hide();
                 }
                 column+=40;
                 encoding>>token;
@@ -64,7 +65,6 @@ void LevelParser::parse(Game2Scene *scene){
             encoding>>endToken;
 
         }
-        qDebug()<<"finished parsing";
     }
     else{
         qDebug()<<"can't open file";
