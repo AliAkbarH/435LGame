@@ -57,10 +57,8 @@ HEADERS += \
     rock.h \
     riverobstacle.h \
     smallriver.h \
-<<<<<<< HEAD
     instruction.h \
-    gameover.h
-=======
+    gameover.h\
     levelparser.h \
     game2scene.h \
     wall.h \
@@ -74,7 +72,7 @@ HEADERS += \
     bullet.h \
     lifecounter.h \
     minibug.h
->>>>>>> ali
+
 
 DISTFILES += \
     Profile Images/water.gif \
