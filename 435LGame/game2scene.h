@@ -19,10 +19,10 @@ class  Game2Scene : public QGraphicsScene
 
 public:
     Game2Scene(QString user);
-    int dir, ammo, bugs, tests, remSec;
+    int dir, ammo, bugs, tests, remSec, HighScore, score;
     bool playing, hasShield, QCshown, paused;
     QList<Bug*> bugList;
-    QLabel *announcement, *timerLabel,*ammoLabel,*livesLabel;
+    QLabel *announcement, *timerLabel,*ammoLabel,*livesLabel, *HiScore, *scoreL;
     QPushButton *next,*pause;
     LifeCounter *lifeCounter;
     LevelParser *parser;
@@ -32,6 +32,8 @@ public:
     QTimer *shieldTimer, *timer;
     QGraphicsPixmapItem *soul1,*soul2,*soul3,*tens,*units, *ammoTens, *ammoUnits;
     void updateLifeScore();
+    int getHighScore();
+    void updateHighScore(QString user);
 
 
 private:
@@ -40,6 +42,8 @@ private:
     void youWin();
     void youLose(QString reason);
     void keyPressEvent(QKeyEvent *event);
+    QStringList profileParser(QString line);
+
 
 public slots:
     void deactivateShield();

@@ -10,7 +10,7 @@
 */
 
 class Won : public QWidget
-
+{
 
 public:
     Won(QWidget *parent);

@@ -18,12 +18,12 @@ int main(int argc, char **argv)
 {
 QApplication app (argc, argv);
 
-//LogOnWidget *LogonWidget=new LogOnWidget();
-//LogonWidget->show();
+LogOnWidget *LogonWidget=new LogOnWidget();
+LogonWidget->show();
 
 
-gamesWidget *window = new gamesWidget("AliAkbar");
-window->show();
+//gamesWidget *window = new gamesWidget("AliAkbar");
+//window->show();
 
 /*game1scene *scene1 = new game1scene();              //!< pointer to an Object of type game1scene
 

@@ -15,10 +15,24 @@ Game2Scene::Game2Scene(QString user)
     ammo=30;
     tests=3;
     remSec=90;
+    HighScore=getHighScore();
+    score=0;
     playing=true;
     QCshown=false;
     paused=false;
     this->user=user;
+
+    HiScore=new QLabel("HIGHSCORE:\n"+QString::number(HighScore));
+    HiScore->setGeometry(700,-70,200,50);
+    addWidget(HiScore);
+    HiScore->setAttribute(Qt::WA_TranslucentBackground);
+    HiScore->setStyleSheet("font: bold;font-size: 30px;");
+
+    scoreL=new QLabel("SCORE:\n"+QString::number(score));
+    scoreL->setGeometry(900,-70,200,50);
+    addWidget(scoreL);
+    scoreL->setAttribute(Qt::WA_TranslucentBackground);
+    scoreL->setStyleSheet("font: bold;font-size: 30px;");
 
     announcement=new QLabel();
     announcement->setGeometry(700,-170,200,50);
@@ -233,6 +247,8 @@ void Game2Scene::updateTimer(){
         youLose("run out of time");
     }
     updateTimerPix();
+    score=10*remSec+15*tester->lives+5*tester->souls;
+    scoreL->setText("SCORE:\n"+QString::number(score));
 }
 
 void Game2Scene::updateTimerPix(){
@@ -265,6 +281,8 @@ void Game2Scene::youWin(){
     next->setText("proceed");
     next->show();
     timer->stop();
+    score=10*remSec+15*tester->lives+5*tester->souls;
+    updateHighScore(user);
 
 }
 
@@ -286,3 +304,60 @@ void Game2Scene::pauseOrResume(){
         pause->setIcon(QIcon(QPixmap(":/game2 images/pause.png").scaled(100,100)));
     }
 }
+
+
+int Game2Scene::getHighScore(){
+    QDir dir;
+    dir.setPath(dir.path()+"/profiles");
+    QString HiScore;
+    int HighScore=0;
+
+    QFile inputFile(dir.path()+"/"+user+".txt");
+
+    if (inputFile.open(QIODevice::ReadOnly))                //!< to check if it is entering the file, and it is
+    {
+       QTextStream in(&inputFile);
+       QString s=in.readLine();
+       HiScore=profileParser(s)[12];
+       HighScore = HiScore.toInt();
+
+       inputFile.close();
+    }
+    return HighScore;
+
+}
+
+
+QStringList Game2Scene::profileParser(QString line){       //parse the line and return a list.
+
+    QRegExp rx("[\t\n]");
+    QStringList list = line.split(rx, QString::SkipEmptyParts);
+    return list;
+}
+
+void Game2Scene::updateHighScore(QString user){    //!<To update the level number in the text file (stored as the 10th entry)
+    if(score>HighScore){
+        QDir dir;
+        dir.setPath(dir.path()+"/profiles");
+
+        QFile inputFile(dir.path()+"/"+user+".txt");
+        inputFile.open(QIODevice::ReadWrite);
+        QTextStream in(&inputFile);
+        QString line=in.readAll();
+        inputFile.close();
+        inputFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
+        int charIndex=0,NLIndex=0;
+        while(NLIndex<2 && charIndex<line.size()){
+            if(line.at(charIndex)=='\n'){
+                NLIndex++;
+            }
+            charIndex++;
+        }
+
+        line=line.replace(charIndex,3,QString::number(score));
+        in<<line;
+        inputFile.close();
+    }
+
+}
+

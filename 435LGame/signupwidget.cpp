@@ -200,6 +200,8 @@ void SignUpWidget::VerifySubmitSlot(){
 
        out<<'\n'<<"100";        //User has a score of 100 writen on a new line
 
+       out<<'\n'<<"0";          //User has a highscore of 0 in game2 written on a new Line
+
        Submit->setText("Press to continue");
        connect(Submit,SIGNAL(pressed()),this,SLOT(GoBackToLogOnSlot()));
 
