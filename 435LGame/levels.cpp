@@ -83,7 +83,7 @@ levels::levels(int x,QString user)
         hint[0]="First hint";
         hint[1]="Second hint";
         hint[2]="Third hint";
-        instructions = "Utilizing objects. \nRiver element was added! Try NOT fall! \n\nFunctions: \nMove(number of steps) \nRotate() \nBoat.Move(number of steps) \npickUp()";
+        instructions = "Utilizing objects. \nRiver element was added!\nTry NOT fall! \n\nFunctions: \nMove(number of steps) \nRotate() \nBoat.Move(number of steps) \npickUp()";
 
         popeyeX1 = 100;
         popeyeY1 = 415;
@@ -140,7 +140,7 @@ levels::levels(int x,QString user)
         hint[0]="First hint";
         hint[1]="Second hint";
         hint[2]="Third hint";
-        instructions = "Using Loops \n\nFunctions: \nRepeat(number of time):[steps to repeat] \nMove(number of steps) \nRotate() \npickUp()";
+        instructions = "Using Loops \n\nFunctions: \nRepeat(number of time)\nMove(number of steps) \nRotate() \npickUp()";
 
         popeyeX1 = 600;
         popeyeY1 = 350;
@@ -167,7 +167,7 @@ levels::levels(int x,QString user)
         hint[0]="First hint";
         hint[1]="Second hint";
         hint[2]="Third hint";
-        instructions = "Using Objects and Loops \n\nFunctions: \nRepeat(number of time):[steps to repeat] \nMove(number of steps) \nRotate() \nBoat.Move(number of steps) \npickUp()";
+        instructions = "Using Objects and Loops \n\nFunctions: \nRepeat(number of time)\nMove(number of steps) \nRotate() \nBoat.Move(number of steps) \npickUp()";
 
         popeyeX1 = 120;
         popeyeY1 = 220;

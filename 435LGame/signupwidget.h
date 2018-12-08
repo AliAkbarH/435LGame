@@ -8,6 +8,13 @@
 #include<QFileInfo>
 #include<QCalendarWidget>
 using namespace std;
+
+/**
+* \file signupwidget.h
+* \brief User sign up widget
+*
+* This is the header file for our the sign up widget where the user enters his information before signing in
+*/
 class SignUpWidget : public QWidget
 {
     Q_OBJECT

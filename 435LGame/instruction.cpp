@@ -24,13 +24,15 @@ instruction::instruction(QWidget *parent) : QWidget(parent)
                                "You will see the final position of popeye and therefore, you should recalculate your code and try again\n"
                                "You have 5 lifes per level, and there are 8 levels. You also have an initial score of 100.\n"
                                "The faster you finish the higher your score.\n"
-                               "Each time you loose a life your score will be decremented\n"
+                               "Each time you lose a life your score will be decremented\n"
+                               "Even if you lose some lifes in one level the number will be restored if you pass it! Giving you equal retry chances for each level. \n"
                                "Each time you press on a hint, your score will be decremented.\n"
                                "However, you have three hints per level that you can loop through.\n"
+                               "But even another iteration will decrement your score, SO remember those hints!\n"
                                "Popeye Automatically enters the Boat When they collide\n"
                                "Instructions at the top right of each level in the level scene will show you the functions that you can use\n"
                                "You Have 20 mins to finish the entire game and 2 mins to finish each level\n"
-                               "Remeber to seperate each line of code by returning back to the line\n\n"
+                               "Remember to separate each line of code by returning back to the line\n\n"
                                "Try to get it Right and most importantly HAVE FUN!\n\n"
                                "Close this window and Let's Go!");
     QVBoxLayout *layout= new QVBoxLayout();

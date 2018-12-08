@@ -10,7 +10,12 @@
 #include<QFile>
 #include<fstream>
 
-
+/**
+* \file signinwidget.h
+* \brief User sign in widget
+*
+* This is the header file for our the sign in widget where the user enters his username and password to Log in
+*/
 class signInWidget : public QWidget
 {
     Q_OBJECT
