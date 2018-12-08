@@ -4,7 +4,7 @@
 /**
 * \file rock.cpp
 * \brief contains rock class definition
-* \author Camille Farhat & Ali Haidar
+* \author Camille Farhat & Ali Haidoura
 */
 
 /*! \brief Setting the rock's Image

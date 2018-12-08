@@ -5,7 +5,7 @@
 #include <QGraphicsPixmapItem>
 
 /**
-* \file rock.cpp
+* \file rock.h
 * \brief contains rock class definition
 * \author Camille Farhat & Ali Haidar
 */

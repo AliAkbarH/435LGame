@@ -15,7 +15,7 @@ public:
     explicit gamesWidget(QString user);
 
 
-        QPushButton *game1, *game2, *game3, *score;
+        QPushButton *game1, *game2, *score;
         QString user;
         QVBoxLayout *VerticalL;
         QGridLayout *GridL;

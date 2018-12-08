@@ -5,7 +5,7 @@
 * \brief Contains Popeye class definition
 *
 *
-* \author Camille Farhat & Ali Haidar
+* \author Camille Farhat & Ali Haidoura
 */
 
 /*! \brief Setting Popeye's Image

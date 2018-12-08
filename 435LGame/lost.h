@@ -18,6 +18,7 @@ class lost : public QWidget
 public:
     explicit lost(QWidget *parent = nullptr);
     lost(int lifes, QWidget *parent = nullptr);
+    lost(int lifes, QString command, QWidget *parent = nullptr);
 
 signals:
 
