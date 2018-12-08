@@ -1,0 +1,17 @@
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x                        u     x
+xxxxxxxxxxxxxxx      xxxxxxxxxxx
+x   b  xxxx      b        b    x
+x       c     b    T     b     x
+xxxxx   xxxxxxxxxxxxxxxxxxx    x
+x        b           b         x
+xxx  s           xx  xx   b    x
+x  xxxx xxx xxxxx     xxxxxxxxxx
+x        xx    x      b        x
+x    b      T     xxxxxx   c   x
+xxx     xxxx   q         xxxxxxx
+xxx                 b        xxx
+x    xxxx   xxxx   x   xxx   s x
+x  c            c  b  xxxT  b  x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	

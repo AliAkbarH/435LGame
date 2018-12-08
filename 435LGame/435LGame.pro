@@ -98,7 +98,8 @@ DISTFILES += \
     Profile Images/level6.jpg \
     Profile Images/level6.jpg \
     Profile Images/level6.jpg \
-    Profile Images/smallRiver.jpg
+    Profile Images/smallRiver.jpg \
+    game2 images/level2.txt
 
 RESOURCES += \
     images.qrc

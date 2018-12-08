@@ -8,109 +8,28 @@
 #include"shield.h"
 #include"bullet.h"
 #include <QDebug>
+#include<QGraphicsItem>
 
 Game2Scene::Game2Scene(QString user)
 {
+    this->user=user;
     dir=0;
     ammo=30;
     tests=3;
     remSec=90;
     HighScore=getHighScore();
     score=0;
+    level=1;
     playing=true;
     QCshown=false;
     paused=false;
-    this->user=user;
-
-    HiScore=new QLabel("HIGHSCORE:\n"+QString::number(HighScore));
-    HiScore->setGeometry(700,-70,200,50);
-    addWidget(HiScore);
-    HiScore->setAttribute(Qt::WA_TranslucentBackground);
-    HiScore->setStyleSheet("font: bold;font-size: 30px;");
-
-    scoreL=new QLabel("SCORE:\n"+QString::number(score));
-    scoreL->setGeometry(900,-70,200,50);
-    addWidget(scoreL);
-    scoreL->setAttribute(Qt::WA_TranslucentBackground);
-    scoreL->setStyleSheet("font: bold;font-size: 30px;");
-
-    announcement=new QLabel();
-    announcement->setGeometry(700,-170,200,50);
-    addWidget(announcement);
-    announcement->setAttribute(Qt::WA_TranslucentBackground);
-    announcement->setStyleSheet("font: bold;font-size: 20px;");
-
-    livesLabel=new QLabel("Lives:");
-    addWidget(livesLabel);
-    livesLabel->setGeometry(50,-180,200,30);
-    livesLabel->setAttribute(Qt::WA_TranslucentBackground);
-    livesLabel->setStyleSheet("font: bold;font-size: 20px;");
-
-    ammoLabel=new QLabel("Ammo:");
-    addWidget(ammoLabel);
-    ammoLabel->setGeometry(350,-180,200,30);
-    ammoLabel->setAttribute(Qt::WA_TranslucentBackground);
-    ammoLabel->setStyleSheet("font: bold;font-size: 20px;");
-
-    timerLabel=new QLabel("Time remaining:");
-    addWidget(timerLabel);
-    timerLabel->setGeometry(500,-180,200,30);
-    timerLabel->setAttribute(Qt::WA_TranslucentBackground);
-    timerLabel->setStyleSheet("font: bold;font-size: 20px;");
-
-
-    next=new QPushButton();
-    next->setGeometry(900,-170,50,50);
-    addWidget(next);
-    next->hide();
-
-    pause=new QPushButton();
-    pause->setGeometry(1100,-150,100,100);
-    pause->setAttribute(Qt::WA_TranslucentBackground);
-    pause->setAutoFillBackground(true);
-    //pause->setFlat(true);
-    pause->setIcon(QIcon(QPixmap(":/game2 images/pause.png").scaled(100,100)));
-    addWidget(pause);
-
-    setSceneRect(0,-100,1280,640);
-    setBackgroundBrush(QBrush(QImage(":/game2 images/background.jpg").scaledToHeight(640).scaledToWidth(1280)));
+    hasShield=false;
 
     LevelParser parser(":/game2 images/level1.txt");
     parser.parse(this);
     bugs=bugList.count();
-    hasShield=false;
 
-    lifeCounter=new LifeCounter(tester->lives);
-    soul1=new QGraphicsPixmapItem();
-    soul1->setPixmap((QPixmap(":/game2 images/heart.png")).scaledToHeight(50));
-    addItem(soul1);
-    soul1->setPos(150,-100);
-    soul2=new QGraphicsPixmapItem();
-    soul2->setPixmap((QPixmap(":/game2 images/heart.png")).scaledToHeight(50));
-    addItem(soul2);
-    soul2->setPos(200,-100);
-    soul3=new QGraphicsPixmapItem();
-    soul3->setPixmap((QPixmap(":/game2 images/heart.png")).scaledToHeight(50));
-    addItem(soul3);
-    soul3->setPos(250,-100);
-    updateLifeScore();
-
-    units=new QGraphicsPixmapItem();
-    tens=new QGraphicsPixmapItem();
-    addItem(units);
-    addItem(tens);
-    units->setPos(560,-150);
-    tens->setPos(500,-150);
-    updateTimerPix();
-
-    ammoUnits=new QGraphicsPixmapItem();
-    ammoTens=new QGraphicsPixmapItem();
-    addItem(ammoUnits);
-    addItem(ammoTens);
-    ammoUnits->setPos(410,-150);
-    ammoTens->setPos(350,-150);
-    updateAmmoPix();
-
+    initializeScene();
 
     timer=new QTimer();
     timer->start(1000);
@@ -119,6 +38,7 @@ Game2Scene::Game2Scene(QString user)
     connect(shieldTimer,SIGNAL(timeout()),this,SLOT(deactivateShield()));
     connect(timer,SIGNAL(timeout()),this,SLOT(updateTimer()));
     connect(pause,SIGNAL(clicked(bool)),this,SLOT(pauseOrResume()));
+
 
 
 }
@@ -153,6 +73,7 @@ void Game2Scene::keyPressEvent(QKeyEvent *event){
             ammo--;
             updateAmmoPix();
         }
+
         if(bugs==0){
             QCIcon->show();
             QCshown=true;
@@ -247,7 +168,6 @@ void Game2Scene::updateTimer(){
         youLose("run out of time");
     }
     updateTimerPix();
-    score=10*remSec+15*tester->lives+5*tester->souls;
     scoreL->setText("SCORE:\n"+QString::number(score));
 }
 
@@ -269,21 +189,30 @@ void Game2Scene::youLose(QString reason){
     announcement->setText("You Lost!\n"+reason);
     announcement->show();
     next->setText("retry");
+    connect(next,SIGNAL(clicked(bool)),this,SLOT(retry()));
     next->show();
     timer->stop();
 
 }
 
 void Game2Scene::youWin(){
-    announcement->setText("You Won");
-    announcement->show();
-    //save score if higher than highscore
-    next->setText("proceed");
-    next->show();
-    timer->stop();
-    score=10*remSec+15*tester->lives+5*tester->souls;
-    updateHighScore(user);
 
+    level++;
+    timer->stop();
+    score=score+10*remSec+15*tester->lives+5*tester->souls;
+    if(level<=3){
+        announcement->setText("You Passed level "+QString::number(level-1));
+        announcement->show();
+        next->setText("proceed");
+        connect(next,SIGNAL(clicked(bool)),this,SLOT(startLevel()));
+    }
+    else{
+        announcement->setText("You Won");
+        announcement->show();
+        next->setText("Log Score");
+        connect(next,SIGNAL(clicked(bool)),this,SLOT(logScore()));
+    }
+    next->show();
 }
 
 void Game2Scene::pauseOrResume(){
@@ -316,13 +245,15 @@ int Game2Scene::getHighScore(){
 
     if (inputFile.open(QIODevice::ReadOnly))                //!< to check if it is entering the file, and it is
     {
+       qDebug()<<"opening";
        QTextStream in(&inputFile);
-       QString s=in.readLine();
+       QString s=in.readAll();
        HiScore=profileParser(s)[12];
        HighScore = HiScore.toInt();
 
        inputFile.close();
     }
+    else qDebug()<<"not opening";
     return HighScore;
 
 }
@@ -361,3 +292,153 @@ void Game2Scene::updateHighScore(QString user){    //!<To update the level numbe
 
 }
 
+void Game2Scene::startLevel(){
+    int lives=tester->lives;
+    int souls=tester->souls;
+    QList<QGraphicsItem*>list=items();
+    for(int i=0;i<list.size();i++){
+        QGraphicsItem *item=list.at(i);
+        this->removeItem(item);
+
+    }
+
+    initializeScene();
+    bugList.clear();
+    LevelParser parser(":/game2 images/level"+QString::number(level)+".txt");
+    parser.parse(this);
+    bugs=bugList.count();
+    tester->lives=lives;
+    tester->souls=souls;
+    dir=0;
+    ammo=30;
+    tests=3;
+    remSec=90;
+    playing=true;
+    QCshown=false;
+    paused=false;
+    hasShield=false;
+    timer->start(1000);
+    updateTimerPix();
+    updateAmmoPix();
+
+}
+
+void Game2Scene::initializeScene(){
+    HiScore=new QLabel("HIGHSCORE:\n"+QString::number(HighScore));
+    HiScore->setGeometry(700,-70,200,50);
+    addWidget(HiScore);
+    HiScore->setAttribute(Qt::WA_TranslucentBackground);
+    HiScore->setStyleSheet("font: bold;font-size: 30px;");
+
+    scoreL=new QLabel("SCORE:\n"+QString::number(score));
+    scoreL->setGeometry(900,-70,200,50);
+    addWidget(scoreL);
+    scoreL->setAttribute(Qt::WA_TranslucentBackground);
+    scoreL->setStyleSheet("font: bold;font-size: 30px;");
+
+    announcement=new QLabel();
+    announcement->setGeometry(700,-170,200,50);
+    addWidget(announcement);
+    announcement->setAttribute(Qt::WA_TranslucentBackground);
+    announcement->setStyleSheet("font: bold;font-size: 20px;");
+
+    livesLabel=new QLabel("Lives:");
+    addWidget(livesLabel);
+    livesLabel->setGeometry(50,-180,200,30);
+    livesLabel->setAttribute(Qt::WA_TranslucentBackground);
+    livesLabel->setStyleSheet("font: bold;font-size: 20px;");
+
+    ammoLabel=new QLabel("Ammo:");
+    addWidget(ammoLabel);
+    ammoLabel->setGeometry(350,-180,200,30);
+    ammoLabel->setAttribute(Qt::WA_TranslucentBackground);
+    ammoLabel->setStyleSheet("font: bold;font-size: 20px;");
+
+    timerLabel=new QLabel("Time remaining:");
+    addWidget(timerLabel);
+    timerLabel->setGeometry(500,-180,200,30);
+    timerLabel->setAttribute(Qt::WA_TranslucentBackground);
+    timerLabel->setStyleSheet("font: bold;font-size: 20px;");
+
+
+    next=new QPushButton();
+    next->setGeometry(900,-170,50,50);
+    addWidget(next);
+    next->hide();
+
+    pause=new QPushButton();
+    pause->setGeometry(1100,-150,100,100);
+    pause->setAttribute(Qt::WA_TranslucentBackground);
+    pause->setAutoFillBackground(true);
+    //pause->setFlat(true);
+    pause->setIcon(QIcon(QPixmap(":/game2 images/pause.png").scaled(100,100)));
+    addWidget(pause);
+
+    setSceneRect(0,-100,1280,640);
+    setBackgroundBrush(QBrush(QImage(":/game2 images/background.jpg").scaledToHeight(640).scaledToWidth(1280)));
+
+    lifeCounter=new LifeCounter(tester->lives);
+    soul1=new QGraphicsPixmapItem();
+    soul1->setPixmap((QPixmap(":/game2 images/heart.png")).scaledToHeight(50));
+    addItem(soul1);
+    soul1->setPos(150,-100);
+    soul2=new QGraphicsPixmapItem();
+    soul2->setPixmap((QPixmap(":/game2 images/heart.png")).scaledToHeight(50));
+    addItem(soul2);
+    soul2->setPos(200,-100);
+    soul3=new QGraphicsPixmapItem();
+    soul3->setPixmap((QPixmap(":/game2 images/heart.png")).scaledToHeight(50));
+    addItem(soul3);
+    soul3->setPos(250,-100);
+    updateLifeScore();
+
+    units=new QGraphicsPixmapItem();
+    tens=new QGraphicsPixmapItem();
+    addItem(units);
+    addItem(tens);
+    units->setPos(560,-150);
+    tens->setPos(500,-150);
+    updateTimerPix();
+
+    ammoUnits=new QGraphicsPixmapItem();
+    ammoTens=new QGraphicsPixmapItem();
+    addItem(ammoUnits);
+    addItem(ammoTens);
+    ammoUnits->setPos(410,-150);
+    ammoTens->setPos(350,-150);
+    updateAmmoPix();
+
+}
+
+void Game2Scene::logScore(){
+    updateHighScore(user);
+    this->views()[0]->hide();
+}
+
+void Game2Scene::retry(){
+    QList<QGraphicsItem*>list=items();
+    for(int i=0;i<list.size();i++){
+        QGraphicsItem *item=list.at(i);
+        this->removeItem(item);
+
+    }
+    level=1;
+    score=0;
+    initializeScene();
+    bugList.clear();
+    LevelParser parser(":/game2 images/level1.txt");
+    parser.parse(this);
+    bugs=bugList.count();
+
+    dir=0;
+    ammo=30;
+    tests=3;
+    remSec=90;
+    playing=true;
+    QCshown=false;
+    paused=false;
+    hasShield=false;
+    timer->start(1000);
+    updateTimerPix();
+    updateAmmoPix();
+}

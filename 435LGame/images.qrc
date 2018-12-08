@@ -47,5 +47,7 @@
         <file>game2 images/num9.png</file>
         <file>game2 images/pause.png</file>
         <file>game2 images/play.png</file>
+        <file>game2 images/level2.txt</file>
+        <file>game2 images/level3.txt</file>
     </qresource>
 </RCC>
