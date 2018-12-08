@@ -4,6 +4,12 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 
+
+/**
+* \file boat.h
+* \brief contains boat class definition
+* \author Camille Farhat & Ali Haidar
+*/
 class boat : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

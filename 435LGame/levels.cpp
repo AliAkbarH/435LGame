@@ -4,7 +4,7 @@
 * \file levels.cpp
 * \brief Setting up the different specs for each level to load them dynamically everytime a user starts a level.
 *
-* \author Camille Farhat & Ali Haidar
+* \author Camille Farhat & Ali Haidoura
 */
 
 

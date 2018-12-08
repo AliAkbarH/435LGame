@@ -8,7 +8,7 @@
 *
 * Pop up window that will display that the player lost when countDown Timer reaches 0.
 *
-* \author Camille Farhat & Ali Haidar
+* \author Camille Farhat & Ali Haidoura
 */
 
 

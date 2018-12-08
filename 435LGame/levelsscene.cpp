@@ -15,7 +15,7 @@
 * the spinach cans, the boat and the river obstacles and other level-specific specifications.
 * The user will be writing code into the text editor. This code will be chekcked and popeye will move accordingly.
 *
-* \author Camille Farhat & Ali Haidar
+* \author Camille Farhat & Ali Haidoura
 */
 
 
@@ -23,13 +23,6 @@
 * from the appropriate text file.
 * Each Level have different specs and object that are loaded to their appropriate positions.
 */
-
-
-
-
-
-
-
 
 levelsscene::levelsscene(QString user)
 {
@@ -108,18 +101,21 @@ levelsscene::levelsscene(QString user)
     addItem(spinach1);
     spinach1->setPos(l->spinachX1,l->spinachY1);
     spinach1->setFlag(QGraphicsItem::ItemIsFocusable);
+    spinach1->setZValue(2);
     spinach1->setFocus();
 
     if(l->spinachX2!=0){                    //!< if the levels has ot not other spinach cans
         addItem(spinach2);
         spinach2->setPos(l->spinachX2,l->spinachY2);
         spinach2->setFlag(QGraphicsItem::ItemIsFocusable);
+        spinach2->setZValue(2);
         spinach2->setFocus();
     }
     if(l->spinachX3!=0){
         addItem(spinach3);
         spinach3->setPos(l->spinachX3,l->spinachY3);
         spinach3->setFlag(QGraphicsItem::ItemIsFocusable);
+        spinach3->setZValue(2);
         spinach3->setFocus();
     }
 
@@ -143,7 +139,7 @@ levelsscene::levelsscene(QString user)
     }
 
 
-    addItem(popeye);                                    //!< popeye is added in the end so that other Items don't hide him
+    addItem(popeye);
     popeye->setScale(1.2);
     popeye->setZValue(2);
     popeye->setPos(l->popeyeX1,l->popeyeY1);
@@ -239,11 +235,6 @@ void levelsscene::youLost(bool timeIsUp){
             l->decrementLifes();
             l->decrementScore();
 
-            lost *loose = new lost(l->lifes);
-            loose->setGeometry(100,100,100,100);
-
-            loose->show();
-
            // l->updateScore(user);
         }else {
 
@@ -280,7 +271,11 @@ void levelsscene::youLost(bool timeIsUp){
 */
 void levelsscene::youWon(){
 
-    for (int i=0;i<l->lifes;i++){       //!Increment the score according the count of lifes, the higher the lifes, the higher the score
+    for (int i=0;i<l->lifes;i++){       //!<Increment the score according the count of lifes, the higher the lifes, the higher the score
+        l->incrementScore();
+    }
+
+    for(int j=0; j<(countdown/60);j++){     //!< Increment the score according to the player's time
         l->incrementScore();
     }
 
@@ -313,9 +308,9 @@ void levelsscene::displayHint(){
 }
 /*! \brief Pause the level the user's in
 */
-void levelsscene::pauseLevel(){                 //!Since everything is loaded from the text file; the lives, scores, timer and level number, the pause simply closes the scene and when the user
-                                                //!re-logs in, he just continues where he left off when he clicks on the Let's Start! button
-    //this->hideScene();
+void levelsscene::pauseLevel(){                 //!<Since everything is loaded from the text file; the lives, scores, timer and level number, the pause simply closes the scene and when the user
+                                                //!<re-logs in, he just continues where he left off when he clicks on the Let's Start! button
+    this->views()[0]->hide();
 }
 
 /*! \brief Retry level and reset positons to initial hard coded positions
@@ -384,7 +379,7 @@ void levelsscene::checkAnswer(){                 //!< Run push button function
 
     QString input = text->toPlainText();
 
-    QRegExp rx("[() ; : \n]");
+    QRegExp rx("[( ) ; : \n]");
     QStringList list = input.split(rx, QString::SkipEmptyParts);
     int direction=0;                            //!<direction of movement, 0 to the right and anticlockwise
     int boatDirection = 0;
@@ -395,7 +390,7 @@ void levelsscene::checkAnswer(){                 //!< Run push button function
 
 
     QString checkForRepeat = list.at(0);
-    if (checkForRepeat=="Repeat"){
+    if (checkForRepeat=="Repeat" || checkForRepeat=="repeat"){
         iterations = list.at(1);                //!<get the number of iterations
         i=2;                                    //!<start reading after we get the number of iterations
         repeat = true;
@@ -404,11 +399,12 @@ void levelsscene::checkAnswer(){                 //!< Run push button function
     for (int j = 0; j<iterations.toInt() ; j++){            //!< iterate j times over the user's Code
         for(i ; i<list.size();i++){                         //!< i is either = 0 or 2 and at the end of the first for loop i is reseted to 2 if there is repetition
             QString command=list.at(i);
-              //qDebug()<<command;
+             // qDebug()<<command;
 
-            if(command=="Move" && myLevel!=5){              //!popeye cannot move in level 5; boat collides with him only
+            if((command=="Move") && myLevel!=5){      //!popeye cannot move in level 5; boat collides with him only
 
                 QString newpos = list.at(i+1);
+              //  qDebug()<<newpos;
                 int displacement =newpos.toInt()*50;
 
                 switch(direction){
@@ -452,7 +448,7 @@ void levelsscene::checkAnswer(){                 //!< Run push button function
                 i++;
             }
             }
-            if(command=="Boat.Move"){                                       //!<If popeye collides with the boat, they should both move in the same manner if Boat.Move is inputed
+            else if(command=="Boat.Move"){   //!<If popeye collides with the boat, they should both move in the same manner if Boat.Move is inputed
                 QString newpos = list.at(i+1);
                 int displacement =newpos.toInt()*50;
 
@@ -512,15 +508,15 @@ void levelsscene::checkAnswer(){                 //!< Run push button function
                 i++;
             }
             }
-            if(command=="Rotate"){
+            else if(command=="Rotate"){
                 direction=(direction+1)%4;                      //!< Each Rotate will rotate popeye by 90 degrees
                 //qDebug()<<direction;
             }
-            if(command=="Boat.Rotate"){
+            else if(command=="Boat.Rotate"){
                 boatDirection=(boatDirection+1)%4;
                 //qDebug()<<boatDirection;
             }
-            if(command=="pickUp"){
+            else if(command=="pickUp"){
                 QList<QGraphicsItem*> colliding=this->collidingItems(popeye);
                 if(!colliding.isEmpty()){
                     for(int i=0;i<colliding.size();i++){
@@ -530,6 +526,11 @@ void levelsscene::checkAnswer(){                 //!< Run push button function
                         }
                     }
                 }
+            }else {
+
+                lost *loose = new lost(l->lifes -1 , command);      //!< decrement the number of lifes before showing it to the user and show appropriate syntax error
+                loose->setGeometry(100,100,100,100);
+                loose->show();
             }
 
         }if (repeat == true){

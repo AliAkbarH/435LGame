@@ -31,10 +31,10 @@ SOURCES += \
     testingicon.cpp \
     coffeecup.cpp \
     qualitycontrolicon.cpp \
-    baot.cpp \
     bullet.cpp \
     lifecounter.cpp \
-    minibug.cpp
+    minibug.cpp \
+    boat.cpp
 
 
 HEADERS += \

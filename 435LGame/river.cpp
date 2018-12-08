@@ -6,7 +6,7 @@
 * \brief Contains river class definition
 *
 *
-* \author Camille Farhat & Ali Haidar
+* \author Camille Farhat & Ali Haidoura
 */
 
 /*! \brief Setting the river's Image

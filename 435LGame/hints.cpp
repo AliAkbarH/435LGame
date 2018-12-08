@@ -7,7 +7,7 @@
 * \file hints.cpp
 * \brief Shows the appropriate hints in a pop up window
 *
-* \author Camille Farhat & Ali Haidar
+* \author Camille Farhat & Ali Haidoura
 */
 
 

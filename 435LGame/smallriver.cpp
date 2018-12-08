@@ -4,7 +4,7 @@
 /**
 * \file smallriver.cpp
 * \brief contains Small River class definition
-* \author Camille Farhat & Ali Haidar
+* \author Camille Farhat & Ali Haidoura
 */
 
 /*! \brief Setting the small river's Image

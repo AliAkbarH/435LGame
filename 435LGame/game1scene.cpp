@@ -17,7 +17,7 @@
 * This is the scene where we see Popeye, Olive and the locks. Each time time popeye passes a level, the corresponding lock is hiden and popeye's
 * position is updated. The let's Go Button is the button that lunches the user to the corresponding level.
 *
-* \author Camille Farhat & Ali Haidar
+* \author Camille Farhat & Ali Haidoura
 */
 
 /*! \brief Setting the initial scene and object's positions.
@@ -119,7 +119,9 @@ void game1scene::startLevel(){
         updatePosition8();
      }
 
+    view2->setAlignment(Qt::AlignHCenter);
     view2->show();
+
 
 }
 

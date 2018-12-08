@@ -2,6 +2,7 @@
 #include<QLabel>
 #include<QLayout>
 
+
 /**
 * \file won.cpp
 * \brief Shows the appropriate win message in a pop up window

@@ -17,7 +17,7 @@
 * \file gameswidget.cpp
 * \brief contains Game1-2 Links and Score Log
 *
-* \author Camille Farhat & Ali Haidar
+* \author Camille Farhat & Ali Haidoura
 */
 
 
@@ -27,12 +27,12 @@ gamesWidget::gamesWidget(QString user)
 {
     game1 = new QPushButton("Game 1");
     game2 = new QPushButton("Game 2");
-    game3 = new QPushButton("Game 3");
+
     score = new QPushButton("Score Log");
     this->user=user;
     game1->setStyleSheet("font: bold;background-color: red;font-size: 36px;height: 48px;width: 170px;");
     game2->setStyleSheet("font: bold;background-color: red;font-size: 36px;height: 48px;width: 170px;");
-    game3->setStyleSheet("font: bold;background-color: red;font-size: 36px;height: 48px;width: 170px;");
+
     score->setStyleSheet("font: bold;background-color: red;font-size: 36px;height: 48px;width: 170px;");
 
     GridL = new QGridLayout();
@@ -61,7 +61,9 @@ void gamesWidget::startGame1(){
     view1->setVerticalScrollBarPolicy((Qt::ScrollBarAlwaysOff));
 
     this->hide();
+    view1->setAlignment(Qt::AlignCenter);
     view1->show();
+
 
 }
 /*! \brief Slot to take the user to Game2Scene.
@@ -99,7 +101,6 @@ void gamesWidget::setGridLayout(){
 
      GridL->addWidget(game1, 0, 0);
      GridL->addWidget(game2, 1, 0);
-     GridL->addWidget(game3, 2, 0);
      GridL->addWidget(score, 3, 0);
 
      GridL->setSpacing(20);

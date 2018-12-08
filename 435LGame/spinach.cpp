@@ -4,7 +4,7 @@
 /**
 * \file spinach.cpp
 * \brief Contains Spinach class definition
-* \author Camille Farhat & Ali Haidar
+* \author Camille Farhat & Ali Haidoura
 */
 
 /*! \brief Setting the spinach can's Image
