@@ -15,7 +15,7 @@
 
 /**
 * \file gameswidget.cpp
-* \brief contains Game1-2 Links and Score Log
+* \brief contains Game1-2 Links
 *
 * \author Camille Farhat & Ali Haidoura
 */
@@ -28,12 +28,11 @@ gamesWidget::gamesWidget(QString user)
     game1 = new QPushButton("Game 1");
     game2 = new QPushButton("Game 2");
 
-    score = new QPushButton("Score Log");
+
     this->user=user;
     game1->setStyleSheet("font: bold;background-color: red;font-size: 36px;height: 48px;width: 170px;");
     game2->setStyleSheet("font: bold;background-color: red;font-size: 36px;height: 48px;width: 170px;");
 
-    score->setStyleSheet("font: bold;background-color: red;font-size: 36px;height: 48px;width: 170px;");
 
     GridL = new QGridLayout();
     VerticalL = new QVBoxLayout();
@@ -45,7 +44,7 @@ gamesWidget::gamesWidget(QString user)
 
     QObject::connect(game1, SIGNAL(clicked()), this, SLOT(startGame1()));
     QObject::connect(game2, SIGNAL(clicked()), this, SLOT(startGame2()));
-    QObject::connect(score, SIGNAL(clicked()), this, SLOT(scoreLog()));
+
 
 }
 
@@ -85,10 +84,6 @@ void gamesWidget::startGame2(){
 
 
 }
-
-void gamesWidget::scoreLog(){
-
-}
 /*! \brief Setting the Vertical Layout.
 */
 void gamesWidget::setVerticalLayout(){
@@ -101,9 +96,7 @@ void gamesWidget::setGridLayout(){
 
      GridL->addWidget(game1, 0, 0);
      GridL->addWidget(game2, 1, 0);
-     GridL->addWidget(score, 3, 0);
-
-     GridL->setSpacing(20);
 
 
+     GridL->setSpacing(40);
 }

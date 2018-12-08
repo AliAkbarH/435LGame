@@ -1,5 +1,6 @@
 #include "signinwidget.h"
 #include"logginwidget.h"
+#include "logonwidget.h"
 #include <QtWidgets>
 #include <QObject>
 #include<QStringList>
@@ -15,6 +16,9 @@ signInWidget::signInWidget(QWidget *parent) : QWidget(parent)
 {
     submit = new QPushButton("Submit");
     submit->setStyleSheet("background-color: white;font-size: 30px;height: 40px;width: 90px;");
+
+    back = new QPushButton("Back");
+    back->setStyleSheet("background-color: white;font-size: 30px;height: 40px;width: 90px;");
 
     signIn = new QLabel("Sign IN");
     signIn->setStyleSheet("font-size: 36px;height: 38px;width: 90px;");
@@ -38,6 +42,7 @@ signInWidget::signInWidget(QWidget *parent) : QWidget(parent)
 
 
     QObject::connect(submit, SIGNAL(clicked()), this, SLOT(loggedIn()));
+    QObject::connect(back, SIGNAL(clicked()), this, SLOT(homepage()));
 
 }
 
@@ -49,11 +54,17 @@ void signInWidget::loggedIn(){
     }
     else return;
 }
+void signInWidget::homepage(){
+    LogOnWidget *logon = new LogOnWidget();
+    this->close();
+    logon->show();
+}
 
 void signInWidget::setVerticalLayout(){
 
     VerticalL->addWidget(signIn, 0);
     VerticalL->addItem(GridL);
+    VerticalL->addWidget(back);
     VerticalL->addWidget(submit);
     VerticalL->setSpacing(50);
 }

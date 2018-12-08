@@ -172,21 +172,23 @@ levelsscene::levelsscene(QString user)
 int levelsscene::getLevel(){
     QDir dir;
     dir.setPath(dir.path()+"/profiles");
-    QString profilePicDir;
-    int levelNum=1;
+    QString level;
+    int myLevel=0;
 
     QFile inputFile(dir.path()+"/"+user+".txt");
 
     if (inputFile.open(QIODevice::ReadOnly))                //!< to check if it is entering the file, and it is
     {
+       qDebug()<<"opening";
        QTextStream in(&inputFile);
-       QString s=in.readLine();
-       profilePicDir=profileParser(s)[9];
-       levelNum = profilePicDir.toInt();
+       QString s=in.readAll();
+       level=profileParser(s)[10];
+       myLevel = level.toInt();
 
        inputFile.close();
     }
-    return levelNum;
+    else qDebug()<<"not opening";
+    return myLevel;
 
 }
 
@@ -235,7 +237,12 @@ void levelsscene::youLost(bool timeIsUp){
             l->decrementLifes();
             l->decrementScore();
 
-           // l->updateScore(user);
+            l->updateScore(user);
+
+            lost *loose = new lost(l->lifes);
+            loose->setGeometry(100,100,100,100);
+
+            loose->show();
         }else {
 
             l->updateLevelOne(user);    //!<reset the user to level 1
@@ -243,7 +250,7 @@ void levelsscene::youLost(bool timeIsUp){
             l->resetLives();
             l->resetScore();
 
-           // l->updateScore(user);
+            l->updateScore(user);
 
             retryLevel();
 
@@ -275,7 +282,7 @@ void levelsscene::youWon(){
         l->incrementScore();
     }
 
-    for(int j=0; j<(countdown/60);j++){     //!< Increment the score according to the player's time
+    for(int j=0; j<(countdown/5);j++){     //!< Increment the score according to the player's time
         l->incrementScore();
     }
 
@@ -284,7 +291,7 @@ void levelsscene::youWon(){
     winWidget->show();
 
     l->updateLevel(user);
-   // l->updateScore(user);
+    l->updateScore(user);
 
     addWidget(proceed)->moveBy(800,450);
 
@@ -359,7 +366,7 @@ bool levelsscene::fileExists(QString path) {
 */
 QStringList levelsscene::profileParser(QString line){       //parse the line and return a list.
 
-    QRegExp rx("[\t]");
+    QRegExp rx("[\t\n]");
     QStringList list = line.split(rx, QString::SkipEmptyParts);
     return list;
 }

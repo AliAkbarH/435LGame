@@ -31,6 +31,9 @@ SignUpWidget::SignUpWidget(QWidget *parent) : QWidget(parent)
 
     Submit->setStyleSheet("font-size: 36px;height: 38px;width: 90px;");
 
+    back = new QPushButton("Back");
+    back->setStyleSheet("background-color: white;font-size: 30px;height: 40px;width: 90px;");
+
 
     Pass->setEchoMode(QLineEdit::Password);
     Confirm->setEchoMode(QLineEdit::Password);
@@ -58,15 +61,22 @@ SignUpWidget::SignUpWidget(QWidget *parent) : QWidget(parent)
 
     VerticalLayout->addLayout(GridLayout);
     VerticalLayout->addStretch(3);
+    VerticalLayout->addWidget(back);
     VerticalLayout->addWidget(Submit);
 
 
     connect(Submit,SIGNAL(pressed()),this,  SLOT(VerifySubmitSlot()));
+    connect(back,SIGNAL(pressed()),this,  SLOT(homepage()));
     setLayout(VerticalLayout);
     resize(450,700);
 
 }
 
+void SignUpWidget::homepage(){
+    LogOnWidget *logon = new LogOnWidget();
+    this->close();
+    logon->show();
+}
 
 void SignUpWidget::createPreviewGroupBox()
 {
@@ -183,20 +193,20 @@ void SignUpWidget::VerifySubmitSlot(){
        out<<Pass->text()<<'\t';
 
        if (ProfilePic1->isChecked()){
-           out<<":/Profile Images/Popeye.png"<<'\t';
+           out<<":/Profile Images/bucket.png"<<'\t';
        }else if (ProfilePic2->isChecked()){
            out<<":/Profile Images/bucket.png"<<'\t';
        }else if (ProfilePic3->isChecked()){
-           out<<":/Profile Images/water.gif"<<'\t';     //same as Profile PIc 4, for now
+           out<<":/Profile Images/water.gif"<<'\t';
        }else if (ProfilePic4->isChecked()){
            out<<":/Profile Images/water.gif"<<'\t';
        }
 
        out<<calendar->selectedDate().day()<<'\t'<<calendar->selectedDate().month()<<'\t'<<calendar->selectedDate().year()<<'\t';
 
-       out<<"1"<<'\t';          //USER IS AT LEVEL 1 WHEN HE STARTS
-
        out<<"5"<<'\t';          //User has 5 lives initially and for each level
+       
+       out<<'\n'<<"1";          //USER IS AT LEVEL 1 WHEN HE STARTS
 
        out<<'\n'<<"100";        //User has a score of 100 writen on a new line
 

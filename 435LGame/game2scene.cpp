@@ -278,7 +278,7 @@ void Game2Scene::updateHighScore(QString user){    //!<To update the level numbe
         inputFile.close();
         inputFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
         int charIndex=0,NLIndex=0;
-        while(NLIndex<2 && charIndex<line.size()){
+        while(NLIndex<3 && charIndex<line.size()){
             if(line.at(charIndex)=='\n'){
                 NLIndex++;
             }

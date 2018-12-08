@@ -14,8 +14,7 @@
 levels::levels(int x,QString user)
 {
     this->levelNumb = x;
-    //score = getScore(user);
-    score = 100;
+    score = getScore(user);
 
     switch(levelNumb){
     case 1:
@@ -294,18 +293,18 @@ void levels::updateLevel(QString user){    //!<To update the level number in the
         QFile inputFile(dir.path()+"/"+user+".txt");
         inputFile.open(QIODevice::ReadWrite);
         QTextStream in(&inputFile);
-        QString line=in.readLine();
+        QString line=in.readAll();
         inputFile.close();
         inputFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
-        int charIndex=0,tabIndex=0;
-        while(tabIndex<9 && charIndex<line.size()){
-            if(line.at(charIndex)=='\t'){
-                tabIndex++;
+        int charIndex=0,NLIndex=0;
+        while(NLIndex<1 && charIndex<line.size()){
+            if(line.at(charIndex)=='\n'){
+                NLIndex++;
             }
             charIndex++;
         }
-        int character=level+1+'0';
-        line=line.replace(charIndex,1,QChar(character));
+
+        line=line.replace(charIndex,1,QString::number(levelNumb));
         in<<line;
         inputFile.close();
     }
@@ -319,77 +318,76 @@ void levels::updateLevelOne(QString user){    //!<To update the level number in 
 
     QFile inputFile(dir.path()+"/"+user+".txt");
     inputFile.open(QIODevice::ReadWrite);
-
     QTextStream in(&inputFile);
-    QString line=in.readLine();
-
+    QString line=in.readAll();
     inputFile.close();
-
     inputFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
-    int charIndex=0,tabIndex=0;
-    while(tabIndex<9 && charIndex<line.size()){
-        if(line.at(charIndex)=='\t'){
-            tabIndex++;
+    int charIndex=0,NLIndex=0;
+    while(NLIndex<1 && charIndex<line.size()){
+        if(line.at(charIndex)=='\n'){
+            NLIndex++;
         }
         charIndex++;
     }
-    int character = 1 + '0';
-    line=line.replace(charIndex,1,QChar(character));
 
+    line=line.replace(charIndex,1,QString::number(1));
     in<<line;
     inputFile.close();
 
 }
 
-/*
-int levels::getScore(QString user){             //!<To get the User's Score from the second line of text file
+int levels::getScore(QString user){
     QDir dir;
     dir.setPath(dir.path()+"/profiles");
-
-    int myScore=55;
+    QString HiScore;
+    int HighScore=0;
 
     QFile inputFile(dir.path()+"/"+user+".txt");
 
-    if (inputFile.open(QIODevice::ReadOnly))                // to check if it is entering the file, and it is
+    if (inputFile.open(QIODevice::ReadOnly))                //!< to check if it is entering the file, and it is
     {
+       qDebug()<<"opening";
        QTextStream in(&inputFile);
-       QString s=in.readLine();
-       s=in.readLine();
+       QString s=in.readAll();
+       HiScore=profileParser(s)[11];
+       HighScore = HiScore.toInt();
 
-       myScore = s.toInt();
-
-       qDebug()<<myScore<<"FIRST";
        inputFile.close();
     }
+    else qDebug()<<"not opening";
+    return HighScore;
 
-    return myScore;
+}
 
-}*/
+QStringList levels::profileParser(QString line){       //!<parse the line and return a list.
 
-/*
-void levels::updateScore(QString user){
+    QRegExp rx("[\t\n]");
+    QStringList list = line.split(rx, QString::SkipEmptyParts);
+    return list;
+}
 
-    QDir dir;
-    dir.setPath(dir.path()+"/profiles");
+void levels::updateScore(QString user){    //!<To update the level number in the text file (stored as the 10th entry)
+    if(score>0){
+        QDir dir;
+        dir.setPath(dir.path()+"/profiles");
 
-    QFile inputFile(dir.path()+"/"+user+".txt");
-    inputFile.open(QIODevice::ReadWrite);
+        QFile inputFile(dir.path()+"/"+user+".txt");
+        inputFile.open(QIODevice::ReadWrite);
+        QTextStream in(&inputFile);
+        QString line=in.readAll();
+        inputFile.close();
+        inputFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
+        int charIndex=0,NLIndex=0;
+        while(NLIndex<2 && charIndex<line.size()){
+            if(line.at(charIndex)=='\n'){
+                NLIndex++;
+            }
+            charIndex++;
+        }
 
-    QTextStream in(&inputFile);
-    QString line=in.readAll();
+        line=line.replace(charIndex,3,QString::number(score));
+        in<<line;
+        inputFile.close();
+    }
 
-
-    qDebug()<<line<<"SSS";
-
-    inputFile.close();
-
-    inputFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
-
-
-    int character = score + '0';
-    line=line.replace(0,3,QChar(character));
-
-    in<<line;
-    inputFile.close();
-
-}*/
+}

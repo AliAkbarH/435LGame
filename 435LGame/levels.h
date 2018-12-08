@@ -50,11 +50,13 @@ public:
     void updateLevel(QString user);     //!<Updating the level Number when user passes a level
     void updateLevelOne(QString user);  //!<Reseting the user's level to 1 if he looses the game
 
-    //int getScore(QString user);
-    //void updateScore(QString user);
+    int getScore(QString user);
+    void updateScore(QString user);
 
     void resetLives();      //!<Reseting the lifes to it's initial count of 5
     void resetScore();      //!<Reseting the score to it's initial count of 100
+
+    QStringList profileParser(QString);   //!<parse the line in a text file and return a list of strings
 
 };
 

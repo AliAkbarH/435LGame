@@ -132,27 +132,30 @@ void game1scene::hideLevelScene(){
     delete view2;
 }
 
-/*! \brief Functions to get the user's level from the corresponding text file.
- * \return Integer levelNumber
+/*! \brief Getting the level number from the appropriate user text file (stored as the 10th entry)
+*\param event only argument, key press
+*\return int that is the Level Number
 */
-int game1scene::getLevel(){             //!<To get the level number from the text file (stored as the 10th entry)
+int game1scene::getLevel(){
     QDir dir;
     dir.setPath(dir.path()+"/profiles");
-    QString profilePicDir;
-    int levelNum=1;
+    QString level;
+    int myLevel=0;
 
     QFile inputFile(dir.path()+"/"+user+".txt");
 
-    if (inputFile.open(QIODevice::ReadOnly))                // to check if it is entering the file, and it is
+    if (inputFile.open(QIODevice::ReadOnly))                //!< to check if it is entering the file, and it is
     {
+       qDebug()<<"opening";
        QTextStream in(&inputFile);
-       QString s=in.readLine();
-       profilePicDir=profileParser(s)[9];
-       levelNum = profilePicDir.toInt();
+       QString s=in.readAll();
+       level=profileParser(s)[10];
+       myLevel = level.toInt();
 
        inputFile.close();
     }
-    return levelNum;
+    else qDebug()<<"not opening";
+    return myLevel;
 
 }
 
@@ -161,7 +164,7 @@ int game1scene::getLevel(){             //!<To get the level number from the tex
 */
 QStringList game1scene::profileParser(QString line){       //parse the line and return a list.
 
-    QRegExp rx("[\t]");
+    QRegExp rx("[\t\n]");
     QStringList list = line.split(rx, QString::SkipEmptyParts);
     return list;
 }

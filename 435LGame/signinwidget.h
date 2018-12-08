@@ -19,7 +19,7 @@ public:
 
         QLabel *userName, *password, *signIn;
         QLineEdit *LuserName, *Lpassword;
-        QPushButton *submit;
+        QPushButton *submit, *back;
         const QString esc="7727";//for some reason endl and \n are not working so we provide this escape string to determine the end of a field
 
         QVBoxLayout *VerticalL;
@@ -37,6 +37,7 @@ signals:
 
 public slots:
         void loggedIn();
+        void homepage();
 
 
 };

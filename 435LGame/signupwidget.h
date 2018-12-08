@@ -15,7 +15,7 @@ public:
     explicit SignUpWidget(QWidget *parent = nullptr);
     QLabel *FirstName,*LastName,*UserName,*Password,*ConfirmPass,*ProfilePicture,*Gender;
     QLineEdit *First,*Last,*User,*Pass,*Confirm;
-    QPushButton *Submit;
+    QPushButton *Submit, *back;
     QRadioButton *Male,*Female,*ProfilePic1,*ProfilePic2,*ProfilePic3,*ProfilePic4;
     QGroupBox *groupBox;
     QGridLayout *GridLayout;
@@ -37,6 +37,7 @@ signals:
 public slots:
     void VerifySubmitSlot();
     void GoBackToLogOnSlot();
+    void homepage();
 
 };
 

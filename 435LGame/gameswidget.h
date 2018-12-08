@@ -15,7 +15,7 @@ public:
     explicit gamesWidget(QString user);
 
 
-        QPushButton *game1, *game2, *score;
+        QPushButton *game1, *game2;
         QString user;
         QVBoxLayout *VerticalL;
         QGridLayout *GridL;
@@ -32,7 +32,6 @@ signals:
 
 
 public slots:
-        void scoreLog();
         void startGame1();
         void startGame2();
 };
