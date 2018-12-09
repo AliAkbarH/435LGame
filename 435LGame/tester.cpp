@@ -1,3 +1,8 @@
+/**
+* \file tester.cpp
+* \brief Contains tester Class definitions
+* \author Ali Al Akbar Haidoura
+  */
 #include "tester.h"
 #include<QTimer>
 

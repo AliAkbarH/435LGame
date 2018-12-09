@@ -1,3 +1,8 @@
+/**
+* \file levelparser.cpp
+* \brief Contains LevelParser Class definitions
+* \author Ali Al Akbar Haidoura
+  */
 #include "levelparser.h"
 #include<QDebug>
 #include<bug.h>

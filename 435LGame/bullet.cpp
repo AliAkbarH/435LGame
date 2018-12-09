@@ -1,3 +1,8 @@
+/**
+* \file bullet.cpp
+* \brief contains Bullet class definitions
+* \author Ali Al Akbar Haidoura
+  */
 #include "bullet.h"
 #include"wall.h"
 #include"bug.h"

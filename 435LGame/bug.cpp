@@ -1,3 +1,9 @@
+/**
+*\file bug.cpp
+*\brief contains Bug class definitions
+* \author Ali Al Akbar Haidoura
+*/
+
 #include "bug.h"
 #include"tester.h"
 #include"minibug.h"

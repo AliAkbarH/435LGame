@@ -1,3 +1,8 @@
+/**
+* \file game2scene.cpp
+* \brief Contains Game2Scene Class definitions
+* \author Ali Al Akbar Haidoura
+  */
 #include "game2scene.h"
 #include "levelparser.h"
 #include"bug.h"
@@ -15,7 +20,6 @@ Game2Scene::Game2Scene(QString user)
     this->user=user;
     dir=0;
     ammo=30;
-    tests=3;
     remSec=90;
     HighScore=getHighScore();
     score=0;
@@ -311,7 +315,6 @@ void Game2Scene::startLevel(){
     tester->souls=souls;
     dir=0;
     ammo=30;
-    tests=3;
     remSec=90;
     playing=true;
     QCshown=false;
@@ -432,7 +435,6 @@ void Game2Scene::retry(){
 
     dir=0;
     ammo=30;
-    tests=3;
     remSec=90;
     playing=true;
     QCshown=false;

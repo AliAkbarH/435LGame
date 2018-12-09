@@ -1,3 +1,8 @@
+/**
+* \file minibug.cpp
+* \brief Contains miniBug Class definitions
+* \author Ali Al Akbar Haidoura
+  */
 #include "minibug.h"
 #include "bullet.h"
 

@@ -1,0 +1,188 @@
+\hypertarget{classGame2Scene}{\section{Game2\-Scene Class Reference}
+\label{classGame2Scene}\index{Game2\-Scene@{Game2\-Scene}}
+}
+Inheritance diagram for Game2\-Scene\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGame2Scene}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGame2Scene_aa54fef8cfc785656172fce2d4c035eec}{void \hyperlink{classGame2Scene_aa54fef8cfc785656172fce2d4c035eec}{deactivate\-Shield} ()}\label{classGame2Scene_aa54fef8cfc785656172fce2d4c035eec}
+
+\begin{DoxyCompactList}\small\item\em Responsible of deactivating the shield on shield\-Timer timeout. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_ac54e5865a35d342190b668418029255c}{void \hyperlink{classGame2Scene_ac54e5865a35d342190b668418029255c}{update\-Timer} ()}\label{classGame2Scene_ac54e5865a35d342190b668418029255c}
+
+\begin{DoxyCompactList}\small\item\em Responsible of updating rem\-Sec on every timer timeout. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a0fce06771965e064807b71734effb3aa}{void \hyperlink{classGame2Scene_a0fce06771965e064807b71734effb3aa}{pause\-Or\-Resume} ()}\label{classGame2Scene_a0fce06771965e064807b71734effb3aa}
+
+\begin{DoxyCompactList}\small\item\em Responsible of pausing or resuming the game on pause Push\-Button press. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_ab26c015154dc7eaf33c3b1f009953492}{void \hyperlink{classGame2Scene_ab26c015154dc7eaf33c3b1f009953492}{start\-Level} ()}\label{classGame2Scene_ab26c015154dc7eaf33c3b1f009953492}
+
+\begin{DoxyCompactList}\small\item\em Responsible of starting a new level after passing the previous one. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a70d447e24186449ec0a9fd67a42d0d1f}{void \hyperlink{classGame2Scene_a70d447e24186449ec0a9fd67a42d0d1f}{log\-Score} ()}\label{classGame2Scene_a70d447e24186449ec0a9fd67a42d0d1f}
+
+\begin{DoxyCompactList}\small\item\em Responsible of logging the score to file after winning the game. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a7a63663bf7d3a79895bb56fe7240a9b2}{void \hyperlink{classGame2Scene_a7a63663bf7d3a79895bb56fe7240a9b2}{retry} ()}\label{classGame2Scene_a7a63663bf7d3a79895bb56fe7240a9b2}
+
+\begin{DoxyCompactList}\small\item\em Responsible of restarting the game after losing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGame2Scene_a2bb661542400d8c3b9ac283c56ddec43}{\hyperlink{classGame2Scene_a2bb661542400d8c3b9ac283c56ddec43}{Game2\-Scene} (Q\-String \hyperlink{classGame2Scene_a03c78504fc8e5179a885307c8bf83c46}{user})}\label{classGame2Scene_a2bb661542400d8c3b9ac283c56ddec43}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a316ab47115c7dfcd04d0374c7eff1195}{void \hyperlink{classGame2Scene_a316ab47115c7dfcd04d0374c7eff1195}{update\-Life\-Score} ()}\label{classGame2Scene_a316ab47115c7dfcd04d0374c7eff1195}
+
+\begin{DoxyCompactList}\small\item\em Responsible of updating the tester's lives when colliding with a bug or a \hyperlink{classminiBug}{mini\-Bug}. \end{DoxyCompactList}\item 
+int \hyperlink{classGame2Scene_aa2b1aab0dd957d2e5082d4c6352cf390}{get\-High\-Score} ()
+\begin{DoxyCompactList}\small\item\em Responsible of fetching the High\-Score from the profile file. \end{DoxyCompactList}\item 
+void \hyperlink{classGame2Scene_a8f2843e83fb8abbe454bf0ef0ef3c7ea}{update\-High\-Score} (Q\-String \hyperlink{classGame2Scene_a03c78504fc8e5179a885307c8bf83c46}{user})
+\begin{DoxyCompactList}\small\item\em Responsible of updating the High\-Score in the profile file if needed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGame2Scene_a8fd17e269efbee9884476ffef2c8d334}{int \hyperlink{classGame2Scene_a8fd17e269efbee9884476ffef2c8d334}{dir}}\label{classGame2Scene_a8fd17e269efbee9884476ffef2c8d334}
+
+\begin{DoxyCompactList}\small\item\em Integer holding the direction of the tester. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a4e79ed93f76dbbdd93398f4095b1a656}{int \hyperlink{classGame2Scene_a4e79ed93f76dbbdd93398f4095b1a656}{ammo}}\label{classGame2Scene_a4e79ed93f76dbbdd93398f4095b1a656}
+
+\begin{DoxyCompactList}\small\item\em Integer holding the amount of ammo left. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a6f7f39f987cfe21e8d75830dd017e64f}{int \hyperlink{classGame2Scene_a6f7f39f987cfe21e8d75830dd017e64f}{bugs}}\label{classGame2Scene_a6f7f39f987cfe21e8d75830dd017e64f}
+
+\begin{DoxyCompactList}\small\item\em Integer holding the number of bugs left on the scene. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a9d666b1476d029c2db3d6361bef2b459}{int \hyperlink{classGame2Scene_a9d666b1476d029c2db3d6361bef2b459}{rem\-Sec}}\label{classGame2Scene_a9d666b1476d029c2db3d6361bef2b459}
+
+\begin{DoxyCompactList}\small\item\em Integer holding the number of seconds left. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a298f56523cb98584b0bacc31bec34984}{int \hyperlink{classGame2Scene_a298f56523cb98584b0bacc31bec34984}{High\-Score}}\label{classGame2Scene_a298f56523cb98584b0bacc31bec34984}
+
+\begin{DoxyCompactList}\small\item\em Integer holding the High\-Score of the Player. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a9a1966f21f97f746433e5425aa9b8ea3}{int \hyperlink{classGame2Scene_a9a1966f21f97f746433e5425aa9b8ea3}{score}}\label{classGame2Scene_a9a1966f21f97f746433e5425aa9b8ea3}
+
+\begin{DoxyCompactList}\small\item\em Integer holding the current score of the player. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a49519fa674cd9c8ca8a9457417e85fc4}{int \hyperlink{classGame2Scene_a49519fa674cd9c8ca8a9457417e85fc4}{level}}\label{classGame2Scene_a49519fa674cd9c8ca8a9457417e85fc4}
+
+\begin{DoxyCompactList}\small\item\em Integer holding the level the player is currently playing. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a6ff9cd19f3f72aed39ed8be062a29d7d}{bool \hyperlink{classGame2Scene_a6ff9cd19f3f72aed39ed8be062a29d7d}{playing}}\label{classGame2Scene_a6ff9cd19f3f72aed39ed8be062a29d7d}
+
+\begin{DoxyCompactList}\small\item\em Boolean indicating if the player is active or not. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a9c1a6b684aef62653967b041bcf54d34}{bool \hyperlink{classGame2Scene_a9c1a6b684aef62653967b041bcf54d34}{has\-Shield}}\label{classGame2Scene_a9c1a6b684aef62653967b041bcf54d34}
+
+\begin{DoxyCompactList}\small\item\em Boolean indicating if the tester has an active shiekd. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a05c4ee0ba558f497fb651df5ef5ce8ba}{bool \hyperlink{classGame2Scene_a05c4ee0ba558f497fb651df5ef5ce8ba}{Q\-Cshown}}\label{classGame2Scene_a05c4ee0ba558f497fb651df5ef5ce8ba}
+
+\begin{DoxyCompactList}\small\item\em Boolean indicating if the Quality Control icon is hidden or shown. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a124c98a6c77d9fc892dda3b87bf9476f}{bool \hyperlink{classGame2Scene_a124c98a6c77d9fc892dda3b87bf9476f}{paused}}\label{classGame2Scene_a124c98a6c77d9fc892dda3b87bf9476f}
+
+\begin{DoxyCompactList}\small\item\em Boolean indicating if the game is paused. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_ac07f98d0be2ccfc03a6619ac0a8b124b}{Q\-List$<$ \hyperlink{classBug}{Bug} $\ast$ $>$ \hyperlink{classGame2Scene_ac07f98d0be2ccfc03a6619ac0a8b124b}{bug\-List}}\label{classGame2Scene_ac07f98d0be2ccfc03a6619ac0a8b124b}
+
+\begin{DoxyCompactList}\small\item\em Q\-List of \hyperlink{classBug}{Bug} objects pointers. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a223238283a2e526ac893d96d40a676e9}{Q\-Label $\ast$ \hyperlink{classGame2Scene_a223238283a2e526ac893d96d40a676e9}{announcement}}\label{classGame2Scene_a223238283a2e526ac893d96d40a676e9}
+
+\begin{DoxyCompactList}\small\item\em Q\-Label holding the win/loss announcements. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a345a19734cbec994392934782c7f570a}{Q\-Label $\ast$ \hyperlink{classGame2Scene_a345a19734cbec994392934782c7f570a}{timer\-Label}}\label{classGame2Scene_a345a19734cbec994392934782c7f570a}
+
+\begin{DoxyCompactList}\small\item\em Q\-Label holding the string Timer. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_ad6e653249d8185beff9c3ec0a065b22e}{Q\-Label $\ast$ \hyperlink{classGame2Scene_ad6e653249d8185beff9c3ec0a065b22e}{ammo\-Label}}\label{classGame2Scene_ad6e653249d8185beff9c3ec0a065b22e}
+
+\begin{DoxyCompactList}\small\item\em Q\-Label holding the word Ammo. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_ae17ea5202378d167508314349e97471d}{Q\-Label $\ast$ \hyperlink{classGame2Scene_ae17ea5202378d167508314349e97471d}{lives\-Label}}\label{classGame2Scene_ae17ea5202378d167508314349e97471d}
+
+\begin{DoxyCompactList}\small\item\em Q\-Label holding the word Lives. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a7c2efee96429b9740203607dd7a40881}{Q\-Label $\ast$ {\bfseries Hi\-Score}}\label{classGame2Scene_a7c2efee96429b9740203607dd7a40881}
+
+\item 
+Q\-Label $\ast$ \hyperlink{classGame2Scene_ac135ec60d1ac545091a8a562df7e99cb}{score\-L}
+\begin{DoxyCompactList}\small\item\em Q\-Label holding the word High\-Score. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_aaa90ff637eec7f19523cf4debaed736d}{Q\-Push\-Button $\ast$ \hyperlink{classGame2Scene_aaa90ff637eec7f19523cf4debaed736d}{next}}\label{classGame2Scene_aaa90ff637eec7f19523cf4debaed736d}
+
+\begin{DoxyCompactList}\small\item\em Q\-Push\-Button used to continue when level finishes;. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a08e755f5197834f770f07e86c6b5bbe4}{Q\-Push\-Button $\ast$ \hyperlink{classGame2Scene_a08e755f5197834f770f07e86c6b5bbe4}{pause}}\label{classGame2Scene_a08e755f5197834f770f07e86c6b5bbe4}
+
+\begin{DoxyCompactList}\small\item\em Q\-Psuh\-Button used to pause/resume the. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a93036a156e84a8e5b56f0c66b634eed8}{\hyperlink{classLifeCounter}{Life\-Counter} $\ast$ \hyperlink{classGame2Scene_a93036a156e84a8e5b56f0c66b634eed8}{life\-Counter}}\label{classGame2Scene_a93036a156e84a8e5b56f0c66b634eed8}
+
+\begin{DoxyCompactList}\small\item\em Q\-Graphics\-Pixmap\-Item representing the number of lives of the tester. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a8c8614db63839edac62c5bf35814a5c8}{\hyperlink{classLevelParser}{Level\-Parser} $\ast$ \hyperlink{classGame2Scene_a8c8614db63839edac62c5bf35814a5c8}{parser}}\label{classGame2Scene_a8c8614db63839edac62c5bf35814a5c8}
+
+\begin{DoxyCompactList}\small\item\em Used to parse the levels from text files. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a03c78504fc8e5179a885307c8bf83c46}{Q\-String \hyperlink{classGame2Scene_a03c78504fc8e5179a885307c8bf83c46}{user}}\label{classGame2Scene_a03c78504fc8e5179a885307c8bf83c46}
+
+\begin{DoxyCompactList}\small\item\em Q\-String holding the current user. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_afb38ecf3a022b0f3f9102a507b4f60dd}{\hyperlink{classTester}{Tester} $\ast$ \hyperlink{classGame2Scene_afb38ecf3a022b0f3f9102a507b4f60dd}{tester}}\label{classGame2Scene_afb38ecf3a022b0f3f9102a507b4f60dd}
+
+\begin{DoxyCompactList}\small\item\em Q\-Graphics\-Pixmap\-Item representing the tester character. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a176aa28a3941af04cb1f04b4a4d1f8c6}{\hyperlink{classQualityControlIcon}{Quality\-Control\-Icon} $\ast$ \hyperlink{classGame2Scene_a176aa28a3941af04cb1f04b4a4d1f8c6}{Q\-C\-Icon}}\label{classGame2Scene_a176aa28a3941af04cb1f04b4a4d1f8c6}
+
+\begin{DoxyCompactList}\small\item\em Q\-Graphics\-Pixmap\-Item representing the Quality control Icon. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_abd4d448b96cb584c41b5eb13ad7c100d}{Q\-Timer $\ast$ \hyperlink{classGame2Scene_abd4d448b96cb584c41b5eb13ad7c100d}{shield\-Timer}}\label{classGame2Scene_abd4d448b96cb584c41b5eb13ad7c100d}
+
+\begin{DoxyCompactList}\small\item\em Q\-Timer responsible for deactivating the shield after 5 seconds. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a5a48dcdfc71f2f9cc3c7c37755b31b9e}{Q\-Timer $\ast$ \hyperlink{classGame2Scene_a5a48dcdfc71f2f9cc3c7c37755b31b9e}{timer}}\label{classGame2Scene_a5a48dcdfc71f2f9cc3c7c37755b31b9e}
+
+\begin{DoxyCompactList}\small\item\em Q\-Timer responsible for updating the time each second. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a074f24b08fdd45db045bfd42a031a0bb}{Q\-Graphics\-Pixmap\-Item $\ast$ {\bfseries soul1}}\label{classGame2Scene_a074f24b08fdd45db045bfd42a031a0bb}
+
+\item 
+\hypertarget{classGame2Scene_a530af7b1147f2a7e960d62e086fa338c}{Q\-Graphics\-Pixmap\-Item $\ast$ {\bfseries soul2}}\label{classGame2Scene_a530af7b1147f2a7e960d62e086fa338c}
+
+\item 
+\hypertarget{classGame2Scene_addfdb5c43738ff25d5e4e385c8c1f18a}{Q\-Graphics\-Pixmap\-Item $\ast$ \hyperlink{classGame2Scene_addfdb5c43738ff25d5e4e385c8c1f18a}{soul3}}\label{classGame2Scene_addfdb5c43738ff25d5e4e385c8c1f18a}
+
+\begin{DoxyCompactList}\small\item\em Q\-Graphics\-Pixmap\-Item representing the souls of the tester. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_a2925920230b9269693709cd31e74beac}{Q\-Graphics\-Pixmap\-Item $\ast$ {\bfseries tens}}\label{classGame2Scene_a2925920230b9269693709cd31e74beac}
+
+\item 
+\hypertarget{classGame2Scene_af6b9f0c6a56d106c07a0d68ed3a7fb44}{Q\-Graphics\-Pixmap\-Item $\ast$ \hyperlink{classGame2Scene_af6b9f0c6a56d106c07a0d68ed3a7fb44}{units}}\label{classGame2Scene_af6b9f0c6a56d106c07a0d68ed3a7fb44}
+
+\begin{DoxyCompactList}\small\item\em Q\-Graphics\-Pixmap\-Item representing the time left. \end{DoxyCompactList}\item 
+\hypertarget{classGame2Scene_adcaf22f9ed4165aa5eb99eedb72445b5}{Q\-Graphics\-Pixmap\-Item $\ast$ {\bfseries ammo\-Tens}}\label{classGame2Scene_adcaf22f9ed4165aa5eb99eedb72445b5}
+
+\item 
+\hypertarget{classGame2Scene_a228893ef05a54bc3d67f4ec0b46d2198}{Q\-Graphics\-Pixmap\-Item $\ast$ \hyperlink{classGame2Scene_a228893ef05a54bc3d67f4ec0b46d2198}{ammo\-Units}}\label{classGame2Scene_a228893ef05a54bc3d67f4ec0b46d2198}
+
+\begin{DoxyCompactList}\small\item\em Q\-Graphics\-Pixmap\-Item representing the ammo left. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGame2Scene_aa2b1aab0dd957d2e5082d4c6352cf390}{\index{Game2\-Scene@{Game2\-Scene}!get\-High\-Score@{get\-High\-Score}}
+\index{get\-High\-Score@{get\-High\-Score}!Game2Scene@{Game2\-Scene}}
+\subsubsection[{get\-High\-Score}]{\setlength{\rightskip}{0pt plus 5cm}int Game2\-Scene\-::get\-High\-Score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame2Scene_aa2b1aab0dd957d2e5082d4c6352cf390}
+
+
+Responsible of fetching the High\-Score from the profile file. 
+
+$<$ to check if it is entering the file, and it is \hypertarget{classGame2Scene_a8f2843e83fb8abbe454bf0ef0ef3c7ea}{\index{Game2\-Scene@{Game2\-Scene}!update\-High\-Score@{update\-High\-Score}}
+\index{update\-High\-Score@{update\-High\-Score}!Game2Scene@{Game2\-Scene}}
+\subsubsection[{update\-High\-Score}]{\setlength{\rightskip}{0pt plus 5cm}void Game2\-Scene\-::update\-High\-Score (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{user}
+\end{DoxyParamCaption}
+)}}\label{classGame2Scene_a8f2843e83fb8abbe454bf0ef0ef3c7ea}
+
+
+Responsible of updating the High\-Score in the profile file if needed. 
+
+$<$To update the level number in the text file (stored as the 10th entry) 
+
+\subsection{Member Data Documentation}
+\hypertarget{classGame2Scene_ac135ec60d1ac545091a8a562df7e99cb}{\index{Game2\-Scene@{Game2\-Scene}!score\-L@{score\-L}}
+\index{score\-L@{score\-L}!Game2Scene@{Game2\-Scene}}
+\subsubsection[{score\-L}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Label$\ast$ Game2\-Scene\-::score\-L}}\label{classGame2Scene_ac135ec60d1ac545091a8a562df7e99cb}
+
+
+Q\-Label holding the word High\-Score. 
+
+Q\-Label holding the word score 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{game2scene_8h}{game2scene.\-h}\item 
+\hyperlink{game2scene_8cpp}{game2scene.\-cpp}\end{DoxyCompactItemize}

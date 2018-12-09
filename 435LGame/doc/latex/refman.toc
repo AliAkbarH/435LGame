@@ -1,0 +1,197 @@
+\contentsline {chapter}{\numberline {1}E\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}E435\discretionary {-}{}{}L Game}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}
+\contentsline {chapter}{\numberline {5}Class Documentation}{11}{chapter.5}
+\contentsline {section}{\numberline {5.1}boat Class Reference}{11}{section.5.1}
+\contentsline {section}{\numberline {5.2}Bug Class Reference}{11}{section.5.2}
+\contentsline {section}{\numberline {5.3}Bullet Class Reference}{12}{section.5.3}
+\contentsline {section}{\numberline {5.4}Coffee\discretionary {-}{}{}Cup Class Reference}{13}{section.5.4}
+\contentsline {section}{\numberline {5.5}game1scene Class Reference}{14}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Constructor \& Destructor Documentation}{15}{subsection.5.5.1}
+\contentsline {subsubsection}{\numberline {5.5.1.1}game1scene}{15}{subsubsection.5.5.1.1}
+\contentsline {subsection}{\numberline {5.5.2}Member Function Documentation}{15}{subsection.5.5.2}
+\contentsline {subsubsection}{\numberline {5.5.2.1}get\discretionary {-}{}{}Level}{15}{subsubsection.5.5.2.1}
+\contentsline {subsubsection}{\numberline {5.5.2.2}profile\discretionary {-}{}{}Parser}{15}{subsubsection.5.5.2.2}
+\contentsline {subsubsection}{\numberline {5.5.2.3}set\discretionary {-}{}{}Up\discretionary {-}{}{}Countdown\discretionary {-}{}{}Timer}{16}{subsubsection.5.5.2.3}
+\contentsline {subsubsection}{\numberline {5.5.2.4}start\discretionary {-}{}{}Level}{16}{subsubsection.5.5.2.4}
+\contentsline {subsubsection}{\numberline {5.5.2.5}update\discretionary {-}{}{}Countdown\discretionary {-}{}{}Timer}{16}{subsubsection.5.5.2.5}
+\contentsline {subsubsection}{\numberline {5.5.2.6}update\discretionary {-}{}{}Position1}{16}{subsubsection.5.5.2.6}
+\contentsline {subsubsection}{\numberline {5.5.2.7}update\discretionary {-}{}{}Position2}{16}{subsubsection.5.5.2.7}
+\contentsline {subsubsection}{\numberline {5.5.2.8}update\discretionary {-}{}{}Position3}{16}{subsubsection.5.5.2.8}
+\contentsline {subsubsection}{\numberline {5.5.2.9}update\discretionary {-}{}{}Position4}{16}{subsubsection.5.5.2.9}
+\contentsline {subsubsection}{\numberline {5.5.2.10}update\discretionary {-}{}{}Position5}{16}{subsubsection.5.5.2.10}
+\contentsline {subsubsection}{\numberline {5.5.2.11}update\discretionary {-}{}{}Position6}{16}{subsubsection.5.5.2.11}
+\contentsline {subsubsection}{\numberline {5.5.2.12}update\discretionary {-}{}{}Position7}{17}{subsubsection.5.5.2.12}
+\contentsline {subsubsection}{\numberline {5.5.2.13}update\discretionary {-}{}{}Position8}{17}{subsubsection.5.5.2.13}
+\contentsline {section}{\numberline {5.6}Game2\discretionary {-}{}{}Scene Class Reference}{17}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Member Function Documentation}{19}{subsection.5.6.1}
+\contentsline {subsubsection}{\numberline {5.6.1.1}get\discretionary {-}{}{}High\discretionary {-}{}{}Score}{19}{subsubsection.5.6.1.1}
+\contentsline {subsubsection}{\numberline {5.6.1.2}update\discretionary {-}{}{}High\discretionary {-}{}{}Score}{19}{subsubsection.5.6.1.2}
+\contentsline {subsection}{\numberline {5.6.2}Member Data Documentation}{19}{subsection.5.6.2}
+\contentsline {subsubsection}{\numberline {5.6.2.1}score\discretionary {-}{}{}L}{19}{subsubsection.5.6.2.1}
+\contentsline {section}{\numberline {5.7}game\discretionary {-}{}{}Over Class Reference}{19}{section.5.7}
+\contentsline {section}{\numberline {5.8}games\discretionary {-}{}{}Widget Class Reference}{20}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Member Function Documentation}{21}{subsection.5.8.1}
+\contentsline {subsubsection}{\numberline {5.8.1.1}start\discretionary {-}{}{}Game1}{21}{subsubsection.5.8.1.1}
+\contentsline {section}{\numberline {5.9}hints Class Reference}{21}{section.5.9}
+\contentsline {section}{\numberline {5.10}instruction Class Reference}{21}{section.5.10}
+\contentsline {section}{\numberline {5.11}Level\discretionary {-}{}{}Parser Class Reference}{22}{section.5.11}
+\contentsline {section}{\numberline {5.12}levels Class Reference}{22}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Member Function Documentation}{23}{subsection.5.12.1}
+\contentsline {subsubsection}{\numberline {5.12.1.1}get\discretionary {-}{}{}Score}{23}{subsubsection.5.12.1.1}
+\contentsline {subsubsection}{\numberline {5.12.1.2}increment\discretionary {-}{}{}Hint\discretionary {-}{}{}Number}{24}{subsubsection.5.12.1.2}
+\contentsline {subsubsection}{\numberline {5.12.1.3}profile\discretionary {-}{}{}Parser}{24}{subsubsection.5.12.1.3}
+\contentsline {subsubsection}{\numberline {5.12.1.4}reset\discretionary {-}{}{}Hint\discretionary {-}{}{}Number}{24}{subsubsection.5.12.1.4}
+\contentsline {subsubsection}{\numberline {5.12.1.5}reset\discretionary {-}{}{}Lives}{24}{subsubsection.5.12.1.5}
+\contentsline {subsubsection}{\numberline {5.12.1.6}set\discretionary {-}{}{}Popeye\discretionary {-}{}{}X1}{24}{subsubsection.5.12.1.6}
+\contentsline {subsubsection}{\numberline {5.12.1.7}update\discretionary {-}{}{}Level}{24}{subsubsection.5.12.1.7}
+\contentsline {subsubsection}{\numberline {5.12.1.8}update\discretionary {-}{}{}Level\discretionary {-}{}{}One}{24}{subsubsection.5.12.1.8}
+\contentsline {subsubsection}{\numberline {5.12.1.9}update\discretionary {-}{}{}Score}{24}{subsubsection.5.12.1.9}
+\contentsline {section}{\numberline {5.13}levelsscene Class Reference}{24}{section.5.13}
+\contentsline {subsection}{\numberline {5.13.1}Constructor \& Destructor Documentation}{26}{subsection.5.13.1}
+\contentsline {subsubsection}{\numberline {5.13.1.1}levelsscene}{26}{subsubsection.5.13.1.1}
+\contentsline {subsection}{\numberline {5.13.2}Member Function Documentation}{26}{subsection.5.13.2}
+\contentsline {subsubsection}{\numberline {5.13.2.1}check\discretionary {-}{}{}Answer}{26}{subsubsection.5.13.2.1}
+\contentsline {subsubsection}{\numberline {5.13.2.2}hide\discretionary {-}{}{}Scene}{27}{subsubsection.5.13.2.2}
+\contentsline {subsubsection}{\numberline {5.13.2.3}pause\discretionary {-}{}{}Level}{27}{subsubsection.5.13.2.3}
+\contentsline {subsubsection}{\numberline {5.13.2.4}retry\discretionary {-}{}{}Level}{27}{subsubsection.5.13.2.4}
+\contentsline {subsubsection}{\numberline {5.13.2.5}set\discretionary {-}{}{}Up\discretionary {-}{}{}Countdown\discretionary {-}{}{}Timer}{27}{subsubsection.5.13.2.5}
+\contentsline {subsubsection}{\numberline {5.13.2.6}update\discretionary {-}{}{}Countdown\discretionary {-}{}{}Timer}{27}{subsubsection.5.13.2.6}
+\contentsline {subsubsection}{\numberline {5.13.2.7}you\discretionary {-}{}{}Lost}{27}{subsubsection.5.13.2.7}
+\contentsline {subsubsection}{\numberline {5.13.2.8}you\discretionary {-}{}{}Won}{27}{subsubsection.5.13.2.8}
+\contentsline {section}{\numberline {5.14}Life\discretionary {-}{}{}Counter Class Reference}{28}{section.5.14}
+\contentsline {section}{\numberline {5.15}locks Class Reference}{28}{section.5.15}
+\contentsline {section}{\numberline {5.16}logg\discretionary {-}{}{}In\discretionary {-}{}{}Widget Class Reference}{28}{section.5.16}
+\contentsline {section}{\numberline {5.17}Log\discretionary {-}{}{}On\discretionary {-}{}{}Widget Class Reference}{29}{section.5.17}
+\contentsline {section}{\numberline {5.18}lost Class Reference}{30}{section.5.18}
+\contentsline {subsection}{\numberline {5.18.1}Constructor \& Destructor Documentation}{30}{subsection.5.18.1}
+\contentsline {subsubsection}{\numberline {5.18.1.1}lost}{30}{subsubsection.5.18.1.1}
+\contentsline {subsubsection}{\numberline {5.18.1.2}lost}{30}{subsubsection.5.18.1.2}
+\contentsline {section}{\numberline {5.19}mini\discretionary {-}{}{}Bug Class Reference}{31}{section.5.19}
+\contentsline {section}{\numberline {5.20}Popeye Class Reference}{31}{section.5.20}
+\contentsline {section}{\numberline {5.21}Quality\discretionary {-}{}{}Control\discretionary {-}{}{}Icon Class Reference}{32}{section.5.21}
+\contentsline {section}{\numberline {5.22}river Class Reference}{32}{section.5.22}
+\contentsline {section}{\numberline {5.23}river\discretionary {-}{}{}Obstacle Class Reference}{33}{section.5.23}
+\contentsline {section}{\numberline {5.24}rock Class Reference}{33}{section.5.24}
+\contentsline {section}{\numberline {5.25}Shield Class Reference}{34}{section.5.25}
+\contentsline {section}{\numberline {5.26}sign\discretionary {-}{}{}In\discretionary {-}{}{}Widget Class Reference}{34}{section.5.26}
+\contentsline {section}{\numberline {5.27}Sign\discretionary {-}{}{}Up\discretionary {-}{}{}Widget Class Reference}{35}{section.5.27}
+\contentsline {section}{\numberline {5.28}small\discretionary {-}{}{}River Class Reference}{36}{section.5.28}
+\contentsline {section}{\numberline {5.29}spinach Class Reference}{36}{section.5.29}
+\contentsline {section}{\numberline {5.30}Tester Class Reference}{37}{section.5.30}
+\contentsline {section}{\numberline {5.31}Testing\discretionary {-}{}{}Icon Class Reference}{37}{section.5.31}
+\contentsline {section}{\numberline {5.32}Wall Class Reference}{38}{section.5.32}
+\contentsline {section}{\numberline {5.33}Won Class Reference}{38}{section.5.33}
+\contentsline {subsection}{\numberline {5.33.1}Constructor \& Destructor Documentation}{39}{subsection.5.33.1}
+\contentsline {subsubsection}{\numberline {5.33.1.1}Won}{39}{subsubsection.5.33.1.1}
+\contentsline {chapter}{\numberline {6}File Documentation}{41}{chapter.6}
+\contentsline {section}{\numberline {6.1}boat.\discretionary {-}{}{}cpp File Reference}{41}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{41}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}boat.\discretionary {-}{}{}h File Reference}{41}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{41}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}bug.\discretionary {-}{}{}cpp File Reference}{41}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{42}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}bug.\discretionary {-}{}{}h File Reference}{42}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{42}{subsection.6.4.1}
+\contentsline {section}{\numberline {6.5}bullet.\discretionary {-}{}{}cpp File Reference}{42}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{42}{subsection.6.5.1}
+\contentsline {section}{\numberline {6.6}bullet.\discretionary {-}{}{}h File Reference}{43}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{43}{subsection.6.6.1}
+\contentsline {section}{\numberline {6.7}coffeecup.\discretionary {-}{}{}cpp File Reference}{43}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{43}{subsection.6.7.1}
+\contentsline {section}{\numberline {6.8}coffeecup.\discretionary {-}{}{}h File Reference}{43}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{43}{subsection.6.8.1}
+\contentsline {section}{\numberline {6.9}game1scene.\discretionary {-}{}{}cpp File Reference}{44}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{44}{subsection.6.9.1}
+\contentsline {section}{\numberline {6.10}game1scene.\discretionary {-}{}{}h File Reference}{44}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{44}{subsection.6.10.1}
+\contentsline {section}{\numberline {6.11}game2scene.\discretionary {-}{}{}cpp File Reference}{45}{section.6.11}
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{45}{subsection.6.11.1}
+\contentsline {section}{\numberline {6.12}game2scene.\discretionary {-}{}{}h File Reference}{45}{section.6.12}
+\contentsline {subsection}{\numberline {6.12.1}Detailed Description}{45}{subsection.6.12.1}
+\contentsline {section}{\numberline {6.13}gameswidget.\discretionary {-}{}{}cpp File Reference}{46}{section.6.13}
+\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{46}{subsection.6.13.1}
+\contentsline {section}{\numberline {6.14}hints.\discretionary {-}{}{}cpp File Reference}{46}{section.6.14}
+\contentsline {subsection}{\numberline {6.14.1}Detailed Description}{46}{subsection.6.14.1}
+\contentsline {section}{\numberline {6.15}hints.\discretionary {-}{}{}h File Reference}{46}{section.6.15}
+\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{47}{subsection.6.15.1}
+\contentsline {section}{\numberline {6.16}instruction.\discretionary {-}{}{}cpp File Reference}{47}{section.6.16}
+\contentsline {subsection}{\numberline {6.16.1}Detailed Description}{47}{subsection.6.16.1}
+\contentsline {section}{\numberline {6.17}instruction.\discretionary {-}{}{}h File Reference}{47}{section.6.17}
+\contentsline {subsection}{\numberline {6.17.1}Detailed Description}{47}{subsection.6.17.1}
+\contentsline {section}{\numberline {6.18}levelparser.\discretionary {-}{}{}cpp File Reference}{47}{section.6.18}
+\contentsline {subsection}{\numberline {6.18.1}Detailed Description}{48}{subsection.6.18.1}
+\contentsline {section}{\numberline {6.19}levelparser.\discretionary {-}{}{}h File Reference}{48}{section.6.19}
+\contentsline {subsection}{\numberline {6.19.1}Detailed Description}{48}{subsection.6.19.1}
+\contentsline {section}{\numberline {6.20}levels.\discretionary {-}{}{}cpp File Reference}{48}{section.6.20}
+\contentsline {subsection}{\numberline {6.20.1}Detailed Description}{48}{subsection.6.20.1}
+\contentsline {section}{\numberline {6.21}levels.\discretionary {-}{}{}h File Reference}{48}{section.6.21}
+\contentsline {subsection}{\numberline {6.21.1}Detailed Description}{49}{subsection.6.21.1}
+\contentsline {section}{\numberline {6.22}levelsscene.\discretionary {-}{}{}cpp File Reference}{49}{section.6.22}
+\contentsline {subsection}{\numberline {6.22.1}Detailed Description}{49}{subsection.6.22.1}
+\contentsline {section}{\numberline {6.23}lifecounter.\discretionary {-}{}{}cpp File Reference}{49}{section.6.23}
+\contentsline {subsection}{\numberline {6.23.1}Detailed Description}{49}{subsection.6.23.1}
+\contentsline {section}{\numberline {6.24}lifecounter.\discretionary {-}{}{}h File Reference}{49}{section.6.24}
+\contentsline {subsection}{\numberline {6.24.1}Detailed Description}{50}{subsection.6.24.1}
+\contentsline {section}{\numberline {6.25}locks.\discretionary {-}{}{}cpp File Reference}{50}{section.6.25}
+\contentsline {subsection}{\numberline {6.25.1}Detailed Description}{50}{subsection.6.25.1}
+\contentsline {section}{\numberline {6.26}locks.\discretionary {-}{}{}h File Reference}{50}{section.6.26}
+\contentsline {subsection}{\numberline {6.26.1}Detailed Description}{50}{subsection.6.26.1}
+\contentsline {section}{\numberline {6.27}lost.\discretionary {-}{}{}cpp File Reference}{51}{section.6.27}
+\contentsline {subsection}{\numberline {6.27.1}Detailed Description}{51}{subsection.6.27.1}
+\contentsline {section}{\numberline {6.28}lost.\discretionary {-}{}{}h File Reference}{51}{section.6.28}
+\contentsline {subsection}{\numberline {6.28.1}Detailed Description}{51}{subsection.6.28.1}
+\contentsline {section}{\numberline {6.29}minibug.\discretionary {-}{}{}cpp File Reference}{51}{section.6.29}
+\contentsline {subsection}{\numberline {6.29.1}Detailed Description}{51}{subsection.6.29.1}
+\contentsline {section}{\numberline {6.30}popeye.\discretionary {-}{}{}cpp File Reference}{51}{section.6.30}
+\contentsline {subsection}{\numberline {6.30.1}Detailed Description}{52}{subsection.6.30.1}
+\contentsline {section}{\numberline {6.31}popeye.\discretionary {-}{}{}h File Reference}{52}{section.6.31}
+\contentsline {subsection}{\numberline {6.31.1}Detailed Description}{52}{subsection.6.31.1}
+\contentsline {section}{\numberline {6.32}qualitycontrolicon.\discretionary {-}{}{}cpp File Reference}{52}{section.6.32}
+\contentsline {subsection}{\numberline {6.32.1}Detailed Description}{52}{subsection.6.32.1}
+\contentsline {section}{\numberline {6.33}qualitycontrolicon.\discretionary {-}{}{}h File Reference}{52}{section.6.33}
+\contentsline {subsection}{\numberline {6.33.1}Detailed Description}{53}{subsection.6.33.1}
+\contentsline {section}{\numberline {6.34}river.\discretionary {-}{}{}cpp File Reference}{53}{section.6.34}
+\contentsline {subsection}{\numberline {6.34.1}Detailed Description}{53}{subsection.6.34.1}
+\contentsline {section}{\numberline {6.35}river.\discretionary {-}{}{}h File Reference}{53}{section.6.35}
+\contentsline {subsection}{\numberline {6.35.1}Detailed Description}{53}{subsection.6.35.1}
+\contentsline {section}{\numberline {6.36}riverobstacle.\discretionary {-}{}{}cpp File Reference}{53}{section.6.36}
+\contentsline {subsection}{\numberline {6.36.1}Detailed Description}{54}{subsection.6.36.1}
+\contentsline {section}{\numberline {6.37}riverobstacle.\discretionary {-}{}{}h File Reference}{54}{section.6.37}
+\contentsline {subsection}{\numberline {6.37.1}Detailed Description}{54}{subsection.6.37.1}
+\contentsline {section}{\numberline {6.38}rock.\discretionary {-}{}{}cpp File Reference}{54}{section.6.38}
+\contentsline {subsection}{\numberline {6.38.1}Detailed Description}{54}{subsection.6.38.1}
+\contentsline {section}{\numberline {6.39}rock.\discretionary {-}{}{}h File Reference}{54}{section.6.39}
+\contentsline {subsection}{\numberline {6.39.1}Detailed Description}{55}{subsection.6.39.1}
+\contentsline {section}{\numberline {6.40}shield.\discretionary {-}{}{}cpp File Reference}{55}{section.6.40}
+\contentsline {subsection}{\numberline {6.40.1}Detailed Description}{55}{subsection.6.40.1}
+\contentsline {section}{\numberline {6.41}shield.\discretionary {-}{}{}h File Reference}{55}{section.6.41}
+\contentsline {subsection}{\numberline {6.41.1}Detailed Description}{55}{subsection.6.41.1}
+\contentsline {section}{\numberline {6.42}signinwidget.\discretionary {-}{}{}h File Reference}{56}{section.6.42}
+\contentsline {subsection}{\numberline {6.42.1}Detailed Description}{56}{subsection.6.42.1}
+\contentsline {section}{\numberline {6.43}signupwidget.\discretionary {-}{}{}h File Reference}{56}{section.6.43}
+\contentsline {subsection}{\numberline {6.43.1}Detailed Description}{56}{subsection.6.43.1}
+\contentsline {section}{\numberline {6.44}smallriver.\discretionary {-}{}{}cpp File Reference}{56}{section.6.44}
+\contentsline {subsection}{\numberline {6.44.1}Detailed Description}{57}{subsection.6.44.1}
+\contentsline {section}{\numberline {6.45}smallriver.\discretionary {-}{}{}h File Reference}{57}{section.6.45}
+\contentsline {subsection}{\numberline {6.45.1}Detailed Description}{57}{subsection.6.45.1}
+\contentsline {section}{\numberline {6.46}spinach.\discretionary {-}{}{}cpp File Reference}{57}{section.6.46}
+\contentsline {subsection}{\numberline {6.46.1}Detailed Description}{57}{subsection.6.46.1}
+\contentsline {section}{\numberline {6.47}spinach.\discretionary {-}{}{}h File Reference}{57}{section.6.47}
+\contentsline {subsection}{\numberline {6.47.1}Detailed Description}{58}{subsection.6.47.1}
+\contentsline {section}{\numberline {6.48}tester.\discretionary {-}{}{}cpp File Reference}{58}{section.6.48}
+\contentsline {subsection}{\numberline {6.48.1}Detailed Description}{58}{subsection.6.48.1}
+\contentsline {section}{\numberline {6.49}tester.\discretionary {-}{}{}h File Reference}{58}{section.6.49}
+\contentsline {subsection}{\numberline {6.49.1}Detailed Description}{58}{subsection.6.49.1}
+\contentsline {section}{\numberline {6.50}testingicon.\discretionary {-}{}{}cpp File Reference}{59}{section.6.50}
+\contentsline {subsection}{\numberline {6.50.1}Detailed Description}{59}{subsection.6.50.1}
+\contentsline {section}{\numberline {6.51}testingicon.\discretionary {-}{}{}h File Reference}{59}{section.6.51}
+\contentsline {subsection}{\numberline {6.51.1}Detailed Description}{59}{subsection.6.51.1}
+\contentsline {section}{\numberline {6.52}won.\discretionary {-}{}{}cpp File Reference}{59}{section.6.52}
+\contentsline {subsection}{\numberline {6.52.1}Detailed Description}{59}{subsection.6.52.1}
+\contentsline {section}{\numberline {6.53}won.\discretionary {-}{}{}h File Reference}{60}{section.6.53}
+\contentsline {subsection}{\numberline {6.53.1}Detailed Description}{60}{subsection.6.53.1}

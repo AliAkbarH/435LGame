@@ -1,3 +1,8 @@
+/**
+* \file tester.h
+* \brief QGraphicsPixmapItem representing the Tester character
+* \author Ali Al Akbar Haidoura
+  */
 #ifndef TESTER_H
 #define TESTER_H
 #include<QGraphicsPixmapItem>

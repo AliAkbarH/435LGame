@@ -1,3 +1,8 @@
+/**
+* \file testingicon.cpp
+* \brief Contains testingIcon Class definitions
+* \author Ali Al Akbar Haidoura
+  */
 #include "testingicon.h"
 
 TestingIcon::TestingIcon()

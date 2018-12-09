@@ -1,0 +1,66 @@
+\hypertarget{classBug}{\section{Bug Class Reference}
+\label{classBug}\index{Bug@{Bug}}
+}
+Inheritance diagram for Bug\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBug}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classBug_ad968d4bb17f160ad412da3fa15d5417e}{void \hyperlink{classBug_ad968d4bb17f160ad412da3fa15d5417e}{guard} ()}\label{classBug_ad968d4bb17f160ad412da3fa15d5417e}
+
+\begin{DoxyCompactList}\small\item\em The slot that moves the bug on each timer timeout. \end{DoxyCompactList}\item 
+\hypertarget{classBug_ab1d53f066f74c84663c47028c1fdbe77}{void \hyperlink{classBug_ab1d53f066f74c84663c47028c1fdbe77}{shoot} ()}\label{classBug_ab1d53f066f74c84663c47028c1fdbe77}
+
+\begin{DoxyCompactList}\small\item\em Responsible for the shooting logic of the \hyperlink{classBug}{Bug}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classBug_ab8661834cbf8ea0d59bfcce05f8c19ac}{\hyperlink{classBug_ab8661834cbf8ea0d59bfcce05f8c19ac}{Bug} (\hyperlink{classGame2Scene}{Game2\-Scene} $\ast$)}\label{classBug_ab8661834cbf8ea0d59bfcce05f8c19ac}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classBug}{Bug} constructor. \end{DoxyCompactList}\item 
+\hypertarget{classBug_a66fa2b39d8200535383e0feff494cd5c}{void \hyperlink{classBug_a66fa2b39d8200535383e0feff494cd5c}{decrement\-Lives} ()}\label{classBug_a66fa2b39d8200535383e0feff494cd5c}
+
+\begin{DoxyCompactList}\small\item\em Responsible for collision logic with bullet. \end{DoxyCompactList}\item 
+\hypertarget{classBug_ae009fdbc7055d30044e6b996fa89c6fc}{void \hyperlink{classBug_ae009fdbc7055d30044e6b996fa89c6fc}{pause} ()}\label{classBug_ae009fdbc7055d30044e6b996fa89c6fc}
+
+\begin{DoxyCompactList}\small\item\em Responsible for keeping the bug in place when pausing the game. \end{DoxyCompactList}\item 
+\hypertarget{classBug_ae634fa739fc20b7891fd0327fc78deae}{void \hyperlink{classBug_ae634fa739fc20b7891fd0327fc78deae}{resume} ()}\label{classBug_ae634fa739fc20b7891fd0327fc78deae}
+
+\begin{DoxyCompactList}\small\item\em responsible for resuming after pausing \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classBug_af47aa4495bad729962a03d229d8fdb1c}{\hyperlink{classGame2Scene}{Game2\-Scene} $\ast$ \hyperlink{classBug_af47aa4495bad729962a03d229d8fdb1c}{scene}}\label{classBug_af47aa4495bad729962a03d229d8fdb1c}
+
+\begin{DoxyCompactList}\small\item\em The scene where the bug is added. \end{DoxyCompactList}\item 
+\hypertarget{classBug_aa75434e0a87bdefb7a80dbfa185b3cea}{Q\-Timer $\ast$ \hyperlink{classBug_aa75434e0a87bdefb7a80dbfa185b3cea}{timer}}\label{classBug_aa75434e0a87bdefb7a80dbfa185b3cea}
+
+\begin{DoxyCompactList}\small\item\em Q\-Timer for moving the \hyperlink{classBug}{Bug} periodically. \end{DoxyCompactList}\item 
+\hypertarget{classBug_a4fa5d0ebcd95fcd80a79f5b17c2d1c49}{Q\-Timer $\ast$ \hyperlink{classBug_a4fa5d0ebcd95fcd80a79f5b17c2d1c49}{shooting\-Timer}}\label{classBug_a4fa5d0ebcd95fcd80a79f5b17c2d1c49}
+
+\begin{DoxyCompactList}\small\item\em Q\-Timer for shooting mini\-Bugs. \end{DoxyCompactList}\item 
+\hypertarget{classBug_a31e919ead62893f77e673c6563a8fab2}{Q\-Pixmap $\ast$ \hyperlink{classBug_a31e919ead62893f77e673c6563a8fab2}{icon}}\label{classBug_a31e919ead62893f77e673c6563a8fab2}
+
+\begin{DoxyCompactList}\small\item\em Q\-Pixmap holding the image of the \hyperlink{classBug}{Bug}. \end{DoxyCompactList}\item 
+\hypertarget{classBug_a94745a4c20719851219de0fd11f699f4}{Q\-Transform {\bfseries transform}}\label{classBug_a94745a4c20719851219de0fd11f699f4}
+
+\item 
+\hypertarget{classBug_ac72cf078fdb04c5757417b7de8cbf64c}{int \hyperlink{classBug_ac72cf078fdb04c5757417b7de8cbf64c}{lives}}\label{classBug_ac72cf078fdb04c5757417b7de8cbf64c}
+
+\begin{DoxyCompactList}\small\item\em Integer holding the number of \hyperlink{classBug}{Bug}'s lives left. \end{DoxyCompactList}\item 
+\hypertarget{classBug_ace580e042da5ec607b1d6b2b06727185}{int \hyperlink{classBug_ace580e042da5ec607b1d6b2b06727185}{dir}}\label{classBug_ace580e042da5ec607b1d6b2b06727185}
+
+\begin{DoxyCompactList}\small\item\em Integer holding the direction of movement of the \hyperlink{classBug}{Bug}. \end{DoxyCompactList}\item 
+\hypertarget{classBug_af650f4d487abf1c9a2635a8348a69edc}{int {\bfseries i}}\label{classBug_af650f4d487abf1c9a2635a8348a69edc}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{bug_8h}{bug.\-h}\item 
+\hyperlink{bug_8cpp}{bug.\-cpp}\end{DoxyCompactItemize}

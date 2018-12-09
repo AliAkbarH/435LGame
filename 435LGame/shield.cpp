@@ -1,3 +1,8 @@
+/**
+* \file shield.cpp
+* \brief Contains shield Class definitions
+* \author Ali Al Akbar Haidoura
+  */
 #include "shield.h"
 
 Shield::Shield()

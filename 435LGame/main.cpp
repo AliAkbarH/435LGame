@@ -1,3 +1,10 @@
+/**
+* \mainpage EECE435L Game
+* \author Ali Al Akbar Haidoura
+* \author Camille farhat
+* \date 9-12-2018
+* \brief A game containing two sub-games designed to help kids learn programming
+  */
 #include <QApplication>
 #include <QtWidgets>
 #include<QPushButton>

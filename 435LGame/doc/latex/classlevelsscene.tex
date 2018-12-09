@@ -1,0 +1,258 @@
+\hypertarget{classlevelsscene}{\section{levelsscene Class Reference}
+\label{classlevelsscene}\index{levelsscene@{levelsscene}}
+}
+Inheritance diagram for levelsscene\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlevelsscene}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classlevelsscene_afb0be60e25586a4c1f4f2c95d8687939}{check\-Answer} ()
+\begin{DoxyCompactList}\small\item\em Checking the User's input and moving popeye and the boat accordingly. If the User Clicks on the pick\-Up Spinach cans dissapear. \end{DoxyCompactList}\item 
+\hypertarget{classlevelsscene_a2b34314b18b5c7af96a2ba6bb9d74616}{void \hyperlink{classlevelsscene_a2b34314b18b5c7af96a2ba6bb9d74616}{display\-Hint} ()}\label{classlevelsscene_a2b34314b18b5c7af96a2ba6bb9d74616}
+
+\begin{DoxyCompactList}\small\item\em Displaying the 3 hints and repeating them if passed over all of them and decrement score accordingly. \end{DoxyCompactList}\item 
+void \hyperlink{classlevelsscene_ae6427d1e5f4207e87dab83a4f9ec6302}{pause\-Level} ()
+\begin{DoxyCompactList}\small\item\em Pause the level the user's in. \end{DoxyCompactList}\item 
+void \hyperlink{classlevelsscene_a9eb73af70c2c3030be31ba44b5966d20}{retry\-Level} ()
+\begin{DoxyCompactList}\small\item\em Retry level and reset positons to initial hard coded positions. \end{DoxyCompactList}\item 
+void \hyperlink{classlevelsscene_ab224af4c9e09ba73a8f38345643978b9}{hide\-Scene} ()
+\begin{DoxyCompactList}\small\item\em Hide the scene. \end{DoxyCompactList}\item 
+void \hyperlink{classlevelsscene_a3fc9fb8b563863ca1f73109a7f94dbba}{update\-Countdown\-Timer} ()
+\begin{DoxyCompactList}\small\item\em Function that will update the timer and then display it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlevelsscene_ac88ccf0616d65eeea4793d9b7f185fe8}{levelsscene} (Q\-String user)
+\begin{DoxyCompactList}\small\item\em The constructor the this class is called, everytime the user clicks on the Let's Go! Button and thus, the corresponding level is loaded from the appropriate text file. Each Level have different specs and object that are loaded to their appropriate positions. \end{DoxyCompactList}\item 
+\hypertarget{classlevelsscene_aad6a31116f8cf58b8f2240be36843657}{void {\bfseries loose\-Life} ()}\label{classlevelsscene_aad6a31116f8cf58b8f2240be36843657}
+
+\item 
+\hypertarget{classlevelsscene_a238d7f1f1542f943fb7851535a83cf52}{void {\bfseries game\-Over} ()}\label{classlevelsscene_a238d7f1f1542f943fb7851535a83cf52}
+
+\item 
+void \hyperlink{classlevelsscene_a4b0a1ba6c491db4488cd28a08c18591d}{you\-Lost} (bool)
+\begin{DoxyCompactList}\small\item\em Decrementing lifes, score and showing appropriate pop up window when users' looses. \end{DoxyCompactList}\item 
+void \hyperlink{classlevelsscene_ab7752c641256cdc4389ad166b421838a}{you\-Won} ()
+\begin{DoxyCompactList}\small\item\em Incrementing score, proceeding to the \hyperlink{classgame1scene}{game1scene} and showing appropriate pop up window when user wins. \end{DoxyCompactList}\item 
+void \hyperlink{classlevelsscene_ae380900a9cf4e534bd61946861fd350e}{set\-Up\-Countdown\-Timer} ()
+\begin{DoxyCompactList}\small\item\em $<$ Timer controlling the countdown \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classlevelsscene_a438c5aa1d42421be740b3ffa2e0f9bac}{Q\-String {\bfseries user}}\label{classlevelsscene_a438c5aa1d42421be740b3ffa2e0f9bac}
+
+\item 
+\hypertarget{classlevelsscene_ad56713e7d1bcd6fd0a55ae375b269d19}{\hyperlink{classPopeye}{Popeye} $\ast$ \hyperlink{classlevelsscene_ad56713e7d1bcd6fd0a55ae375b269d19}{popeye} = new \hyperlink{classPopeye}{Popeye}()}\label{classlevelsscene_ad56713e7d1bcd6fd0a55ae375b269d19}
+
+\begin{DoxyCompactList}\small\item\em Creating the references to the Objects. \end{DoxyCompactList}\item 
+\hypertarget{classlevelsscene_a172c29c688ab3b992718c126a546bc5d}{\hyperlink{classspinach}{spinach} $\ast$ {\bfseries spinach1} = new \hyperlink{classspinach}{spinach}()}\label{classlevelsscene_a172c29c688ab3b992718c126a546bc5d}
+
+\item 
+\hypertarget{classlevelsscene_a47930f9f071ec2554cd259ffdd878b19}{\hyperlink{classspinach}{spinach} $\ast$ {\bfseries spinach2} = new \hyperlink{classspinach}{spinach}()}\label{classlevelsscene_a47930f9f071ec2554cd259ffdd878b19}
+
+\item 
+\hypertarget{classlevelsscene_aa7a7a4ed666f12828fc4cc7e5727a4be}{\hyperlink{classspinach}{spinach} $\ast$ {\bfseries spinach3} = new \hyperlink{classspinach}{spinach}()}\label{classlevelsscene_aa7a7a4ed666f12828fc4cc7e5727a4be}
+
+\item 
+\hypertarget{classlevelsscene_a2aa538f94ab2a37a21e9cbda55f95fdc}{\hyperlink{classriver}{river} $\ast$ {\bfseries river1} = new \hyperlink{classriver}{river}()}\label{classlevelsscene_a2aa538f94ab2a37a21e9cbda55f95fdc}
+
+\item 
+\hypertarget{classlevelsscene_afde2853c70466d2650f2d22a8a38476f}{\hyperlink{classboat}{boat} $\ast$ {\bfseries boat1} = new \hyperlink{classboat}{boat}()}\label{classlevelsscene_afde2853c70466d2650f2d22a8a38476f}
+
+\item 
+\hypertarget{classlevelsscene_a3360b5541677c90abe0dc578fa23d9cd}{\hyperlink{classrock}{rock} $\ast$ {\bfseries rock1} = new \hyperlink{classrock}{rock}()}\label{classlevelsscene_a3360b5541677c90abe0dc578fa23d9cd}
+
+\item 
+\hypertarget{classlevelsscene_a0ad43dd80f27a36ca3e7199c499322fd}{\hyperlink{classriverObstacle}{river\-Obstacle} $\ast$ {\bfseries obstacle} = new \hyperlink{classriverObstacle}{river\-Obstacle}}\label{classlevelsscene_a0ad43dd80f27a36ca3e7199c499322fd}
+
+\item 
+\hypertarget{classlevelsscene_a36a5a006fa44ef570bf00320a50dc6ae}{\hyperlink{classsmallRiver}{small\-River} $\ast$ {\bfseries small\-River1} = new \hyperlink{classsmallRiver}{small\-River}()}\label{classlevelsscene_a36a5a006fa44ef570bf00320a50dc6ae}
+
+\item 
+\hypertarget{classlevelsscene_a7362f819c35583c27a1746357f1b2f76}{\hyperlink{classsmallRiver}{small\-River} $\ast$ {\bfseries small\-River2} = new \hyperlink{classsmallRiver}{small\-River}()}\label{classlevelsscene_a7362f819c35583c27a1746357f1b2f76}
+
+\item 
+\hypertarget{classlevelsscene_a9bb43edcf6f4c22bf3400a3758578062}{\hyperlink{classlevels}{levels} $\ast$ {\bfseries l}}\label{classlevelsscene_a9bb43edcf6f4c22bf3400a3758578062}
+
+\item 
+\hypertarget{classlevelsscene_a5e0a538e398629d89dcc62d620eff88a}{Q\-Push\-Button $\ast$ {\bfseries run}}\label{classlevelsscene_a5e0a538e398629d89dcc62d620eff88a}
+
+\item 
+\hypertarget{classlevelsscene_a12e277418e8d7d9e4ef44d931686f1c6}{Q\-Push\-Button $\ast$ {\bfseries hint}}\label{classlevelsscene_a12e277418e8d7d9e4ef44d931686f1c6}
+
+\item 
+\hypertarget{classlevelsscene_a603f99a93fc6f8e97c2121ad59480c95}{Q\-Push\-Button $\ast$ {\bfseries pause}}\label{classlevelsscene_a603f99a93fc6f8e97c2121ad59480c95}
+
+\item 
+\hypertarget{classlevelsscene_ae01db667588208787b85257483b461f1}{Q\-Push\-Button $\ast$ {\bfseries retry}}\label{classlevelsscene_ae01db667588208787b85257483b461f1}
+
+\item 
+\hypertarget{classlevelsscene_a54b0e28d9331156ecbb5184c723dbafe}{Q\-Push\-Button $\ast$ \hyperlink{classlevelsscene_a54b0e28d9331156ecbb5184c723dbafe}{proceed}}\label{classlevelsscene_a54b0e28d9331156ecbb5184c723dbafe}
+
+\begin{DoxyCompactList}\small\item\em Q\-Widgets that will displayed on the screen. \end{DoxyCompactList}\item 
+\hypertarget{classlevelsscene_a62b85c060b3cb074bb0974da5d4580e3}{Q\-Text\-Edit $\ast$ {\bfseries text}}\label{classlevelsscene_a62b85c060b3cb074bb0974da5d4580e3}
+
+\item 
+\hypertarget{classlevelsscene_a223b1278a33e4a828ae6ad08d703c25a}{Q\-Label $\ast$ {\bfseries instructions}}\label{classlevelsscene_a223b1278a33e4a828ae6ad08d703c25a}
+
+\item 
+\hypertarget{classlevelsscene_a49ebdc6c1f0f718aee0fa693c179e3a9}{Q\-Graphics\-Text\-Item $\ast$ {\bfseries count\-Down\-Text}}\label{classlevelsscene_a49ebdc6c1f0f718aee0fa693c179e3a9}
+
+\item 
+\hypertarget{classlevelsscene_a1d9581d7120c445327855fb7fa979ec1}{int {\bfseries countdown} = 120}\label{classlevelsscene_a1d9581d7120c445327855fb7fa979ec1}
+
+\item 
+\hypertarget{classlevelsscene_a33ff8c59114eb2a898ae03602a03d81d}{Q\-Timer $\ast$ \hyperlink{classlevelsscene_a33ff8c59114eb2a898ae03602a03d81d}{countdown\-Timer}}\label{classlevelsscene_a33ff8c59114eb2a898ae03602a03d81d}
+
+\begin{DoxyCompactList}\small\item\em $<$ value of the countdown at the start of the game that is = to 120 i.\-e. 2 mins for each level \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classlevelsscene_ac88ccf0616d65eeea4793d9b7f185fe8}{\index{levelsscene@{levelsscene}!levelsscene@{levelsscene}}
+\index{levelsscene@{levelsscene}!levelsscene@{levelsscene}}
+\subsubsection[{levelsscene}]{\setlength{\rightskip}{0pt plus 5cm}levelsscene\-::levelsscene (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{user}
+\end{DoxyParamCaption}
+)}}\label{classlevelsscene_ac88ccf0616d65eeea4793d9b7f185fe8}
+
+
+The constructor the this class is called, everytime the user clicks on the Let's Go! Button and thus, the corresponding level is loaded from the appropriate text file. Each Level have different specs and object that are loaded to their appropriate positions. 
+
+$<$ User can only pause after level 1 is completed
+
+$<$ if the levels has ot not other spinach cans 
+
+\subsection{Member Function Documentation}
+\hypertarget{classlevelsscene_afb0be60e25586a4c1f4f2c95d8687939}{\index{levelsscene@{levelsscene}!check\-Answer@{check\-Answer}}
+\index{check\-Answer@{check\-Answer}!levelsscene@{levelsscene}}
+\subsubsection[{check\-Answer}]{\setlength{\rightskip}{0pt plus 5cm}void levelsscene\-::check\-Answer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classlevelsscene_afb0be60e25586a4c1f4f2c95d8687939}
+
+
+Checking the User's input and moving popeye and the boat accordingly. If the User Clicks on the pick\-Up Spinach cans dissapear. 
+
+$<$ Run push button function
+
+$<$direction of movement, 0 to the right and anticlockwise
+
+$<$check the argument of the Repeat(args) from the user
+
+$<$get the number of iterations
+
+$<$start reading after we get the number of iterations
+
+$<$ iterate j times over the user's Code
+
+$<$ i is either = 0 or 2 and at the end of the first for loop i is reseted to 2 if there is repetition
+
+popeye cannot move in level 5; boat collides with him only
+
+to check if popeye can pass on the bridge or if there is a river
+
+$<$If popeye collides with the boat, they should both move in the same manner if Boat.\-Move is inputed
+
+$<$In level 7 the boat can only move on a horizontal line
+
+$<$ Each Rotate will rotate popeye by 90 degrees
+
+$<$if the colliding object is of type spinach
+
+$<$ decrement the number of lifes before showing it to the user and show appropriate syntax error \hypertarget{classlevelsscene_ab224af4c9e09ba73a8f38345643978b9}{\index{levelsscene@{levelsscene}!hide\-Scene@{hide\-Scene}}
+\index{hide\-Scene@{hide\-Scene}!levelsscene@{levelsscene}}
+\subsubsection[{hide\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void levelsscene\-::hide\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classlevelsscene_ab224af4c9e09ba73a8f38345643978b9}
+
+
+Hide the scene. 
+
+Hide the levelsscene. \hypertarget{classlevelsscene_ae6427d1e5f4207e87dab83a4f9ec6302}{\index{levelsscene@{levelsscene}!pause\-Level@{pause\-Level}}
+\index{pause\-Level@{pause\-Level}!levelsscene@{levelsscene}}
+\subsubsection[{pause\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void levelsscene\-::pause\-Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classlevelsscene_ae6427d1e5f4207e87dab83a4f9ec6302}
+
+
+Pause the level the user's in. 
+
+$<$Since everything is loaded from the text file; the lives, scores, timer and level number, the pause simply closes the scene and when the user re-\/logs in, he just continues where he left off when he clicks on the Let's Start! button \hypertarget{classlevelsscene_a9eb73af70c2c3030be31ba44b5966d20}{\index{levelsscene@{levelsscene}!retry\-Level@{retry\-Level}}
+\index{retry\-Level@{retry\-Level}!levelsscene@{levelsscene}}
+\subsubsection[{retry\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void levelsscene\-::retry\-Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classlevelsscene_a9eb73af70c2c3030be31ba44b5966d20}
+
+
+Retry level and reset positons to initial hard coded positions. 
+
+$<$retry -\/$>$ reset popeye's position
+
+$<$ if the levels has ot not other spinach cans \hypertarget{classlevelsscene_ae380900a9cf4e534bd61946861fd350e}{\index{levelsscene@{levelsscene}!set\-Up\-Countdown\-Timer@{set\-Up\-Countdown\-Timer}}
+\index{set\-Up\-Countdown\-Timer@{set\-Up\-Countdown\-Timer}!levelsscene@{levelsscene}}
+\subsubsection[{set\-Up\-Countdown\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void levelsscene\-::set\-Up\-Countdown\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classlevelsscene_ae380900a9cf4e534bd61946861fd350e}
+
+
+$<$ Timer controlling the countdown 
+
+Initializes Text\-Item that indicates the Countdown at the start of each level.
+
+Setting up the timer \hypertarget{classlevelsscene_a3fc9fb8b563863ca1f73109a7f94dbba}{\index{levelsscene@{levelsscene}!update\-Countdown\-Timer@{update\-Countdown\-Timer}}
+\index{update\-Countdown\-Timer@{update\-Countdown\-Timer}!levelsscene@{levelsscene}}
+\subsubsection[{update\-Countdown\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void levelsscene\-::update\-Countdown\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classlevelsscene_a3fc9fb8b563863ca1f73109a7f94dbba}
+
+
+Function that will update the timer and then display it. 
+
+update S\-L\-O\-T that controls the Countdown to display it when adjusted, every second \hypertarget{classlevelsscene_a4b0a1ba6c491db4488cd28a08c18591d}{\index{levelsscene@{levelsscene}!you\-Lost@{you\-Lost}}
+\index{you\-Lost@{you\-Lost}!levelsscene@{levelsscene}}
+\subsubsection[{you\-Lost}]{\setlength{\rightskip}{0pt plus 5cm}void levelsscene\-::you\-Lost (
+\begin{DoxyParamCaption}
+\item[{bool}]{time\-Is\-Up}
+\end{DoxyParamCaption}
+)}}\label{classlevelsscene_a4b0a1ba6c491db4488cd28a08c18591d}
+
+
+Decrementing lifes, score and showing appropriate pop up window when users' looses. 
+
+$<$reset the user to level 1
+
+$<$reset the user to level 1 \hypertarget{classlevelsscene_ab7752c641256cdc4389ad166b421838a}{\index{levelsscene@{levelsscene}!you\-Won@{you\-Won}}
+\index{you\-Won@{you\-Won}!levelsscene@{levelsscene}}
+\subsubsection[{you\-Won}]{\setlength{\rightskip}{0pt plus 5cm}void levelsscene\-::you\-Won (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classlevelsscene_ab7752c641256cdc4389ad166b421838a}
+
+
+Incrementing score, proceeding to the \hyperlink{classgame1scene}{game1scene} and showing appropriate pop up window when user wins. 
+
+$<$Increment the score according the count of lifes, the higher the lifes, the higher the score
+
+$<$ Increment the score according to the player's time 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+levelsscene.\-h\item 
+\hyperlink{levelsscene_8cpp}{levelsscene.\-cpp}\end{DoxyCompactItemize}

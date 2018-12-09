@@ -1,3 +1,8 @@
+/**
+* \file testingicon.h
+* \brief QGraphicsPixmapItem representing the testingIcon
+* \author Ali Al Akbar Haidoura
+  */
 #ifndef TESTINGICON_H
 #define TESTINGICON_H
 #include<QGraphicsPixmapItem>

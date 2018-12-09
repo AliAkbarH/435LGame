@@ -1,3 +1,8 @@
+/**
+* \file lifecounter.cpp
+* \brief Contains LifeCounter Class definitions
+* \author Ali Al Akbar Haidoura
+  */
 #include "lifecounter.h"
 
 LifeCounter::LifeCounter(int life)

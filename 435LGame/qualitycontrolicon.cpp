@@ -1,3 +1,8 @@
+/**
+* \file qualitycontrolicon.cpp
+* \brief Contains QualityControlIcon Class definitions
+* \author Ali Al Akbar Haidoura
+  */
 #include "qualitycontrolicon.h"
 
 QualityControlIcon::QualityControlIcon()
